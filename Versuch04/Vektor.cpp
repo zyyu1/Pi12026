@@ -6,14 +6,25 @@
 // Datei:  Vektor.cpp
 // Inhalt: Sourcedatei der Klasse Vektor
 //////////////////////////////////////////////////////////////////////////////
-
+/**
+ * \file Vektor.cpp
+ * \brief Implementierung der Klasse Vektor.
+ */
 #include "Vektor.h"
-
+/**
+ * \brief Konstruktor der Klasse Vektor.
+ *
+ * \param inX x-Komponente des Vektors.
+ * \param inY y-Komponente des Vektors.
+ * \param inZ z-Komponente des Vektors.
+ */
 Vektor::Vektor(double inX, double inY, double inZ) : x(inX), y(inY), z(inZ)
 {
 
 }
-
+/**
+ * \brief Destruktor der Klasse Vektor.
+ */
 Vektor::~Vektor()
 {
 
