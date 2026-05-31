@@ -7,26 +7,67 @@
 
 #include "Student.h"
 
-class ListenElement         //定义一个类 ListenElement
+/**
+ * @brief Reprasentiert einen Knoten einer doppelt verketteten Studentenliste.
+ */
+class ListenElement
 {
 private:
-    Student data;           //保存学生数据，是一个 Student 对象
-    ListenElement* next;    //指向下一个链表节点
-    ListenElement* prev;    //单向链表变成双向链表，增加一个指向前一个节点的指针
+    Student data;
+    ListenElement* next;
+    ListenElement* prev;
 
 public:
+    /**
+     * @brief Erstellt ein neues Listenelement.
+     *
+     * @param pData Studentendaten des Knotens
+     * @param pNext Zeiger auf das naechste Listenelement
+     * @param pPrev Zeiger auf das vorherige Listenelement
+     */
+    ListenElement(Student pData, ListenElement* pNext, ListenElement* pPrev);
 
-    // pNext 指向下一个节点
-    // pPrev 指向前一个节点
-    ListenElement(Student pData, ListenElement* pNext, ListenElement* pPrev); 
+    /**
+     * @brief Ersetzt die gespeicherten Studentendaten des Knotens.
+     *
+     * @param pData Neue Studentendaten
+     */
+    void setData(Student pData);
 
-    void setData(Student pData);        //setter成员函数设置学生数据
-    void setNext(ListenElement* pNext); //setter成员函数设置下一个节点指针
-    void setPrev(ListenElement* pPrev); //setter成员函数设置前一个节点指针
+    /**
+     * @brief Setzt den Zeiger auf das naechste Listenelement.
+     *
+     * @param pNext Neues naechstes Listenelement
+     */
+    void setNext(ListenElement* pNext);
 
-    Student getData() const;            //getter成员函数返回当前节点的学生对象
-    ListenElement* getNext() const;     //返回指向下一个节点的指针
-    ListenElement* getPrev() const;     //增加一个成员函数，返回指向前一个节点的指针
+    /**
+     * @brief Setzt den Zeiger auf das vorherige Listenelement.
+     *
+     * @param pPrev Neues vorheriges Listenelement
+     */
+    void setPrev(ListenElement* pPrev);
+
+    /**
+     * @brief Liefert die gespeicherten Studentendaten.
+     *
+     * @return Studentendaten des Knotens
+     */
+    Student getData() const;
+
+    /**
+     * @brief Liefert den Zeiger auf das naechste Listenelement.
+     *
+     * @return Zeiger auf das naechste Listenelement
+     */
+    ListenElement* getNext() const;
+
+    /**
+     * @brief Liefert den Zeiger auf das vorherige Listenelement.
+     *
+     * @return Zeiger auf das vorherige Listenelement
+     */
+    ListenElement* getPrev() const;
 };
 
 #endif

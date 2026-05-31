@@ -1,0 +1,135 @@
+\doxysection{Student Class Reference}
+\hypertarget{class_student}{}\label{class_student}\index{Student@{Student}}
+
+
+Speichert die Stammdaten eines Studenten.  
+
+
+
+
+{\ttfamily \#include $<$Student.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}\label{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d} 
+{\bfseries Student} ()
+\begin{DoxyCompactList}\small\item\em Erstellt einen leeren Studenten. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student_ad0924c430eca591dad62412b9ddb50bf}{Student}} (unsigned int mat\+Nr, std\+::string name, std\+::string geburtstag, std\+::string address)
+\begin{DoxyCompactList}\small\item\em Erstellt einen Studenten mit vollstaendigen Stammdaten. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_student_a4b8bf48bc0e35673793210bd03cb4f23}{get\+Mat\+Nr}} () const
+\begin{DoxyCompactList}\small\item\em Liefert die Matrikelnummer des Studenten. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_student_af2b671e64af8a240f59652414a8b8047}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Liefert den Namen des Studenten. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_student_a7a5a2f32e4fbc93395073157e3ae035f}{get\+Geburtstag}} () const
+\begin{DoxyCompactList}\small\item\em Liefert das Geburtsdatum des Studenten. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_student_aec9e550c530f685630942bf4140bfb73}{get\+Adresse}} () const
+\begin{DoxyCompactList}\small\item\em Liefert die Adresse des Studenten. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_a5560ff9c5da47ba8067cb37035e45e16}{ausgabe}} () const
+\begin{DoxyCompactList}\small\item\em Gibt alle gespeicherten Studentendaten auf der Konsole aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Speichert die Stammdaten eines Studenten. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_student_ad0924c430eca591dad62412b9ddb50bf}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}}
+{\footnotesize\ttfamily \label{class_student_ad0924c430eca591dad62412b9ddb50bf} 
+Student\+::\+Student (\begin{DoxyParamCaption}\item[{unsigned int}]{mat\+Nr}{, }\item[{std\+::string}]{name}{, }\item[{std\+::string}]{geburtstag}{, }\item[{std\+::string}]{adresse}{}\end{DoxyParamCaption})}
+
+
+
+Erstellt einen Studenten mit vollstaendigen Stammdaten. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat\+Nr} & Matrikelnummer des Studenten \\
+\hline
+{\em name} & Vollstaendiger Name des Studenten \\
+\hline
+{\em geburtstag} & Geburtsdatum des Studenten \\
+\hline
+{\em address} & Adresse des Studenten\\
+\hline
+{\em mat\+Nr} & Matrikelnummer des Studenten \\
+\hline
+{\em name} & Name des Studenten \\
+\hline
+{\em geburtstag} & Geburtsdatum des Studenten \\
+\hline
+{\em adresse} & Adresse des Studenten \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_student_a5560ff9c5da47ba8067cb37035e45e16}\index{Student@{Student}!ausgabe@{ausgabe}}
+\index{ausgabe@{ausgabe}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{ausgabe()}{ausgabe()}}
+{\footnotesize\ttfamily \label{class_student_a5560ff9c5da47ba8067cb37035e45e16} 
+void Student\+::ausgabe (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gibt alle gespeicherten Studentendaten auf der Konsole aus. 
+
+Gibt alle gespeicherten Studentendaten in einer Zeile aus. \Hypertarget{class_student_aec9e550c530f685630942bf4140bfb73}\index{Student@{Student}!getAdresse@{getAdresse}}
+\index{getAdresse@{getAdresse}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getAdresse()}{getAdresse()}}
+{\footnotesize\ttfamily \label{class_student_aec9e550c530f685630942bf4140bfb73} 
+std\+::string Student\+::get\+Adresse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Liefert die Adresse des Studenten. 
+
+\begin{DoxyReturn}{Returns}
+Adresse des Studenten 
+\end{DoxyReturn}
+\Hypertarget{class_student_a7a5a2f32e4fbc93395073157e3ae035f}\index{Student@{Student}!getGeburtstag@{getGeburtstag}}
+\index{getGeburtstag@{getGeburtstag}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getGeburtstag()}{getGeburtstag()}}
+{\footnotesize\ttfamily \label{class_student_a7a5a2f32e4fbc93395073157e3ae035f} 
+std\+::string Student\+::get\+Geburtstag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Liefert das Geburtsdatum des Studenten. 
+
+\begin{DoxyReturn}{Returns}
+Geburtsdatum des Studenten 
+\end{DoxyReturn}
+\Hypertarget{class_student_a4b8bf48bc0e35673793210bd03cb4f23}\index{Student@{Student}!getMatNr@{getMatNr}}
+\index{getMatNr@{getMatNr}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getMatNr()}{getMatNr()}}
+{\footnotesize\ttfamily \label{class_student_a4b8bf48bc0e35673793210bd03cb4f23} 
+unsigned int Student\+::get\+Mat\+Nr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Liefert die Matrikelnummer des Studenten. 
+
+\begin{DoxyReturn}{Returns}
+Matrikelnummer des Studenten 
+\end{DoxyReturn}
+\Hypertarget{class_student_af2b671e64af8a240f59652414a8b8047}\index{Student@{Student}!getName@{getName}}
+\index{getName@{getName}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_student_af2b671e64af8a240f59652414a8b8047} 
+std\+::string Student\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Liefert den Namen des Studenten. 
+
+\begin{DoxyReturn}{Returns}
+Name des Studenten 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Versuch05/Student.\+h\item 
+Versuch05/Student.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,50 @@
+\doxysection{Liste.\+h}
+\hypertarget{_liste_8h_source}{}\label{_liste_8h_source}\index{Versuch05/Liste.h@{Versuch05/Liste.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Praktikum\ Informatik\ 1\ MMXXVI}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ LISTE\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ LISTE\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ListenElement.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Student.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_liste_a26368f966a6cfb9d8320603871d9f316}{Liste}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_listen_element}{ListenElement}}*\ front;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_listen_element}{ListenElement}}*\ back;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_liste_a26368f966a6cfb9d8320603871d9f316}{Liste}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_liste_ac9bb3dba05e5884a536e54af86552177}{\string~Liste}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_liste_a4411346bfafbb0db63af1f47e88bf3b1}{Liste}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_liste_a26368f966a6cfb9d8320603871d9f316}{Liste}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_liste_a26368f966a6cfb9d8320603871d9f316}{Liste}}\&\ \mbox{\hyperlink{class_liste_af68ead23d09d897cbfee0a48b9d77727}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_liste_a26368f966a6cfb9d8320603871d9f316}{Liste}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liste_a03a950dc8fb42a599196ce41330cf8cd}{pushBack}}(\mbox{\hyperlink{class_student}{Student}}\ pData);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liste_af7a2281b634bf0c10b1e6375a03da125}{pushFront}}(\mbox{\hyperlink{class_student}{Student}}\ pData);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liste_a359e04399c69cab7061e7c8eceb74d38}{popFront}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_liste_a7b6936c35cb2a36514de4ea4364c8ee3}{empty}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_student}{Student}}\ \mbox{\hyperlink{class_liste_a379a9ced61e8489881aa1205abbbf752}{dataFront}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liste_a34bc1c9c56b6f484413043b5219eac3a}{ausgabeVorwaerts}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_liste_a5b5a2b762536ba804798bd145a8079c5}{ausgabeRueckwaerts}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_liste_a8e300f0b98290d4e052eb6af740fbda9}{loeschen}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ matNr);}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LISTE\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

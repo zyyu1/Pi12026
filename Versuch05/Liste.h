@@ -10,39 +10,91 @@
 #include "ListenElement.h"
 #include "Student.h"
 
+/**
+ * @brief Verwaltet eine doppelt verkettete Liste von Studenten.
+ */
 class Liste
 {
 private:
-    ListenElement* front;                                  // Zeiger auf das erste Listenelement
-    ListenElement* back;                                   // Zeiger auf das letzte Listenelement
+    ListenElement* front;
+    ListenElement* back;
 
 public:
-    Liste();                                               // Konstruktor mit Zeigerinitialisierung
-    ~Liste();                                              // 释放链表中所有动态申请的结点，避免内存泄漏
-    // 链表结点通过 new 动态创建，禁止拷贝可避免多个对象共享同一批结点后重复释放。
+    /**
+     * @brief Erstellt eine leere Liste.
+     */
+    Liste();
+
+    /**
+     * @brief Zerstoert die Liste und gibt alle Listenelemente frei.
+     */
+    ~Liste();
+
     /**
      * @brief Kopierkonstruktor ist deaktiviert, um flache Kopien der Listenknoten zu verhindern.
      *
      * @param other Zu kopierende Liste
      */
-    Liste(const Liste&) = delete;
+    Liste(const Liste& other) = delete;
+
     /**
      * @brief Zuweisungsoperator ist deaktiviert, um flache Kopien der Listenknoten zu verhindern.
      *
      * @param other Zuzuweisende Liste
      * @return Referenz auf diese Liste
      */
-    Liste& operator=(const Liste&) = delete;
+    Liste& operator=(const Liste& other) = delete;
+
+    /**
+     * @brief Fuegt einen Studenten am Ende der Liste ein.
+     *
+     * @param pData Einzufuegender Student
+     */
     void pushBack(Student pData);
-    void pushFront(Student pData);                         //增加一个成员函数，在链表头部插入一个学生对象
+
+    /**
+     * @brief Fuegt einen Studenten am Anfang der Liste ein.
+     *
+     * @param pData Einzufuegender Student
+     */
+    void pushFront(Student pData);
+
+    /**
+     * @brief Entfernt das erste Element der Liste.
+     */
     void popFront();
+
+    /**
+     * @brief Prueft, ob die Liste leer ist.
+     *
+     * @return true, wenn die Liste keine Elemente enthaelt, sonst false
+     */
     bool empty();
+
+    /**
+     * @brief Liefert die Daten des ersten Listenelements.
+     *
+     * @return Student am Listenanfang oder ein leerer Student bei leerer Liste
+     */
     Student dataFront();
+
+    /**
+     * @brief Gibt die Liste von vorne nach hinten aus.
+     */
     void ausgabeVorwaerts() const;
-    void ausgabeRueckwaerts() const; //增加一个成员函数，输出链表的内容，顺序是从后往前
-    
-    //增加一个成员函数，找到并删除指定学号的学生
-    bool loeschen(unsigned int matNr); //找到并删除：返回 true ; 没找到：返回 false
+
+    /**
+     * @brief Gibt die Liste von hinten nach vorne aus.
+     */
+    void ausgabeRueckwaerts() const;
+
+    /**
+     * @brief Sucht einen Studenten ueber die Matrikelnummer und entfernt ihn aus der Liste.
+     *
+     * @param matNr Matrikelnummer des zu loeschenden Studenten
+     * @return true, wenn ein passender Student gefunden und geloescht wurde, sonst false
+     */
+    bool loeschen(unsigned int matNr);
 };
 
-#endif /*LISTE_H_*/
+#endif /* LISTE_H_ */

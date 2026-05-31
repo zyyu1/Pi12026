@@ -5,18 +5,17 @@
 #include "Liste.h"
 
 /**
- * @brief Standardkonstruktor, der eine leere Liste erstellt
+ * @brief Erstellt eine leere Liste.
  */
 Liste::Liste(): front(nullptr), back(nullptr)
 {
 }
 
 /**
- * @brief Destruktor zum Freigeben aller Listenelemente.
+ * @brief Zerstoert die Liste und gibt alle Listenelemente frei.
  */
 Liste::~Liste()
 {
-    // 依次删除所有结点，避免程序结束时遗留动态内存。
     while (!empty())
     {
         popFront();
@@ -24,18 +23,15 @@ Liste::~Liste()
 }
 
 /**
- * @brief Hinzufuegen eines neuen Listenelements am Ende der Liste.
+ * @brief Fuegt einen Studenten am Ende der Liste ein.
  *
- * @param pData Zeiger auf ein Objekt der Klasse Student
- * @return void
+ * @param pData Einzufuegender Student
  */
 void Liste::pushBack(Student pData)
 {
-    //为什么加back？
-    //因为我们需要在链表的末尾添加一个新的元素，所以我们需要一个指针来指向链表的最后一个元素，这样我们就可以直接在最后一个元素之后添加新的元素，而不需要遍历整个链表来找到最后一个元素。
     ListenElement* neuesElement = new ListenElement(pData, nullptr, back);
 
-    if (front == nullptr)                                       // Liste leer?
+    if (front == nullptr)
     {
         front = neuesElement;
         back = neuesElement;
@@ -43,21 +39,19 @@ void Liste::pushBack(Student pData)
     else
     {
         back->setNext(neuesElement);
-        neuesElement->setPrev(back); //设置新元素的前一个节点为当前的最后一个节点
+        neuesElement->setPrev(back);
         back = neuesElement;
     }
 }
 
 /**
- * @brief Hinzufuegen eines neuen Listenelements am Anfang der Liste.
+ * @brief Fuegt einen Studenten am Anfang der Liste ein.
  *
- * @param pData Daten des neuen Studenten
+ * @param pData Einzufuegender Student
  */
-//增加一个成员函数，在链表头部插入一个学生对象
 void Liste::pushFront(Student pData)
 {
-    ListenElement* neuesElement =
-        new ListenElement(pData, front, nullptr);
+    ListenElement* neuesElement = new ListenElement(pData, front, nullptr);
 
     if (front == nullptr)
     {
@@ -72,13 +66,10 @@ void Liste::pushFront(Student pData)
 }
 
 /**
- * @brief Entfernen eines Listenelements am Anfang der Liste.
- *
- * @return void
+ * @brief Entfernt das erste Element der Liste.
  */
 void Liste::popFront()
 {
-    // 空链表时直接返回，防止访问空指针。
     if (front == nullptr)
     {
         return;
@@ -86,24 +77,24 @@ void Liste::popFront()
 
     ListenElement* cursor = front;
 
-    if (front == back)                                       // Liste enth�lt nur ein Listenelement
+    if (front == back)
     {
-        delete front;                                        // Listenelement l�schen
+        delete front;
         front = nullptr;
         back = nullptr;
     }
     else
     {
         front = front->getNext();
-        front->setPrev(nullptr); //设置新的第一个元素的前一个节点为nullptr
+        front->setPrev(nullptr);
         delete cursor;
     }
 }
 
 /**
- * @brief Pruefen, ob die Liste leer ist
+ * @brief Prueft, ob die Liste leer ist.
  *
- * @return wenn leer true, sonst false
+ * @return true, wenn die Liste keine Elemente enthaelt, sonst false
  */
 bool Liste::empty()
 {
@@ -111,13 +102,12 @@ bool Liste::empty()
 }
 
 /**
- * @brief Gibt die Daten des ersten Listenelements in der Liste zurueck
+ * @brief Liefert die Daten des ersten Listenelements.
  *
- * @return Zeiger auf ein Objekt der Klasse Student
+ * @return Student am Listenanfang oder ein leerer Student bei leerer Liste
  */
 Student Liste::dataFront()
 {
-    // 调用者如果忘记先判空，返回一个默认 Student，避免程序崩溃。
     if (front == nullptr)
     {
         return Student();
@@ -127,9 +117,7 @@ Student Liste::dataFront()
 }
 
 /**
- * @brief Ausgabe der Liste vom ersten bis zum letzten Element.
- *
- * @return void
+ * @brief Gibt die Liste von vorne nach hinten aus.
  */
 void Liste::ausgabeVorwaerts() const
 {
@@ -137,15 +125,13 @@ void Liste::ausgabeVorwaerts() const
 
     while (cursor != nullptr)
     {
-    	cursor->getData().ausgabe();
+        cursor->getData().ausgabe();
         cursor = cursor->getNext();
     }
 }
 
 /**
- * @brief Ausgabe der Liste vom letzten bis zum ersten Element.
- *
- * @return void
+ * @brief Gibt die Liste von hinten nach vorne aus.
  */
 void Liste::ausgabeRueckwaerts() const
 {
@@ -154,17 +140,16 @@ void Liste::ausgabeRueckwaerts() const
     while (cursor != nullptr)
     {
         cursor->getData().ausgabe();
-        cursor = cursor->getPrev(); //设置新的第一个元素的前一个节点为nullptr
+        cursor = cursor->getPrev();
     }
 }
 
 /**
- * @brief Finden und Loeschen eines Listenelements mit einer bestimmten Matrikelnummer.
+ * @brief Sucht einen Studenten ueber die Matrikelnummer und entfernt ihn aus der Liste.
  *
- * @param matNr Die Matrikelnummer des zu loeschenden Studenten
- * @return true, wenn das Element gefunden und geloescht wurde, sonst false
+ * @param matNr Matrikelnummer des zu loeschenden Studenten
+ * @return true, wenn ein passender Student gefunden und geloescht wurde, sonst false
  */
-//增加一个成员函数，找到并删除指定学号的学生
 bool Liste::loeschen(unsigned int matNr)
 {
     ListenElement* cursor = front;

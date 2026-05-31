@@ -1,0 +1,50 @@
+\doxysection{Versuch03/othello\+KI.h File Reference}
+\hypertarget{othello_k_i_8h}{}\label{othello_k_i_8h}\index{Versuch03/othelloKI.h@{Versuch03/othelloKI.h}}
+{\ttfamily \#include "{}config.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{othello_k_i_8h_a5e5980177c60019445f26e3e61b50c51}{computer\+Zug}} (int spielfeld\mbox{[}\mbox{\hyperlink{config_8h_a6e8c64412a620a46fbadb6bbf2df47fe}{GROESSE\+\_\+Y}}\mbox{]}\mbox{[}\mbox{\hyperlink{config_8h_a091c112fc29d1116c224f3d4c0fa7455}{GROESSE\+\_\+X}}\mbox{]}, const int aktueller\+Spieler)
+\begin{DoxyCompactList}\small\item\em Berechnet und fuehrt einen Computerzug fuer Othello aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Praktikum Informatik 1
+
+Stellt eine KI fuer das Spiel Othello zur Verfuegung 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{othello_k_i_8h_a5e5980177c60019445f26e3e61b50c51}\index{othelloKI.h@{othelloKI.h}!computerZug@{computerZug}}
+\index{computerZug@{computerZug}!othelloKI.h@{othelloKI.h}}
+\doxysubsubsection{\texorpdfstring{computerZug()}{computerZug()}}
+{\footnotesize\ttfamily \label{othello_k_i_8h_a5e5980177c60019445f26e3e61b50c51} 
+bool computer\+Zug (\begin{DoxyParamCaption}\item[{int}]{spielfeld}{\mbox{[}\+GROESSE\+\_\+\+Y\mbox{]}\mbox{[}\+GROESSE\+\_\+\+X\mbox{]}, }\item[{const int}]{aktueller\+Spieler}{}\end{DoxyParamCaption})}
+
+
+
+Berechnet und fuehrt einen Computerzug fuer Othello aus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spielfeld} & Das aktuelle Spielfeld \\
+\hline
+{\em aktueller\+Spieler} & Der Spieler, fuer den der Computerzug berechnet wird \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, wenn ein Zug ausgefuehrt wurde, sonst false
+\end{DoxyReturn}
+Berechnet und fuehrt einen Computerzug fuer Othello aus.
+
+Die KI prueft alle gueltigen Zuege und waehlt den Zug, nach dem der Gegner im naechsten Schritt moeglichst wenige Zuege hat.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spielfeld} & Das aktuelle Spielfeld \\
+\hline
+{\em aktueller\+Spieler} & Der Spieler, fuer den der Computerzug berechnet wird \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, wenn ein Zug ausgefuehrt wurde, sonst false 
+\end{DoxyReturn}

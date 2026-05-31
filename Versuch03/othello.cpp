@@ -1,18 +1,26 @@
-/**
- * Praktikum Informatik 1 
- * 
+/** @mainpage
  *
- * @file main.cpp
+ * Praktikum Informatik 1 MMXXVI <BR>
+ * Versuch 3: Komplexere Projekte und Dokumentation
+ * <BR>
+ * Othello, Tests und Doxygen-Dokumentation
+ *
+ */
+
+/**
+ * Praktikum Informatik 1
+ *
+ * @file othello.cpp
  *
  * Die Funktionen fuer das Spiel Othello
  */
 
 /**
-* @mainpage Othello
-*
-* Dokumentation des Spiels Othello im Rahmen des Praktikums Informatik 1.
-*
-*/
+ * @page othello Othello
+ *
+ * Dokumentation des Spiels Othello im Rahmen des Praktikums Informatik 1.
+ *
+ */
 
 #include <iostream>
 #include <string>
@@ -20,108 +28,107 @@
 #include "test.h"
 #include "othelloKI.h"
 
-
 /**
- * @brief Funktion zur ersten Initialisierung eines neuen Spielfelds
+ * @brief Initialisiert ein Spielfeld fuer ein neues Othello-Spiel.
  *
- * Diese Funktion fuellt ein existierendes Spielfeld mit Nullen und erzeugt die Startaufstellung.
+ * Die Funktion fuellt ein existierendes Spielfeld mit Nullen und erzeugt
+ * anschliessend die Startaufstellung.
  *
  * @param spielfeld Spielfeld, das initialisiert wird
  */
- //建立初始化棋盘
+// 初始化棋盘并放置开局四个棋子
 void initialisiereSpielfeld(int spielfeld[GROESSE_Y][GROESSE_X])
 {
     for (int j = 0; j < GROESSE_Y; j++)
+    {
+        for (int i = 0; i < GROESSE_X; i++)
         {
-            for(int i = 0; i < GROESSE_X; i++)
-            {
-                spielfeld[j][i] = 0;                                //把整个棋盘清空，设成 0
-            }
+            spielfeld[j][i] = 0;                                // 先把所有格子清空为 0
         }
-        //放四个起始棋子,这里设置为8*8棋盘
-        spielfeld[GROESSE_Y / 2 - 1][GROESSE_X / 2 - 1] = 1;        //[3][3] = 1
-        spielfeld[GROESSE_Y / 2][GROESSE_X / 2 - 1] = 2;            //[4][3] = 2
-        spielfeld[GROESSE_Y / 2 - 1][GROESSE_X / 2] = 2;            //[3][4] = 2
-        spielfeld[GROESSE_Y / 2][GROESSE_X / 2] = 1;                //[4][4] = 1
+    }
+
+    // 在棋盘中心放置 Othello 的初始四子
+    spielfeld[GROESSE_Y / 2 - 1][GROESSE_X / 2 - 1] = 1;        //[3][3] = 1
+    spielfeld[GROESSE_Y / 2][GROESSE_X / 2 - 1] = 2;            //[4][3] = 2
+    spielfeld[GROESSE_Y / 2 - 1][GROESSE_X / 2] = 2;            //[3][4] = 2
+    spielfeld[GROESSE_Y / 2][GROESSE_X / 2] = 1;                //[4][4] = 1
 }
 
-
 /**
-* @brief Ausgabe des Spielfelds auf der Konsole
-*
-* Ausgabe des aktuellen Spielfelds, 0 bedeutet leeres Feld, 1 ist Spieler 1 und 2 ist Spieler2
-* Kreuze symbolisieren Spieler 1, waehrend Kreise Spieler 2 symbolisieren
-*
-*  @param spielfeld  Spielfeld, das ausgeben wird
-*/
-//辅助显示函数,把当前棋盘格式化输出到控制台
+ * @brief Gibt das aktuelle Spielfeld auf der Konsole aus.
+ *
+ * Der Wert 0 kennzeichnet ein leeres Feld, 1 steht fuer Spieler 1 und
+ * 2 fuer Spieler 2. Kreuze symbolisieren Spieler 1, Kreise Spieler 2.
+ *
+ * @param spielfeld Spielfeld, das ausgegeben wird
+ */
+// 在控制台中按网格形式输出当前棋盘
 void zeigeSpielfeld(const int spielfeld[GROESSE_Y][GROESSE_X])
 {
-    //打印列标题A|B|C...
+    // 先输出列标 A|B|C...
     std::cout << "   | ";
 
-    //Start bei ASCII 65 = A                            
+    // Start bei ASCII 65 = A
     for (int i = 65; i < 65 + GROESSE_X; ++i)
-        std::cout << ((char) i) << " | " ; //强制转换类型为字符串
+    {
+        std::cout << ((char) i) << " | "; // 将 ASCII 字母转换为列名
+    }
 
     std::cout << std::endl;
 
-    //逐行输出棋盘
+    // 逐行输出棋盘内容
     for (int j = 0; j < GROESSE_Y; ++j)
     {
-        for(int i = 0; i < GROESSE_X; ++i)                  
+        for (int i = 0; i < GROESSE_X; ++i)
         {
             std::cout << "---+";
         }
-        std::cout << "---+" << std::endl;                   //输出分隔线
-        std::cout << " " << j + 1 << " |";                  //输出行号
-
+        std::cout << "---+" << std::endl;                   // 输出分隔线
+        std::cout << " " << j + 1 << " |";                  // 输出当前行号
 
         for (int i = 0; i < GROESSE_X; ++i)
         {
             switch (spielfeld[j][i])
             {
-                case 0:                                     //空格
-                    std::cout << "   " ;
+                case 0:                                     // 空格
+                    std::cout << "   ";
                     break;
-                case 1:                                     //玩家1
+                case 1:                                     // 玩家 1
                     std::cout << " X ";
                     break;
-                case 2:                                     //玩家2
+                case 2:                                     // 玩家 2
                     std::cout << " O ";
                     break;
 
-                default:                                    //如果棋盘里出现了不是 0/1/2 的值，直接报错退
+                default:                                    // 若棋盘中出现不是 0/1/2 的值，则直接报错退出
                     std::cout << "Unzulaessige Daten im Spielfeld!" << std::endl;
                     std::cout << "Abbruch .... " << std::endl;
                     exit(0);
                     break;
             }
             std::cout << "|";
-        };  //for i
+        }
 
-        std::cout <<  std::endl;
-
-    }  //for j
+        std::cout << std::endl;
+    }
 }
 
-
 /**
- * @brief Prueft, wer Gewinner ist
+ * @brief Ermittelt den Gewinner des aktuellen Spielfelds.
  *
- * Zaehlt alle Steine auf dem Feld
+ * Dazu werden alle Steine beider Spieler auf dem Spielfeld gezaehlt.
  *
- * @param spielfeld Aktuelles Spielfeld, fuer das der Gewinner ermittelt wird
- * @return winner
+ * @param spielfeld Aktuelles Spielfeld
+ * @return 0 bei Unentschieden, 1 bei Sieg von Spieler 1, sonst 2
  */
-//游戏结束后,统计棋盘上玩家 1 和玩家 2 的棋子数，返回赢家
+// 统计双方棋子数量并判断获胜者
 int gewinner(const int spielfeld[GROESSE_Y][GROESSE_X])
 {
-    //初始化计数器
+    // 记录双方棋子数
     int zaehlerSpieler1 = 0;
     int zaehlerSpieler2 = 0;
 
-    //遍历棋盘,统计玩家 1 和玩家 2 的棋子数
+    // 遍历棋盘，分别统计玩家 1 和玩家 2 的棋子数
     for (int j = 0; j < GROESSE_Y; ++j)
     {
         for (int i = 0; i < GROESSE_X; ++i)
@@ -134,11 +141,10 @@ int gewinner(const int spielfeld[GROESSE_Y][GROESSE_X])
             {
                 ++zaehlerSpieler2;
             }
-
         }
     }
 
-    //判断赢家
+    // 返回获胜者
     if (zaehlerSpieler1 == zaehlerSpieler2)
     {
         return 0;
@@ -153,111 +159,103 @@ int gewinner(const int spielfeld[GROESSE_Y][GROESSE_X])
     }
 }
 
-
 /**
-* @brief Ueberprueft fuer zwei Indizes, ob sie auf dem Spielfeld sind
-*
-* @param posX Index fuer die Spalte
-* @param posY Index fuer die Zeile
-* @return true, wenn Spalte und Zeile innerhalb des Spielfelds sind, sonst false
-*/
-//检查位置是否在棋盘范围内
+ * @brief Prueft, ob eine Position innerhalb des Spielfelds liegt.
+ *
+ * @param posX Index der Spalte
+ * @param posY Index der Zeile
+ * @return true, wenn die Position innerhalb des Spielfelds liegt, sonst false
+ */
+// 判断一个坐标是否位于棋盘内部
 bool aufSpielfeld(const int posX, const int posY)
 {
     if (posX >= 0 && posX < GROESSE_X && posY >= 0 && posY < GROESSE_Y)
     {
         return true;
     }
-    
+
     return false;
 }
 
-
 /**
- * @brief Ueberprueft fuer zwei Indizes, ob der Zug gueltig ist
+ * @brief Prueft, ob ein Zug an einer gegebenen Position gueltig ist.
  *
- *  Ueberprueft, ob auf einem benachbarten Feld ein gegnerischer Stein liegt.
- *  Wenn ja, wird diese Richtung solange untersucht, bis ein eigener Stein
- *  gefunden wird. Wird vorher der Spielfeldrand erreicht oder ein leeres Feld
- *  gefunden, wird false zurueckgegeben, sonst true
+ * Dazu wird untersucht, ob von der Zielposition aus in mindestens einer
+ * Richtung gegnerische Steine von einem eigenen Stein eingeschlossen werden.
  *
  * @param spielfeld Das aktuelle Spielfeld
  * @param aktuellerSpieler Der aktuelle Spieler
- * @param posX Zu ueberpruefende Spalte
- * @param posY Zu ueberpruefende Zeile
- * @return
+ * @param posX Zu pruefende Spalte
+ * @param posY Zu pruefende Zeile
+ * @return true, wenn der Zug gueltig ist, sonst false
  */
-//判断玩家aktuellerSpieler能否在位置 (posX, posY) 落子
+// 判断当前玩家在指定位置落子是否合法
 bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY)
 {
-    //计算对手
-    int gegner = 3 - aktuellerSpieler;              // if aktuellerSpieler == 1 -> gegner = 2
-                                                    //  if aktuellerSpieler == 2 -> gegner = 1
-   
-    //首先确保选择位置合法
+    // 对手编号
+    int gegner = 3 - aktuellerSpieler;
+
+    // 坐标越界则不合法
     if (aufSpielfeld(posX, posY) == 0)
     {
         return false;
     }
-    
-    //检查位置是不是空的
-    if (spielfeld[posY][posX] != 0) // ist das Feld leer?
+
+    // 目标位置必须为空
+    if (spielfeld[posY][posX] != 0)
     {
         return false;
     }
 
-    // Alle Richtungen ueberpruefen bis erster gueltiger Zug gefunden
-    //检查八个方向,上下左右 + 4 个斜角,找到紧邻对手棋子,且后面有自己棋子的位置,就返回 true
-    //跳过(0,0)
-    //判断1,是否紧邻对手棋子
-    //判断2,是否后面有自己棋子
-    for (int j = -1; j <= 1; j++)                       //check y
+    // 检查 8 个方向，只要有一个方向满足夹住对手棋子，就说明这是合法落子
+    for (int j = -1; j <= 1; j++)
     {
-        for (int i = -1; i <= 1; i++)                   //check x
+        for (int i = -1; i <= 1; i++)
         {
-            if(i == 0 && j == 0)                        //跳过(0,0)
+            if (i == 0 && j == 0)                        // 跳过方向 (0, 0)
             {
-                continue;                               //跳过这一次后续代码,进入下一个循环
+                continue;                                // 原地不算一个搜索方向
             }
 
-            //建立用来判断的临时变量,先判断对手棋子
-            int posXTemp = posX + i;                    //检查位置的 x 坐标
-            int posYTemp = posY + j;                    //检查位置的 y 坐标 
+            // 先走到当前方向上的第一个相邻格
+            int posXTemp = posX + i;                     // 临时 x 坐标
+            int posYTemp = posY + j;                     // 临时 y 坐标
 
-            //确保判断棋子合法
-            if(aufSpielfeld(posXTemp,  posYTemp) == 0)
+            // 相邻格越界则换下一个方向
+            if (aufSpielfeld(posXTemp, posYTemp) == 0)
             {
                 continue;
             }
 
-            //pos八个方向里有对手棋子
-            if(spielfeld[posYTemp][posXTemp] == gegner )
+            // 相邻格必须先是对手棋子
+            if (spielfeld[posYTemp][posXTemp] == gegner)
             {
-                //迭代temp,继续往这个方向推进,以判断另一面是否有自方棋子
+                // 再向前走一步，继续检查后续格子
                 posXTemp = posXTemp + i;
                 posYTemp = posYTemp + j;
             }
-            else{
+            else
+            {
                 continue;
             }
 
-            //确保新位置合法
-            while(aufSpielfeld(posXTemp, posYTemp)){
-
-                //新位置是自方棋子
-                if(spielfeld[posYTemp][posXTemp] == aktuellerSpieler)
+            // 沿当前方向持续搜索
+            while (aufSpielfeld(posXTemp, posYTemp))
+            {
+                // 遇到自己的棋子，说明形成夹击
+                if (spielfeld[posYTemp][posXTemp] == aktuellerSpieler)
                 {
                     return true;
                 }
 
-                //新位置是空格,位置不合法
-                else if(spielfeld[posYTemp][posXTemp] == 0)
+                // 遇到空格，说明这个方向不成立
+                else if (spielfeld[posYTemp][posXTemp] == 0)
                 {
-                    break;                               //跳出循环
+                    break;                                // 当前方向搜索结束
                 }
 
-                //新位置是对手棋子,继续迭代
-                posXTemp = posXTemp + i;              
+                // 继续沿当前方向前进
+                posXTemp = posXTemp + i;
                 posYTemp = posYTemp + j;
             }
         }
@@ -265,22 +263,24 @@ bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSp
     return false;
 }
 
-
 /**
- * @brief Funktion, die einen Zug ausfuehrt
+ * @brief Fuehrt einen gueltigen Zug auf dem Spielfeld aus.
+ *
+ * Dabei wird der neue Stein gesetzt und alle eingeschlossenen gegnerischen
+ * Steine werden umgedreht.
  *
  * @param spielfeld Das aktuelle Spielfeld
  * @param aktuellerSpieler Der aktuelle Spieler
- * @param posX Die aktuelle Spalte
- * @param posY Die aktuelle Zeile
+ * @param posX Spalte des Zugs
+ * @param posY Zeile des Zugs
  */
-//执行落子动作,把子放上去，并且把所有被夹住的对方棋子翻过来
+// 在棋盘上执行一个合法落子，并翻转所有被夹住的对手棋子
 void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY)
 {
-    //same, 计算对手
+    // 对手编号
     int gegner = 3 - aktuellerSpieler;
 
-    //Alle Richtungen bearbeiten
+    // Alle Richtungen bearbeiten
     for (int j = -1; j <= 1; j++)
     {
         for (int i = -1; i <= 1; i++)
@@ -288,75 +288,73 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
             // aehnlich wie die Funktion zugGueltig(), aber stellen Sie sicher, das alle gegnerischen Steine in
             // allen Richtungen in Ihre eigenen Steine umgewandelt werden
 
-            if(i == 0 && j == 0)                        //跳过(0,0)
+            if (i == 0 && j == 0)                        // 跳过方向 (0, 0)
             {
-                continue;                               //跳过这一次后续代码,进入下一个循环
+                continue;                                // 原地不算方向
             }
 
-            //建立用来判断的临时变量,先判断对手棋子
-            int posXTemp = posX + i;                    //检查位置的 x 坐标
-            int posYTemp = posY + j;                    //检查位置的 y 坐标 
+            // 先走到当前方向上的第一个相邻格
+            int posXTemp = posX + i;                     // 临时 x 坐标
+            int posYTemp = posY + j;                     // 临时 y 坐标
 
-            //确保判断棋子合法
-            if(aufSpielfeld(posXTemp,  posYTemp) == 0)
+            // 相邻格越界则换下一个方向
+            if (aufSpielfeld(posXTemp, posYTemp) == 0)
             {
                 continue;
             }
 
-             //pos八个方向里有对手棋子
-            if(spielfeld[posYTemp][posXTemp] == gegner )
+            // 相邻格必须先是对手棋子
+            if (spielfeld[posYTemp][posXTemp] == gegner)
             {
-                //迭代temp,继续往这个方向推进,以判断另一面是否有自方棋子
+                // 再向前走一步，继续检查后续格子
                 posXTemp = posXTemp + i;
                 posYTemp = posYTemp + j;
             }
-            else{
+            else
+            {
                 continue;
             }
 
-             //确保新位置在棋盘上
-            while(aufSpielfeld(posXTemp, posYTemp)){
-
-                //1.新位置是自方棋子
-                if(spielfeld[posYTemp][posXTemp] == aktuellerSpieler)
+            // 沿当前方向持续搜索
+            while (aufSpielfeld(posXTemp, posYTemp))
+            {
+                // 1. 遇到自己的棋子，说明这一段可以回头翻转
+                if (spielfeld[posYTemp][posXTemp] == aktuellerSpieler)
                 {
-                    //迭代temp到上一个对方棋子处
+                    // 回退一步，准备把夹住的对手棋子逐个翻转
                     posXTemp = posXTemp - i;
                     posYTemp = posYTemp - j;
 
-                    //但这里中间可能还有其他对方棋子,加一个while,一直往回走到(posy,posx)
-                    while(posXTemp != posX || posYTemp != posY)
+                    // 一直回退到原落子点前，把路径上的对手棋子都改成当前玩家
+                    while (posXTemp != posX || posYTemp != posY)
                     {
-                        //翻转对方棋子
+                        // 翻转棋子
                         spielfeld[posYTemp][posXTemp] = aktuellerSpieler;
 
-                        //继续迭代
+                        // 继续回退
                         posXTemp = posXTemp - i;
                         posYTemp = posYTemp - j;
                     }
 
                     break;
-
                 }
 
-                //2.新位置是空格,位置不合法
-                else if(spielfeld[posYTemp][posXTemp] == 0)
+                // 2. 遇到空格，说明这个方向不成立
+                else if (spielfeld[posYTemp][posXTemp] == 0)
                 {
-                    break;                               //跳出循环
+                    break;                                // 当前方向搜索结束
                 }
 
-                //3.新位置是对手棋子,继续迭代
-                posXTemp = posXTemp + i;              
+                // 3. 仍然是对手棋子，继续沿当前方向前进
+                posXTemp = posXTemp + i;
                 posYTemp = posYTemp + j;
             }
         }
     }
 
-    //在 (posX, posY) 放下当前玩家的新棋子
+    // 最后在落子位置放上当前玩家的棋子
     spielfeld[posY][posX] = aktuellerSpieler;
-
 }
-
 
 /**
  * @brief Zaehlt alle moeglichen Zuege eines Spielers.
@@ -369,14 +367,13 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
  * @param aktuellerSpieler Der Spieler, fuer den die moeglichen Zuege bestimmt werden.
  * @return Anzahl der moeglichen Zuege des Spielers.
  */
-//统计某个玩家当前一共有多少个合法走子位置
-//把 zugGueltig() 在整个棋盘上跑一遍，然后数一数 true 出现了几次
+// 统计当前玩家在整个棋盘上所有合法落子的位置数量
 int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
-    //引入计数器
+    // 统计合法走法数量
     int anzahlZuege = 0;
 
-    //遍历棋盘,统计合法走子位置的数量
+    // 遍历整个棋盘，检查每一个位置
     for (int j = 0; j < GROESSE_Y; j++)
     {
         for (int i = 0; i < GROESSE_X; i++)
@@ -389,24 +386,22 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
     }
 
     return anzahlZuege;
-
 }
 
-
 /**
- * @brief Ermöglicht einen menschlichen Zug.
+ * @brief Ermoeglicht einen menschlichen Zug.
  *
- * Die Funktion erlaubt es einem menschlichen Spieler, einen Zug auf dem Spielfeld durchzuführen.
- * Sie überprüft, ob der eingegebene Zug gültig ist, und führt ihn aus.
+ * Die Funktion erlaubt es einem menschlichen Spieler, einen Zug auf dem Spielfeld durchzufuehren.
+ * Sie ueberprueft, ob der eingegebene Zug gueltig ist, und fuehrt ihn aus.
  *
  * @param spielfeld Das aktuelle Spielfeld.
  * @param aktuellerSpieler Der Spieler, der am Zug ist.
- * @return true, wenn der Zug erfolgreich ausgeführt wurde, sonst false.
+ * @return true, wenn der Zug erfolgreich ausgefuehrt wurde, sonst false.
  */
-//让玩家输入一个合法的走子位置,并且执行这个走子
- bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
+// 处理人类玩家输入，并在输入合法时执行该步
+bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
-    //如果玩家没有合法走子位置了,直接返回 false
+    // 如果当前玩家没有合法走法，就直接返回 false
     if (moeglicheZuege(spielfeld, aktuellerSpieler) == 0)
     {
         return false;
@@ -416,7 +411,7 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
     int posY;
     std::string symbolSpieler;
 
-    //确定玩家的符号
+    // 根据玩家编号设置显示符号
     if (aktuellerSpieler == 1)
     {
         symbolSpieler = "X";
@@ -426,20 +421,20 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
         symbolSpieler = "O";
     }
 
-    //让玩家输入一个合法的走子位置,并且执行这个走子
+    // 持续读取输入，直到用户输入一个合法落子
     while (true)
     {
         std::string eingabe;
-        std::cout << std::endl << "Du bist " << symbolSpieler << ". Dein Zug (z.B. A1, a1): " ;
+        std::cout << std::endl << "Du bist " << symbolSpieler << ". Dein Zug (z.B. A1, a1): ";
         std::cin >> eingabe;
-        //把输入转换成坐标,比如 A1 -> (0,0), B1 -> (1,0), A2 -> (0,1) ...
-        posX = (int) eingabe[0] % 32 -1;
+
+        // 把类似 A1 的输入转换成数组坐标，例如 A1 -> (0,0)
+        posX = (int) eingabe[0] % 32 - 1;
         posY = (int) eingabe[1] - 49;
 
-        //检查输入是否合法,如果合法就执行走子,否则提示玩家重新输入
+        // 如果输入对应的是合法落子，就跳出循环，否则提示重新输入
         if (zugGueltig(spielfeld, aktuellerSpieler, posX, posY))
         {
-            //accept turn;
             break;
         }
         else
@@ -448,65 +443,62 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
         }
     }
 
-    //执行走子
+    // 执行该步落子
     zugAusfuehren(spielfeld, aktuellerSpieler, posX, posY);
     std::cout << std::endl << "Spieler " << aktuellerSpieler << " setzt auf " << (char) (posX + 65) << (posY + 1) << std::endl;
 
     return true;
 }
 
-
 /**
  * @brief Steuert den gesamten Spielablauf von Othello.
  *
- * Die Funktion initialisiert das Spielfeld und laesst die Spieler
- * abwechselnd ziehen. Wenn ein Spieler keinen moeglichen Zug hat,
- * muss er passen. Das Spiel endet, wenn beide Spieler keine moeglichen
- * Zuege mehr haben. Anschliessend wird der Gewinner ausgegeben.
+ * Die Funktion initialisiert das Spielfeld, laesst die Spieler abwechselnd
+ * ziehen und beendet das Spiel, sobald beide Spieler keine moeglichen Zuege
+ * mehr besitzen.
  *
- * @param spielerTyp Feld mit den Typen der beiden Spieler.
+ * @param spielerTyp Feld mit den Typen der beiden Spieler
  */
-//进行游戏
- void spielen(const int spielerTyp[2])
+// 控制整局 Othello 游戏流程
+void spielen(const int spielerTyp[2])
 {
     int spielfeld[GROESSE_Y][GROESSE_X];
 
-    //Erzeuge Startaufstellung
+    // Erzeuge Startaufstellung
     initialisiereSpielfeld(spielfeld);
 
     int aktuellerSpieler = 1;
     zeigeSpielfeld(spielfeld);
 
     // solange noch Zuege bei einem der beiden Spieler moeglich sind
-    //如果玩家 1 或者玩家 2 还有合法走子位置,游戏继续
-    while(moeglicheZuege(spielfeld, 1) != 0 || moeglicheZuege(spielfeld, 2) != 0)
+    // 只要任意一方还有合法走法，游戏就继续
+    while (moeglicheZuege(spielfeld, 1) != 0 || moeglicheZuege(spielfeld, 2) != 0)
     {
         if (moeglicheZuege(spielfeld, aktuellerSpieler) > 0)
         {
-            //判断当前玩家是电脑还是人类(COMPUTER = 2, MENSCH = 1)
-            if (spielerTyp[aktuellerSpieler - 1] == MENSCH)           //玩家 1 → 下标 0, 玩家 2 → 下标 1
+            // 根据玩家类型决定是人类下棋还是电脑下棋（COMPUTER = 2, MENSCH = 1）
+            if (spielerTyp[aktuellerSpieler - 1] == MENSCH)           // 玩家 1 对应下标 0，玩家 2 对应下标 1
             {
-                 menschlicherZug(spielfeld, aktuellerSpieler);
+                menschlicherZug(spielfeld, aktuellerSpieler);
             }
             else
             {
                 computerZug(spielfeld, aktuellerSpieler);
             }
 
-        //显示当前棋盘
-        zeigeSpielfeld(spielfeld);
+            // 每一步后都重新显示棋盘
+            zeigeSpielfeld(spielfeld);
         }
-
         else
         {
-        //如果当前玩家没有合法走子位置了,提示玩家过
-        std::cout << "Spieler " << aktuellerSpieler << " muss passen." << std::endl;
+            // 当前玩家没有合法走法，需要跳过本回合
+            std::cout << "Spieler " << aktuellerSpieler << " muss passen." << std::endl;
         }
 
-        //切换玩家
+        // 切换到另一位玩家
         aktuellerSpieler = 3 - aktuellerSpieler;
     }
-    
+
     switch (gewinner(spielfeld))
     {
         case 0:
@@ -536,7 +528,7 @@ int main()
 {
     if (TEST == 1)
     {
-        //进行总测试,记录测试结果
+        // 先运行完整测试，确保核心逻辑正确
         bool gesamtErgebnis = ganzenTestAusfuehren();
         if (gesamtErgebnis == true)
         {
@@ -549,7 +541,7 @@ int main()
         }
         std::cout << std::endl << std::endl;
     }
-    
+
     // Die folgenden drei Zeilen werden auskommentiert oder geloescht, nachdem Sie die Funktion spielen()
     // implementiert haben (waeren sonst doppelt)
     //int spielfeld[GROESSE_Y][GROESSE_X];

@@ -1,0 +1,165 @@
+\doxysection{Liste Class Reference}
+\hypertarget{class_liste}{}\label{class_liste}\index{Liste@{Liste}}
+
+
+Verwaltet eine doppelt verkettete \doxylink{class_liste}{Liste} von Studenten.  
+
+
+
+
+{\ttfamily \#include $<$Liste.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_liste_a26368f966a6cfb9d8320603871d9f316}\label{class_liste_a26368f966a6cfb9d8320603871d9f316} 
+{\bfseries Liste} ()
+\begin{DoxyCompactList}\small\item\em Erstellt eine leere \doxylink{class_liste}{Liste}. \end{DoxyCompactList}\item 
+\Hypertarget{class_liste_ac9bb3dba05e5884a536e54af86552177}\label{class_liste_ac9bb3dba05e5884a536e54af86552177} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Liste} ()
+\begin{DoxyCompactList}\small\item\em Zerstoert die \doxylink{class_liste}{Liste} und gibt alle Listenelemente frei. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_liste_a4411346bfafbb0db63af1f47e88bf3b1}{Liste}} (const \mbox{\hyperlink{class_liste}{Liste}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Kopierkonstruktor ist deaktiviert, um flache Kopien der Listenknoten zu verhindern. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_liste}{Liste}} \& \mbox{\hyperlink{class_liste_af68ead23d09d897cbfee0a48b9d77727}{operator=}} (const \mbox{\hyperlink{class_liste}{Liste}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Zuweisungsoperator ist deaktiviert, um flache Kopien der Listenknoten zu verhindern. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_liste_a03a950dc8fb42a599196ce41330cf8cd}{push\+Back}} (\mbox{\hyperlink{class_student}{Student}} p\+Data)
+\begin{DoxyCompactList}\small\item\em Fuegt einen Studenten am Ende der \doxylink{class_liste}{Liste} ein. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_liste_af7a2281b634bf0c10b1e6375a03da125}{push\+Front}} (\mbox{\hyperlink{class_student}{Student}} p\+Data)
+\begin{DoxyCompactList}\small\item\em Fuegt einen Studenten am Anfang der \doxylink{class_liste}{Liste} ein. \end{DoxyCompactList}\item 
+\Hypertarget{class_liste_a359e04399c69cab7061e7c8eceb74d38}\label{class_liste_a359e04399c69cab7061e7c8eceb74d38} 
+void {\bfseries pop\+Front} ()
+\begin{DoxyCompactList}\small\item\em Entfernt das erste Element der \doxylink{class_liste}{Liste}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_liste_a7b6936c35cb2a36514de4ea4364c8ee3}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Prueft, ob die \doxylink{class_liste}{Liste} leer ist. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_student}{Student}} \mbox{\hyperlink{class_liste_a379a9ced61e8489881aa1205abbbf752}{data\+Front}} ()
+\begin{DoxyCompactList}\small\item\em Liefert die Daten des ersten Listenelements. \end{DoxyCompactList}\item 
+\Hypertarget{class_liste_a34bc1c9c56b6f484413043b5219eac3a}\label{class_liste_a34bc1c9c56b6f484413043b5219eac3a} 
+void {\bfseries ausgabe\+Vorwaerts} () const
+\begin{DoxyCompactList}\small\item\em Gibt die \doxylink{class_liste}{Liste} von vorne nach hinten aus. \end{DoxyCompactList}\item 
+\Hypertarget{class_liste_a5b5a2b762536ba804798bd145a8079c5}\label{class_liste_a5b5a2b762536ba804798bd145a8079c5} 
+void {\bfseries ausgabe\+Rueckwaerts} () const
+\begin{DoxyCompactList}\small\item\em Gibt die \doxylink{class_liste}{Liste} von hinten nach vorne aus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_liste_a8e300f0b98290d4e052eb6af740fbda9}{loeschen}} (unsigned int mat\+Nr)
+\begin{DoxyCompactList}\small\item\em Sucht einen Studenten ueber die Matrikelnummer und entfernt ihn aus der \doxylink{class_liste}{Liste}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Verwaltet eine doppelt verkettete \doxylink{class_liste}{Liste} von Studenten. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_liste_a4411346bfafbb0db63af1f47e88bf3b1}\index{Liste@{Liste}!Liste@{Liste}}
+\index{Liste@{Liste}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{Liste()}{Liste()}}
+{\footnotesize\ttfamily \label{class_liste_a4411346bfafbb0db63af1f47e88bf3b1} 
+Liste\+::\+Liste (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_liste}{Liste}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Kopierkonstruktor ist deaktiviert, um flache Kopien der Listenknoten zu verhindern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Zu kopierende \doxylink{class_liste}{Liste} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_liste_a379a9ced61e8489881aa1205abbbf752}\index{Liste@{Liste}!dataFront@{dataFront}}
+\index{dataFront@{dataFront}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{dataFront()}{dataFront()}}
+{\footnotesize\ttfamily \label{class_liste_a379a9ced61e8489881aa1205abbbf752} 
+\mbox{\hyperlink{class_student}{Student}} Liste\+::data\+Front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Liefert die Daten des ersten Listenelements. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_student}{Student} am Listenanfang oder ein leerer \doxylink{class_student}{Student} bei leerer \doxylink{class_liste}{Liste} 
+\end{DoxyReturn}
+\Hypertarget{class_liste_a7b6936c35cb2a36514de4ea4364c8ee3}\index{Liste@{Liste}!empty@{empty}}
+\index{empty@{empty}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{class_liste_a7b6936c35cb2a36514de4ea4364c8ee3} 
+bool Liste\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prueft, ob die \doxylink{class_liste}{Liste} leer ist. 
+
+\begin{DoxyReturn}{Returns}
+true, wenn die \doxylink{class_liste}{Liste} keine Elemente enthaelt, sonst false 
+\end{DoxyReturn}
+\Hypertarget{class_liste_a8e300f0b98290d4e052eb6af740fbda9}\index{Liste@{Liste}!loeschen@{loeschen}}
+\index{loeschen@{loeschen}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{loeschen()}{loeschen()}}
+{\footnotesize\ttfamily \label{class_liste_a8e300f0b98290d4e052eb6af740fbda9} 
+bool Liste\+::loeschen (\begin{DoxyParamCaption}\item[{unsigned int}]{mat\+Nr}{}\end{DoxyParamCaption})}
+
+
+
+Sucht einen Studenten ueber die Matrikelnummer und entfernt ihn aus der \doxylink{class_liste}{Liste}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat\+Nr} & Matrikelnummer des zu loeschenden Studenten \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, wenn ein passender \doxylink{class_student}{Student} gefunden und geloescht wurde, sonst false 
+\end{DoxyReturn}
+\Hypertarget{class_liste_af68ead23d09d897cbfee0a48b9d77727}\index{Liste@{Liste}!operator=@{operator=}}
+\index{operator=@{operator=}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_liste_af68ead23d09d897cbfee0a48b9d77727} 
+\mbox{\hyperlink{class_liste}{Liste}} \& Liste\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_liste}{Liste}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Zuweisungsoperator ist deaktiviert, um flache Kopien der Listenknoten zu verhindern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Zuzuweisende \doxylink{class_liste}{Liste} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referenz auf diese \doxylink{class_liste}{Liste} 
+\end{DoxyReturn}
+\Hypertarget{class_liste_a03a950dc8fb42a599196ce41330cf8cd}\index{Liste@{Liste}!pushBack@{pushBack}}
+\index{pushBack@{pushBack}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{pushBack()}{pushBack()}}
+{\footnotesize\ttfamily \label{class_liste_a03a950dc8fb42a599196ce41330cf8cd} 
+void Liste\+::push\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}}}]{p\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Fuegt einen Studenten am Ende der \doxylink{class_liste}{Liste} ein. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & Einzufuegender \doxylink{class_student}{Student} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_liste_af7a2281b634bf0c10b1e6375a03da125}\index{Liste@{Liste}!pushFront@{pushFront}}
+\index{pushFront@{pushFront}!Liste@{Liste}}
+\doxysubsubsection{\texorpdfstring{pushFront()}{pushFront()}}
+{\footnotesize\ttfamily \label{class_liste_af7a2281b634bf0c10b1e6375a03da125} 
+void Liste\+::push\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}}}]{p\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Fuegt einen Studenten am Anfang der \doxylink{class_liste}{Liste} ein. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & Einzufuegender \doxylink{class_student}{Student} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Liste.\+h\item 
+Liste.\+cpp\end{DoxyCompactItemize}

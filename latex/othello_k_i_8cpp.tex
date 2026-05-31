@@ -1,0 +1,118 @@
+\doxysection{Versuch03/othello\+KI.cpp File Reference}
+\hypertarget{othello_k_i_8cpp}{}\label{othello_k_i_8cpp}\index{Versuch03/othelloKI.cpp@{Versuch03/othelloKI.cpp}}
+{\ttfamily \#include "{}othello\+KI.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{othello_k_i_8cpp_a8cf3121558de67463e88957becd116d1}{moegliche\+Zuege}} (const int spielfeld\mbox{[}\mbox{\hyperlink{config_8h_a6e8c64412a620a46fbadb6bbf2df47fe}{GROESSE\+\_\+Y}}\mbox{]}\mbox{[}\mbox{\hyperlink{config_8h_a091c112fc29d1116c224f3d4c0fa7455}{GROESSE\+\_\+X}}\mbox{]}, const int aktueller\+Spieler)
+\begin{DoxyCompactList}\small\item\em Zaehlt alle moeglichen Zuege eines Spielers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{othello_k_i_8cpp_a7034afa60f015a8ab6c0b836d316d4a4}{zug\+Ausfuehren}} (int spielfeld\mbox{[}\mbox{\hyperlink{config_8h_a6e8c64412a620a46fbadb6bbf2df47fe}{GROESSE\+\_\+Y}}\mbox{]}\mbox{[}\mbox{\hyperlink{config_8h_a091c112fc29d1116c224f3d4c0fa7455}{GROESSE\+\_\+X}}\mbox{]}, const int aktueller\+Spieler, const int posX, const int posY)
+\begin{DoxyCompactList}\small\item\em Fuehrt einen gueltigen Zug auf dem Spielfeld aus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{othello_k_i_8cpp_a0f17ff75622987b979767417e76164a0}{zug\+Gueltig}} (const int spielfeld\mbox{[}\mbox{\hyperlink{config_8h_a6e8c64412a620a46fbadb6bbf2df47fe}{GROESSE\+\_\+Y}}\mbox{]}\mbox{[}\mbox{\hyperlink{config_8h_a091c112fc29d1116c224f3d4c0fa7455}{GROESSE\+\_\+X}}\mbox{]}, const int aktueller\+Spieler, const int posX, const int posY)
+\begin{DoxyCompactList}\small\item\em Prueft, ob ein Zug an einer gegebenen Position gueltig ist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{othello_k_i_8cpp_a5e5980177c60019445f26e3e61b50c51}{computer\+Zug}} (int spielfeld\mbox{[}\mbox{\hyperlink{config_8h_a6e8c64412a620a46fbadb6bbf2df47fe}{GROESSE\+\_\+Y}}\mbox{]}\mbox{[}\mbox{\hyperlink{config_8h_a091c112fc29d1116c224f3d4c0fa7455}{GROESSE\+\_\+X}}\mbox{]}, const int aktueller\+Spieler)
+\begin{DoxyCompactList}\small\item\em Fuehrt einen moeglichst guenstigen Computerzug aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Praktikum Informatik 1
+
+Stellt eine KI fuer das Spiel Othello zur Verfuegung 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{othello_k_i_8cpp_a5e5980177c60019445f26e3e61b50c51}\index{othelloKI.cpp@{othelloKI.cpp}!computerZug@{computerZug}}
+\index{computerZug@{computerZug}!othelloKI.cpp@{othelloKI.cpp}}
+\doxysubsubsection{\texorpdfstring{computerZug()}{computerZug()}}
+{\footnotesize\ttfamily \label{othello_k_i_8cpp_a5e5980177c60019445f26e3e61b50c51} 
+bool computer\+Zug (\begin{DoxyParamCaption}\item[{int}]{spielfeld}{\mbox{[}\+GROESSE\+\_\+\+Y\mbox{]}\mbox{[}\+GROESSE\+\_\+\+X\mbox{]}, }\item[{const int}]{aktueller\+Spieler}{}\end{DoxyParamCaption})}
+
+
+
+Fuehrt einen moeglichst guenstigen Computerzug aus. 
+
+Berechnet und fuehrt einen Computerzug fuer Othello aus.
+
+Die KI prueft alle gueltigen Zuege und waehlt den Zug, nach dem der Gegner im naechsten Schritt moeglichst wenige Zuege hat.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spielfeld} & Das aktuelle Spielfeld \\
+\hline
+{\em aktueller\+Spieler} & Der Spieler, fuer den der Computerzug berechnet wird \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, wenn ein Zug ausgefuehrt wurde, sonst false 
+\end{DoxyReturn}
+\Hypertarget{othello_k_i_8cpp_a8cf3121558de67463e88957becd116d1}\index{othelloKI.cpp@{othelloKI.cpp}!moeglicheZuege@{moeglicheZuege}}
+\index{moeglicheZuege@{moeglicheZuege}!othelloKI.cpp@{othelloKI.cpp}}
+\doxysubsubsection{\texorpdfstring{moeglicheZuege()}{moeglicheZuege()}}
+{\footnotesize\ttfamily \label{othello_k_i_8cpp_a8cf3121558de67463e88957becd116d1} 
+int moegliche\+Zuege (\begin{DoxyParamCaption}\item[{const int}]{spielfeld}{\mbox{[}\+GROESSE\+\_\+\+Y\mbox{]}\mbox{[}\+GROESSE\+\_\+\+X\mbox{]}, }\item[{const int}]{aktueller\+Spieler}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Zaehlt alle moeglichen Zuege eines Spielers. 
+
+Die Funktion durchsucht das gesamte Spielfeld und prueft fuer jede Position, ob dort ein gueltiger Zug fuer den aktuellen Spieler moeglich ist. Fuer jede gueltige Position wird der Zaehler erhoeht.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spielfeld} & Das aktuelle Spielfeld. \\
+\hline
+{\em aktueller\+Spieler} & Der Spieler, fuer den die moeglichen Zuege bestimmt werden. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Anzahl der moeglichen Zuege des Spielers. 
+\end{DoxyReturn}
+\Hypertarget{othello_k_i_8cpp_a7034afa60f015a8ab6c0b836d316d4a4}\index{othelloKI.cpp@{othelloKI.cpp}!zugAusfuehren@{zugAusfuehren}}
+\index{zugAusfuehren@{zugAusfuehren}!othelloKI.cpp@{othelloKI.cpp}}
+\doxysubsubsection{\texorpdfstring{zugAusfuehren()}{zugAusfuehren()}}
+{\footnotesize\ttfamily \label{othello_k_i_8cpp_a7034afa60f015a8ab6c0b836d316d4a4} 
+void zug\+Ausfuehren (\begin{DoxyParamCaption}\item[{int}]{spielfeld}{\mbox{[}\+GROESSE\+\_\+\+Y\mbox{]}\mbox{[}\+GROESSE\+\_\+\+X\mbox{]}, }\item[{const int}]{aktueller\+Spieler}{, }\item[{const int}]{posX}{, }\item[{const int}]{posY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Fuehrt einen gueltigen Zug auf dem Spielfeld aus. 
+
+Dabei wird der neue Stein gesetzt und alle eingeschlossenen gegnerischen Steine werden umgedreht.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spielfeld} & Das aktuelle Spielfeld \\
+\hline
+{\em aktueller\+Spieler} & Der aktuelle Spieler \\
+\hline
+{\em posX} & Spalte des Zugs \\
+\hline
+{\em posY} & Zeile des Zugs \\
+\hline
+\end{DoxyParams}
+\Hypertarget{othello_k_i_8cpp_a0f17ff75622987b979767417e76164a0}\index{othelloKI.cpp@{othelloKI.cpp}!zugGueltig@{zugGueltig}}
+\index{zugGueltig@{zugGueltig}!othelloKI.cpp@{othelloKI.cpp}}
+\doxysubsubsection{\texorpdfstring{zugGueltig()}{zugGueltig()}}
+{\footnotesize\ttfamily \label{othello_k_i_8cpp_a0f17ff75622987b979767417e76164a0} 
+bool zug\+Gueltig (\begin{DoxyParamCaption}\item[{const int}]{spielfeld}{\mbox{[}\+GROESSE\+\_\+\+Y\mbox{]}\mbox{[}\+GROESSE\+\_\+\+X\mbox{]}, }\item[{const int}]{aktueller\+Spieler}{, }\item[{const int}]{posX}{, }\item[{const int}]{posY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Prueft, ob ein Zug an einer gegebenen Position gueltig ist. 
+
+Dazu wird untersucht, ob von der Zielposition aus in mindestens einer Richtung gegnerische Steine von einem eigenen Stein eingeschlossen werden.
+
+
+\begin{DoxyParams}{Parameters}
+{\em spielfeld} & Das aktuelle Spielfeld \\
+\hline
+{\em aktueller\+Spieler} & Der aktuelle Spieler \\
+\hline
+{\em posX} & Zu pruefende Spalte \\
+\hline
+{\em posY} & Zu pruefende Zeile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, wenn der Zug gueltig ist, sonst false 
+\end{DoxyReturn}

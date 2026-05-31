@@ -1,51 +1,44 @@
 /**
- * Praktikum Informatik 1 
- * 
+ * Praktikum Informatik 1
  *
  * @file othelloKI.cpp
  *
  * Stellt eine KI fuer das Spiel Othello zur Verfuegung
  */
-//电脑玩家,不用更改
+
 #include "othelloKI.h"
 #include <iostream>
-
 
 extern int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler);
 extern void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 extern bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 
-/**
- * @brief Fuehrt einen moeglichst guenstigen Computerzug aus.
+/*
+ * Fuehrt einen moeglichst guenstigen Computerzug aus.
  *
- * Die KI prueft alle gueltigen Zuege und waehlt den Zug, nach dem der Gegner
- * im naechsten Schritt moeglichst wenige Zuege hat.
- *
- * @param spielfeld Das aktuelle Spielfeld
- * @param aktuellerSpieler Der Spieler, fuer den der Computerzug berechnet wird
- * @return True, wenn ein Zug ausgefuehrt wurde, sonst false
+ * Die Schnittstelle ist bereits in othelloKI.h dokumentiert.
  */
 bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
-    if (moeglicheZuege(spielfeld,aktuellerSpieler) == 0)
+    if (moeglicheZuege(spielfeld, aktuellerSpieler) == 0)
     {
         return false;
     }
+
     int voraussehen[GROESSE_Y][GROESSE_X];
     int min_x = 0;
     int min_y = 0;
     int min = GROESSE_X * GROESSE_Y;
 
-    for (int j = 0 ; j < GROESSE_Y; j++)
+    for (int j = 0; j < GROESSE_Y; j++)
     {
         for (int i = 0; i < GROESSE_X; i++)
         {
-            // Spielfeld zuruecksetzen
             for (int cj = 0; cj < GROESSE_Y; cj++)
             {
                 for (int ci = 0; ci < GROESSE_X; ci++)
                 {
-                    voraussehen[cj][ci]=spielfeld[cj][ci];
+                    voraussehen[cj][ci] = spielfeld[cj][ci];
                 }
             }
 
@@ -54,7 +47,7 @@ bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler
                 zugAusfuehren(voraussehen, aktuellerSpieler, i, j);
                 if (moeglicheZuege(voraussehen, 3 - aktuellerSpieler) < min)
                 {
-                    min=moeglicheZuege(voraussehen, 3 - aktuellerSpieler);
+                    min = moeglicheZuege(voraussehen, 3 - aktuellerSpieler);
                     min_x = i;
                     min_y = j;
                 }
@@ -63,7 +56,8 @@ bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler
     }
 
     zugAusfuehren(spielfeld, aktuellerSpieler, min_x, min_y);
-    std::cout << std::endl << "Spieler " << aktuellerSpieler << " setzt auf " << (char) (min_x + 65) << (min_y + 1) << std::endl;
+    std::cout << std::endl << "Spieler " << aktuellerSpieler << " setzt auf "
+              << static_cast<char>(min_x + 65) << (min_y + 1) << std::endl;
 
     return true;
 }
