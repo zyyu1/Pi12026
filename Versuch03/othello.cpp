@@ -470,6 +470,7 @@ void spielen(const int spielerTyp[2])
 
     int aktuellerSpieler = 1;
     zeigeSpielfeld(spielfeld);
+
     //增加计数器,记录现在执行的轮数
     int runden = 0;
 
@@ -477,7 +478,7 @@ void spielen(const int spielerTyp[2])
     // 只要任意一方还有合法走法，游戏就继续
     while (moeglicheZuege(spielfeld, 1) != 0 || moeglicheZuege(spielfeld, 2) != 0)
     {
-        //如果一方不能走了, 记录另一方行动的回合
+        //即使一方不能走了, 记录另一方行动的回合
         runden++;
 
         if (moeglicheZuege(spielfeld, aktuellerSpieler) > 0)
@@ -500,6 +501,7 @@ void spielen(const int spielerTyp[2])
         {
             // 当前玩家没有合法走法，需要跳过本回合
             std::cout << "Spieler " << aktuellerSpieler << " muss passen." << std::endl;
+            std::cout << "Runden : " << runden << std::endl;
         }
 
         // 切换到另一位玩家
