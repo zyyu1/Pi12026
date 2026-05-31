@@ -9,9 +9,12 @@
  *
  * @param pData Ein Objekt der Klasse Student
  * @param pNext Zeiger auf das naechste Listenelement
+ * @param pPrev Zeiger auf das vorherige Listenelement
  */
-ListenElement::ListenElement(Student pData, ListenElement* pNext):
-    data(pData), next(pNext)
+
+ //构造函数，接受三个参数 pNext和pPrevious指向ListenElement 类型的指针
+ListenElement::ListenElement(Student pData, ListenElement* pNext, ListenElement* pPrev) :
+    data(pData), next(pNext), prev(pPrev)
 {
 }
 
@@ -36,6 +39,17 @@ void ListenElement::setNext(ListenElement* pNext)
 }
 
 /**
+ * @brief Fuegt einen Zeiger auf das vorherige Listenelement ein
+ *
+ * @param pPrev Zeiger auf das vorherige Listenelement
+ */
+//setter成员函数设置前一个节点指针
+void ListenElement::setPrev(ListenElement* pPrev)
+{
+    prev = pPrev;
+}
+
+/**
  * @brief Gibt ein Objekt der Klasse Student zurueck
  *
  * @return Ein Zeiger auf ein Objekt der Klasse Student
@@ -53,4 +67,15 @@ Student ListenElement::getData() const
 ListenElement* ListenElement::getNext() const
 {
     return next;
+}
+
+/**
+ * @brief Gibt einen Zeiger auf das vorherige Listenelement zurueck
+ *
+ * @return Zeiger auf das vorherige Listenelement
+ */
+//增加一个成员函数，返回指向前一个节点的指针
+ListenElement* ListenElement::getPrev() const
+{
+    return prev;
 }

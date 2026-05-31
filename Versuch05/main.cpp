@@ -6,20 +6,55 @@
  */
 
 #include <iostream>
+#include <limits>
 #include <string>
 
 #include "Liste.h"
 #include "Student.h"
+
+namespace
+{
+/**
+ * @brief Entfernt die restlichen Zeichen der aktuellen Eingabezeile aus dem Eingabepuffer.
+ */
+void clearInputLine()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+/**
+ * @brief Liest eine vorzeichenlose Ganzzahl ein und behandelt ungueltige Eingaben.
+ *
+ * @param prompt Auszugebender Eingabehinweis
+ * @param value Referenz, in die der gelesene Wert geschrieben wird
+ * @return true, wenn erfolgreich eine Zahl eingelesen wurde, sonst false
+ */
+bool readUnsignedInt(const std::string& prompt, unsigned int& value)
+{
+    std::cout << prompt;
+
+    if (!(std::cin >> value))
+    {
+        // 非数字输入会让输入流进入失败状态，这里重置状态并清空残留输入。
+        std::cin.clear();
+        clearInputLine();
+        return false;
+    }
+
+    clearInputLine();
+    return true;
+}
+}
 
 int main()
 {
     Liste studentenListe;
     Student student;
 
-    char abfrage;
+    char abfrage = '0';
     std::cout << "Wollen Sie die Liste selbst fuellen? (j)/(n) ";
     std::cin >> abfrage;
-    std::cin.ignore(10, '\n');
+    clearInputLine();
 
     if (abfrage != 'j')
     {
@@ -27,11 +62,11 @@ int main()
         studentenListe.pushBack(student);
         student = Student(74567, "Vera Schmitt", "23.07.1982", "Gartenstr. 23");
         studentenListe.pushBack(student);
-        student = Student(12345, "Siggi Baumeister", "23.04.1983", "Ahornst.55");
+        student = Student(12345, "Siggi Baumeister", "23.04.1983", "Ahornstr. 55");
         studentenListe.pushBack(student);
-        student = Student(64567, "Paula Peters", "9.01.1981", "Weidenweg 12");
+        student = Student(64567, "Paula Peters", "09.01.1981", "Weidenweg 12");
         studentenListe.pushBack(student);
-        student = Student(23456, "Walter Rodenstock", "15.10.1963", "W�llnerstr.9");
+        student = Student(23456, "Walter Rodenstock", "15.10.1963", "Woelnerstr. 9");
         studentenListe.pushBack(student);
     }
 
@@ -42,79 +77,149 @@ int main()
                   << "(1): Datenelement hinten hinzufuegen" << std::endl
                   << "(2): Datenelement vorne entfernen" << std::endl
                   << "(3): Datenbank ausgeben" << std::endl
+                  << "(4): Datenbank rueckwaerts ausgeben" << std::endl
+                  << "(5): Student loeschen" << std::endl
+                  // 单独输出退出项，避免被上一行的注释或拼接错误一起吞掉。
+                  << "(6): Datenelement vorne hinzufuegen" << std::endl
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
-        std::cin.ignore(10, '\n');
+        clearInputLine();
 
         switch (abfrage)
         {
-            // Datenelement hinten hinzufuegen
             case '1':
+            {
+                unsigned int matNr = 0;
+                std::string name;
+                std::string geburtstag;
+                std::string adresse;
+
+                std::cout << "Bitte geben Sie die Daten fuer den Studenten ein.\nName: ";
+                std::getline(std::cin, name);
+
+                std::cout << "Geburtsdatum: ";
+                std::getline(std::cin, geburtstag);
+
+                std::cout << "Adresse: ";
+                std::getline(std::cin, adresse);
+
+                if (!readUnsignedInt("Matrikelnummer: ", matNr))
                 {
-                    unsigned int matNr = 0;
-                    std::string name = "";
-                    std::string geburtstag = "";
-                    std::string adresse = "";
-
-                    std::cout << "Bitte geben sie die Daten f�r den Studenten ein.\nName: ";
-                    getline(std::cin, name);    // ganze Zeile einlesen inklusive aller Leerzeichen
-
-                    std::cout << "Geburtsdatum: ";
-                    getline(std::cin, geburtstag);
-
-                    std::cout << "Adresse: ";
-                    getline(std::cin, adresse);
-
-                    std::cout << "Matrikelnummer: ";
-                    std::cin >> matNr;
-                    std::cin.ignore(10, '\n');
-
-                    student = Student(matNr, name, geburtstag, adresse);
-
-                    studentenListe.pushBack(student);
+                    std::cout << "Ungueltige Matrikelnummer. Der Student wurde nicht angelegt." << std::endl;
+                    break;
                 }
-                break;
 
-            // Datenelement vorne entfernen
+                student = Student(matNr, name, geburtstag, adresse);
+                studentenListe.pushBack(student);
+                break;
+            }
+
             case '2':
+            {
+                if (!studentenListe.empty())
                 {
-                    if(!studentenListe.empty())
-                    {
-                        student = studentenListe.dataFront();
-                        std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
-                        student.ausgabe();
-                        studentenListe.popFront();
-                    }
-                    else
-                    {
-                        std::cout << "Die Liste ist leer!\n";
-                    }
+                    student = studentenListe.dataFront();
+                    std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
+                    student.ausgabe();
+                    studentenListe.popFront();
+                }
+                else
+                {
+                    std::cout << "Die Liste ist leer!" << std::endl;
                 }
                 break;
+            }
 
-            // Datenbank vorwaerts ausgeben
             case '3':
-                if(!studentenListe.empty())
+            {
+                if (!studentenListe.empty())
                 {
                     std::cout << "Inhalt der Liste in fortlaufender Reihenfolge:" << std::endl;
                     studentenListe.ausgabeVorwaerts();
                 }
                 else
                 {
-                    std::cout << "Die Liste ist leer!\n\n";
+                    std::cout << "Die Liste ist leer!" << std::endl;
                 }
                 break;
+            }
+
+            case '4':
+            {
+                if (!studentenListe.empty())
+                {
+                    std::cout << "Inhalt der Liste in umgekehrter Reihenfolge:" << std::endl;
+                    studentenListe.ausgabeRueckwaerts();
+                }
+                else
+                {
+                    std::cout << "Die Liste ist leer!" << std::endl;
+                }
+                break;
+            }
+
+            case '5':
+            {
+                unsigned int matNr = 0;
+
+                if (!readUnsignedInt(
+                        "Bitte geben Sie die Matrikelnummer des Studenten ein, der geloescht werden soll: ",
+                        matNr))
+                {
+                    std::cout << "Ungueltige Matrikelnummer." << std::endl;
+                    break;
+                }
+
+                if (studentenListe.loeschen(matNr))
+                {
+                    std::cout << "Der Student mit der Matrikelnummer " << matNr
+                              << " wurde geloescht." << std::endl;
+                }
+                else
+                {
+                    std::cout << "Kein Student mit der Matrikelnummer " << matNr
+                              << " gefunden." << std::endl;
+                }
+                break;
+            }
+
+            case '6':
+            {
+                unsigned int matNr = 0;
+                std::string name;
+                std::string geburtstag;
+                std::string adresse;
+
+                std::cout << "Bitte geben Sie die Daten fuer den Studenten ein.\nName: ";
+                std::getline(std::cin, name);
+
+                std::cout << "Geburtsdatum: ";
+                std::getline(std::cin, geburtstag);
+
+                std::cout << "Adresse: ";
+                std::getline(std::cin, adresse);
+
+                if (!readUnsignedInt("Matrikelnummer: ", matNr))
+                {
+                    std::cout << "Ungueltige Matrikelnummer. Der Student wurde nicht angelegt." << std::endl;
+                    break;
+                }
+
+                student = Student(matNr, name, geburtstag, adresse);
+                studentenListe.pushFront(student);
+                break;
+            }
 
             case '0':
                 std::cout << "Das Programm wird nun beendet";
                 break;
 
-            default :
-                std::cout << "Falsche Eingabe, bitte nochmal";
+            default:
+                // 用户输入了未定义的菜单项时，给出明确提示。
+                std::cout << "Falsche Eingabe, bitte nochmal." << std::endl;
                 break;
         }
-    }
-    while (abfrage != '0');
+    } while (abfrage != '0');
 
     return 0;
 }

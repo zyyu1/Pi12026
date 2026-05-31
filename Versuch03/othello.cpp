@@ -527,6 +527,11 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
     }
 }
 
+/**
+ * @brief Startet optional die Tests und anschliessend das Othello-Spiel.
+ *
+ * @return 0 bei erfolgreicher Programmausfuehrung
+ */
 int main()
 {
     if (TEST == 1)

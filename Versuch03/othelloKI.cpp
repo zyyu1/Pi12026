@@ -15,6 +15,16 @@ extern int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int a
 extern void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 extern bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 
+/**
+ * @brief Fuehrt einen moeglichst guenstigen Computerzug aus.
+ *
+ * Die KI prueft alle gueltigen Zuege und waehlt den Zug, nach dem der Gegner
+ * im naechsten Schritt moeglichst wenige Zuege hat.
+ *
+ * @param spielfeld Das aktuelle Spielfeld
+ * @param aktuellerSpieler Der Spieler, fuer den der Computerzug berechnet wird
+ * @return True, wenn ein Zug ausgefuehrt wurde, sonst false
+ */
 bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
     if (moeglicheZuege(spielfeld,aktuellerSpieler) == 0)
