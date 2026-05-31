@@ -74,8 +74,11 @@ public:
     void rotiereUmZ(double rad);
 
 private:
+    /** X-Komponente des Vektors. */
     double x;
+    /** Y-Komponente des Vektors. */
     double y;
+    /** Z-Komponente des Vektors. */
     double z;
 };
 

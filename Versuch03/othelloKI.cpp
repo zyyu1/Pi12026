@@ -9,6 +9,7 @@
 #include "othelloKI.h"
 #include <iostream>
 
+// Diese Funktionen werden in othello.cpp definiert und hier von der KI genutzt.
 extern int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler);
 extern void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 extern bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
@@ -20,11 +21,13 @@ extern bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktu
  */
 bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
+    // Wenn kein Zug moeglich ist, kann der Computer nichts ausfuehren.
     if (moeglicheZuege(spielfeld, aktuellerSpieler) == 0)
     {
         return false;
     }
 
+    // Das Hilfsspielfeld dient zum Simulieren aller moeglichen Zuege.
     int voraussehen[GROESSE_Y][GROESSE_X];
     int min_x = 0;
     int min_y = 0;
@@ -34,6 +37,7 @@ bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler
     {
         for (int i = 0; i < GROESSE_X; i++)
         {
+            // Kopiert das aktuelle Spielfeld fuer eine Zugvorschau.
             for (int cj = 0; cj < GROESSE_Y; cj++)
             {
                 for (int ci = 0; ci < GROESSE_X; ci++)
@@ -44,7 +48,9 @@ bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler
 
             if (zugGueltig(voraussehen, aktuellerSpieler, i, j))
             {
+                // Simuliert den gueltigen Zug auf dem Hilfsspielfeld.
                 zugAusfuehren(voraussehen, aktuellerSpieler, i, j);
+                // Bevorzugt einen Zug, der dem Gegner moeglichst wenige Antworten laesst.
                 if (moeglicheZuege(voraussehen, 3 - aktuellerSpieler) < min)
                 {
                     min = moeglicheZuege(voraussehen, 3 - aktuellerSpieler);
@@ -55,6 +61,7 @@ bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler
         }
     }
 
+    // Fuehrt den besten gefundenen Zug auf dem echten Spielfeld aus.
     zugAusfuehren(spielfeld, aktuellerSpieler, min_x, min_y);
     std::cout << std::endl << "Spieler " << aktuellerSpieler << " setzt auf "
               << static_cast<char>(min_x + 65) << (min_y + 1) << std::endl;

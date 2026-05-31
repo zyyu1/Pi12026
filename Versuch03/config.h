@@ -5,8 +5,10 @@
  *
  * Beinhaltet globale Konfiguration.
  */
+// Globale Konfigurationsdatei fuer das gesamte Othello-Projekt.
 // 全局配置文件
 
+// Das Spielfeld besitzt 8 Spalten und 8 Zeilen.
 #ifndef CONFIG_H_
 #define CONFIG_H_
 

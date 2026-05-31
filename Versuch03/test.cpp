@@ -36,6 +36,7 @@ extern int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int p
  */
 bool gewinnerTest(const int eingabefeld[GROESSE_Y][GROESSE_X], const int richtig, const int testNummer)
 {
+    // Startet einen einzelnen Testfall fuer die Gewinnerbestimmung.
     std::cout << "Fuehre Test " << testNummer + 1 << " fuer 'gewinner()' aus ..." << std::endl;
     std::cout << "----------------------------------" << std::endl << std::endl;
 
@@ -51,6 +52,7 @@ bool gewinnerTest(const int eingabefeld[GROESSE_Y][GROESSE_X], const int richtig
         std::cout << "Test " << testNummer + 1 << " fehlgeschlagen" << std::endl << std::endl;
         if (AUSFUEHRLICH == 1)
         {
+            // Gibt bei Bedarf das Testspielfeld fuer die Fehlersuche aus.
             // 输出失败时的测试棋盘，便于定位问题
             zeigeSpielfeld(eingabefeld);
 
@@ -75,13 +77,16 @@ bool aufSpielfeldTest(const int posX, const int posY, const bool richtig, const 
 {
     // ueberprueft, ob eine gegebene Position auf dem Spielfeld ist
 
+    // Gibt eine kurze Ueberschrift fuer den aktuellen Test aus.
     // 在控制台输出当前测试标题
     std::cout << "Fuehre Test " << testNummer + 1 << " fuer 'aufSpielfeld()' aus ..." << std::endl;
     std::cout << "----------------------------------" << std::endl << std::endl;
 
+    // Ruft die zu testende Funktion auf und speichert das Ergebnis.
     // 调用 aufSpielfeld() 并保存结果
     bool ergebnis = aufSpielfeld(posX, posY);
 
+    // Vergleicht Ist- und Sollwert des Testfalls.
     // 将实际结果与期望结果进行比较
     if (ergebnis == richtig)
     {
@@ -92,9 +97,11 @@ bool aufSpielfeldTest(const int posX, const int posY, const bool richtig, const 
     {
         std::cout << "Test " << testNummer + 1 << " fehlgeschlagen" << std::endl << std::endl;
 
+        // Im ausfuehrlichen Modus werden zusaetzliche Informationen angezeigt.
         // 在详细模式下输出更多调试信息
         if (AUSFUEHRLICH == 1)
         {
+            // Gibt die gepruefte Position zur besseren Analyse aus.
             // 输出被测试的位置
             std::cout << "Position: (" << posX << ", " << posY << ")" << std::endl;
             std::cout << "Berechnetes Ergebnis: " << ergebnis << std::endl;
@@ -139,6 +146,7 @@ bool zugGueltigTest(const int eingabeFeld[GROESSE_Y][GROESSE_X], const int spiel
 
         if (AUSFUEHRLICH == 1)
         {
+            // Zeigt das verwendete Spielfeld an, damit Fehler leichter nachvollziehbar sind.
             // 输出当前测试棋盘
             zeigeSpielfeld(eingabeFeld);
 
@@ -169,10 +177,12 @@ bool zugAusfuehrenTest(int eingabeFeld[GROESSE_Y][GROESSE_X], const int ergebnis
     // ueberprueft, ob fuer ein gegebenes Spielfeld der Zug fuer einen gegebenen Spieler korrekt ausgefuehrt wird
     // wenn AUSFUEHRLICH gleich 1 werden zusaetzlich beide Spielfelder ausgegeben 
 
+    // Gibt eine Ueberschrift fuer den aktuellen Testfall aus.
     // 在控制台输出当前测试标题
     std::cout << "Fuehre Test " << testNummer + 1 << " fuer 'zugAusfuehren()' aus ..." << std::endl;
     std::cout << "----------------------------------" << std::endl << std::endl;
 
+    // Legt eine Kopie des Eingabefelds an, damit die Originaldaten unveraendert bleiben.
     // 复制输入棋盘，避免直接修改原始测试数据
     int testFeld[GROESSE_Y][GROESSE_X];
 
@@ -184,9 +194,11 @@ bool zugAusfuehrenTest(int eingabeFeld[GROESSE_Y][GROESSE_X], const int ergebnis
         }
     }
 
+    // Fuehrt den zu pruefenden Zug auf der Testkopie aus.
     // 执行落子函数
     zugAusfuehren(testFeld, spieler, posX, posY);
 
+    // Vergleicht Feld fuer Feld mit dem erwarteten Ergebnis.
     // 逐格比较计算结果与期望棋盘是否一致
     bool ergebnis = true;
 
@@ -201,6 +213,7 @@ bool zugAusfuehrenTest(int eingabeFeld[GROESSE_Y][GROESSE_X], const int ergebnis
         }
     }
 
+    // Gibt je nach Vergleichsergebnis den Teststatus aus.
     // 根据比较结果输出测试状态
     if (ergebnis == true)
     {
@@ -211,6 +224,7 @@ bool zugAusfuehrenTest(int eingabeFeld[GROESSE_Y][GROESSE_X], const int ergebnis
     {
         std::cout << "Test " << testNummer + 1 << " fehlgeschlagen" << std::endl << std::endl;
 
+        // Im ausfuehrlichen Modus werden Eingabe, Ergebnis und Sollfeld angezeigt.
         // 在详细模式下输出输入棋盘、计算结果和正确结果
         if (AUSFUEHRLICH == 1)
         {
@@ -263,9 +277,11 @@ bool moeglicheZuegeTest(const int eingabeFeld[GROESSE_Y][GROESSE_X], const int s
 
         if (AUSFUEHRLICH == 1)
         {
+            // Zeigt das aktuelle Testspielfeld im Fehlerfall an.
             // 输出当前测试棋盘
             zeigeSpielfeld(eingabeFeld);
 
+            // Zeigt Spieler, Istwert und Sollwert zur Kontrolle an.
             // 输出玩家编号、计算结果和正确结果
             std::cout << "Spieler: " << spieler << std::endl;
             std::cout << "Berechnetes Ergebnis: " << ergebnis << std::endl;
@@ -289,9 +305,11 @@ bool ganzenTestAusfuehren()
 {
     bool gesamtErgebnis = true;
 
+// Jede Testgruppe liegt in einem eigenen Block, damit lokale Namen getrennt bleiben.
 // Jeder Test steht in einem eigenen Block {}, damit es keine Namenskonflikte gibt
 // z.B. eingabeFeld oder korrektesErgebnis
 
+// Testgruppe fuer die Funktion gewinner()
 // 测试 gewinner()
 // ---------- TESTE GEWINNER ---------- //
     {
@@ -331,6 +349,7 @@ bool ganzenTestAusfuehren()
 
         for (int i = 0; i < 3; i++)
         {
+            // Verknuepft das Ergebnis des Einzeltests mit dem Gesamtergebnis.
             bool tmp_ergebnis = gewinnerTest(eingabeFeld[i], korrektesErgebnis[i], i);
             if (gesamtErgebnis == true && tmp_ergebnis == false)
             {
@@ -342,6 +361,7 @@ bool ganzenTestAusfuehren()
     }
 
 
+// Testgruppe fuer die Funktion aufSpielfeld()
 // 测试 aufSpielfeld()
 // ---------- TESTE POSITION IM FELD---------- //
     {
@@ -350,6 +370,7 @@ bool ganzenTestAusfuehren()
 
         for (int i = 0; i < 6; i++)
         {
+            // Aktualisiert das Gesamtergebnis anhand des Einzeltests.
             // 执行单个测试并合并总结果
             bool tmp_ergebnis = aufSpielfeldTest(position[i][0], position[i][1], korrektesErgebnis[i], i);
 
@@ -362,6 +383,7 @@ bool ganzenTestAusfuehren()
         std::cout << "Ende des Tests fuer 'aufSpielfeld()'" << std::endl << std::endl;
     }
 
+// Testgruppe fuer die Funktion zugGueltig()
 // 测试 zugGueltig()
 // ---------- TESTE ZUG GUELTIG ---------- //
     {
@@ -444,6 +466,7 @@ bool ganzenTestAusfuehren()
 
         for (int i = 0; i < 7; i++)
         {
+            // Aktualisiert das Gesamtergebnis anhand des Einzeltests.
             // 执行单个测试并合并总结果
             bool tmp_ergebnis = zugGueltigTest(eingabeFeld[i], spieler[i], position[i][0], position[i][1], korrektesErgebnis[i], i);
 
@@ -454,6 +477,7 @@ bool ganzenTestAusfuehren()
         }
     }
 
+// Testgruppe fuer die Funktion zugAusfuehren()
 // 测试 zugAusfuehren()
 // ---------- TESTE ZUG AUSFUEHREN ---------- //
     {
@@ -677,6 +701,7 @@ bool ganzenTestAusfuehren()
 
         for (int i = 0; i < 10; i++)
         {
+            // Aktualisiert das Gesamtergebnis anhand des Einzeltests.
             // 执行单个测试并合并总结果
             bool tmp_ergebnis = zugAusfuehrenTest(eingabeFeld[i], ergebnisFeld[i], spieler[i], position[i][0], position[i][1], i);
 
@@ -689,7 +714,7 @@ bool ganzenTestAusfuehren()
         std::cout << "Ende des Tests fuer 'zugAusfuehren()'" << std::endl << std::endl;
     }
 
-
+// Testgruppe fuer die Funktion moeglicheZuege()
 // 测试 moeglicheZuege()
 // ---------- TESTE MOEGLICHE ZUEGE ---------- //
 {
@@ -721,6 +746,7 @@ bool ganzenTestAusfuehren()
 
         for (int i = 0; i < 2; i++)
         {
+            // Aktualisiert das Gesamtergebnis anhand des Einzeltests.
             // 执行单个测试并合并总结果
             bool tmp_ergebnis = moeglicheZuegeTest(eingabeFeld[i], spieler[i], korrektesErgebnis[i], i);
 

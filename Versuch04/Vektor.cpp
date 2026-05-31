@@ -30,6 +30,9 @@ Vektor::~Vektor()
 {
 }
 
+/**
+ * @brief Gibt alle drei Komponenten formatiert auf der Konsole aus.
+ */
 void Vektor::ausgabe() const
 {
     std::cout << "X-Komponente: " << x << std::endl;
@@ -37,18 +40,27 @@ void Vektor::ausgabe() const
     std::cout << "Z-Komponente: " << z << std::endl << std::endl;
 }
 
+/**
+ * @brief Berechnet den Betrag des aktuellen Vektors.
+ */
 double Vektor::laenge() const
 {
     const double laenge = std::sqrt((x * x) + (y * y) + (z * z));
     return laenge;
 }
 
+/**
+ * @brief Bildet die komponentenweise Differenz zweier Vektoren.
+ */
 Vektor Vektor::sub(const Vektor& input) const
 {
     const Vektor differenz(x - input.x, y - input.y, z - input.z);
     return differenz;
 }
 
+/**
+ * @brief Berechnet das Skalarprodukt des aktuellen Vektors mit input.
+ */
 double Vektor::skalarProd(const Vektor& input) const
 {
     const double a = x * input.x;
@@ -59,12 +71,16 @@ double Vektor::skalarProd(const Vektor& input) const
     return skalarprodukt;
 }
 
+/**
+ * @brief Bestimmt den Winkel zwischen zwei Vektoren in Grad.
+ */
 double Vektor::winkel(const Vektor& input) const
 {
     const double skalarprodukt = skalarProd(input);
     const double betrag1 = laenge();
     const double betrag2 = input.laenge();
 
+    // Fuer Nullvektoren ist der Winkel nicht sinnvoll definiert.
     if (betrag1 == 0.0 || betrag2 == 0.0)
     {
         return 0.0;
@@ -72,6 +88,7 @@ double Vektor::winkel(const Vektor& input) const
 
     double cosAlpha = skalarprodukt / (betrag1 * betrag2);
 
+    // Rundungsfehler duerfen den Wertebereich von acos nicht verletzen.
     if (cosAlpha > 1.0)
     {
         cosAlpha = 1.0;
@@ -87,6 +104,9 @@ double Vektor::winkel(const Vektor& input) const
     return winkelGrad;
 }
 
+/**
+ * @brief Rotiert den Vektor in der x-y-Ebene um die z-Achse.
+ */
 void Vektor::rotiereUmZ(const double rad)
 {
     const double newX = x * std::cos(rad) - y * std::sin(rad);

@@ -39,6 +39,7 @@
 // 初始化棋盘并放置开局四个棋子
 void initialisiereSpielfeld(int spielfeld[GROESSE_Y][GROESSE_X])
 {
+    // Setzt zunaechst alle Felder des Spielfelds auf leer.
     for (int j = 0; j < GROESSE_Y; j++)
     {
         for (int i = 0; i < GROESSE_X; i++)
@@ -48,6 +49,7 @@ void initialisiereSpielfeld(int spielfeld[GROESSE_Y][GROESSE_X])
     }
 
     // 在棋盘中心放置 Othello 的初始四子
+    // Setzt anschliessend die vier Startsteine in die Mitte des Spielfelds.
     spielfeld[GROESSE_Y / 2 - 1][GROESSE_X / 2 - 1] = 1;        //[3][3] = 1
     spielfeld[GROESSE_Y / 2][GROESSE_X / 2 - 1] = 2;            //[4][3] = 2
     spielfeld[GROESSE_Y / 2 - 1][GROESSE_X / 2] = 2;            //[3][4] = 2
@@ -66,6 +68,7 @@ void initialisiereSpielfeld(int spielfeld[GROESSE_Y][GROESSE_X])
 void zeigeSpielfeld(const int spielfeld[GROESSE_Y][GROESSE_X])
 {
     // 先输出列标 A|B|C...
+    // Gibt zunaechst die Spaltenbezeichnungen aus.
     std::cout << "   | ";
 
     // Start bei ASCII 65 = A
@@ -77,6 +80,7 @@ void zeigeSpielfeld(const int spielfeld[GROESSE_Y][GROESSE_X])
     std::cout << std::endl;
 
     // 逐行输出棋盘内容
+    // Gibt anschliessend jede Zeile des Spielfelds aus.
     for (int j = 0; j < GROESSE_Y; ++j)
     {
         for (int i = 0; i < GROESSE_X; ++i)
@@ -169,6 +173,7 @@ int gewinner(const int spielfeld[GROESSE_Y][GROESSE_X])
 // 判断一个坐标是否位于棋盘内部
 bool aufSpielfeld(const int posX, const int posY)
 {
+    // Akzeptiert nur Koordinaten innerhalb der festen Spielfeldgroesse.
     if (posX >= 0 && posX < GROESSE_X && posY >= 0 && posY < GROESSE_Y)
     {
         return true;
@@ -193,21 +198,25 @@ bool aufSpielfeld(const int posX, const int posY)
 bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY)
 {
     // 对手编号
+    // Berechnet die Spielernummer des Gegners.
     int gegner = 3 - aktuellerSpieler;
 
     // 坐标越界则不合法
+    // Positionen ausserhalb des Spielfelds sind ungueltig.
     if (aufSpielfeld(posX, posY) == 0)
     {
         return false;
     }
 
     // 目标位置必须为空
+    // Es darf nur auf ein freies Feld gesetzt werden.
     if (spielfeld[posY][posX] != 0)
     {
         return false;
     }
 
     // 检查 8 个方向，只要有一个方向满足夹住对手棋子，就说明这是合法落子
+    // Untersucht alle acht Richtungen auf einschliessbare Gegnersteine.
     for (int j = -1; j <= 1; j++)
     {
         for (int i = -1; i <= 1; i++)
@@ -371,9 +380,11 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
 int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
     // 统计合法走法数量
+    // Zaehlt alle gueltigen Zugpositionen des aktuellen Spielers.
     int anzahlZuege = 0;
 
     // 遍历整个棋盘，检查每一个位置
+    // Durchlaeuft das gesamte Spielfeld und prueft jede Position.
     for (int j = 0; j < GROESSE_Y; j++)
     {
         for (int i = 0; i < GROESSE_X; i++)
@@ -403,6 +414,7 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
 bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
     // 如果当前玩家没有合法走法，就直接返回 false
+    // Ohne moegliche Zuege kann der Spieler nichts setzen.
     if (moeglicheZuege(spielfeld, aktuellerSpieler) == 0)
     {
         return false;
@@ -413,6 +425,7 @@ bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpi
     std::string symbolSpieler;
 
     // 根据玩家编号设置显示符号
+    // Bestimmt das Ausgabesymbol des aktuellen Spielers.
     if (aktuellerSpieler == 1)
     {
         symbolSpieler = "X";
@@ -423,6 +436,7 @@ bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpi
     }
 
     // 持续读取输入，直到用户输入一个合法落子
+    // Fragt so lange nach einer Eingabe, bis ein gueltiger Zug vorliegt.
     while (true)
     {
         std::string eingabe;
@@ -430,10 +444,12 @@ bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpi
         std::cin >> eingabe;
 
         // 把类似 A1 的输入转换成数组坐标，例如 A1 -> (0,0)
+        // Wandelt die Benutzereingabe von z. B. A1 in Feldkoordinaten um.
         posX = (int) eingabe[0] % 32 - 1;
         posY = (int) eingabe[1] - 49;
 
         // 如果输入对应的是合法落子，就跳出循环，否则提示重新输入
+        // Bei einem gueltigen Zug endet die Eingabeschleife.
         if (zugGueltig(spielfeld, aktuellerSpieler, posX, posY))
         {
             break;
@@ -445,6 +461,7 @@ bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpi
     }
 
     // 执行该步落子
+    // Fuehrt den geprueften Zug auf dem Spielfeld aus.
     zugAusfuehren(spielfeld, aktuellerSpieler, posX, posY);
     std::cout << std::endl << "Spieler " << aktuellerSpieler << " setzt auf " << (char) (posX + 65) << (posY + 1) << std::endl;
 
@@ -472,6 +489,7 @@ void spielen(const int spielerTyp[2])
     zeigeSpielfeld(spielfeld);
 
     //增加计数器,记录现在执行的轮数
+    // Zaehlt die gespielten Runden im laufenden Spiel.
     int runden = 0;
 
     // solange noch Zuege bei einem der beiden Spieler moeglich sind
@@ -495,34 +513,40 @@ void spielen(const int spielerTyp[2])
 
             // 每一步后都重新显示棋盘
             std::cout << "Runden : " << runden << std::endl;
+            // Gibt nach jedem erfolgreichen Zug die Rundenzahl und das Feld aus.
             zeigeSpielfeld(spielfeld);
         }
         else
         {
             // 当前玩家没有合法走法，需要跳过本回合
+            // Spieler ohne moeglichen Zug muessen in dieser Runde passen.
             std::cout << "Spieler " << aktuellerSpieler << " muss passen." << std::endl;
-            std::cout << "Runden : " << runden << std::endl;
         }
 
         // 切换到另一位玩家
+        // Wechselt anschliessend zum anderen Spieler.
         aktuellerSpieler = 3 - aktuellerSpieler;
     }
 
     switch (gewinner(spielfeld))
     {
-        case 0:
+                // Leeres Feld
+                case 0:
             std::cout << "Es ist ein Unentschieden." << std::endl;
             break;
 
-        case 1:
+                // Stein von Spieler 1
+                case 1:
             std::cout << "Spieler 1 gewinnt !" << std::endl;
             break;
 
-        case 2:
+                // Stein von Spieler 2
+                case 2:
             std::cout << "Spieler 2 gewinnt !" << std::endl;
             break;
 
-        default:
+                // Sicherheitsabbruch bei unzulaessigen Feldwerten
+                default:
             std::cout << "Fehler" << std::endl;
             break;
     }
@@ -539,6 +563,7 @@ int main()
     if (TEST == 1)
     {
         // 先运行完整测试，确保核心逻辑正确
+        // Startet vor dem Spiel alle automatisierten Tests.
         bool gesamtErgebnis = ganzenTestAusfuehren();
         if (gesamtErgebnis == true)
         {
@@ -563,10 +588,12 @@ int main()
     //int spielerTyp[2] = {MENSCH, MENSCH };
 
 //三种对局情况,执行判断
+    // Liest fuer beide Spieler ein, ob Mensch oder Computer verwendet werden soll.
     int spielerTyp[2];
     char eingabe = ' ';
 
     //spieler 1
+    // Konfiguriert den Typ von Spieler 1.
     std::cout << "Ist Spieler 1 ein Computer? (j/n) ";
     std::cin >> eingabe;
 
@@ -581,6 +608,7 @@ int main()
 
     //spieler 2
     std::cout << std::endl;
+    // Konfiguriert den Typ von Spieler 2.
     std::cout << "Ist Spieler 2 ein Computer? (j/n) ";
     std::cin >> eingabe;
 
@@ -597,9 +625,11 @@ int main()
     std::cout << "Startfeld" << std::endl;
 
     // 最后调用 spielen() 函数，开始游戏
+    // Startet das eigentliche Spiel mit den gewaehlten Spielertypen.
     spielen(spielerTyp);
 
     //判断是否需要重新开始游戏
+    // Fragt nach Spielende, ob eine neue Partie gestartet werden soll.
     char neuesSpieleingabe = ' ';
 
     std::cout << std::endl;

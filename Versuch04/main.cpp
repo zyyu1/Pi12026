@@ -39,6 +39,7 @@ int main()
 
     if (TEST_VEKTOR)
     {
+        // Beispielvektoren fuer einen schnellen Funktionstest.
         Vektor a(1.0, 2.0, 3.0);
         Vektor b(4.0, 5.0, 6.0);
 
@@ -61,15 +62,18 @@ int main()
         a.ausgabe();
     }
 
+    // Hoehenangaben in Metern: Augenhoehe, Plattformhoehe und Erdradius.
     const double height = 1.7;
     const double platformHeight = 555.7;
     const double radius = 6371000.0;
     const double gesamtHoehe = platformHeight + height;
 
+    // Erdmittelpunkt im Ursprung, Beobachter senkrecht ueber dem Nordpol.
     Vektor erdRadius(0, radius, 0);
     Vektor aussichtsPunkt(0, gesamtHoehe + radius, 0);
     Vektor sicht = aussichtsPunkt.sub(erdRadius);
 
+    // Der Radiusvektor wird schrittweise gedreht, bis die Sichtlinie tangential wird.
     const double alpha = -0.00000001;
     int schritte = 0;
 
@@ -80,6 +84,7 @@ int main()
         schritte++;
     }
 
+    // Ausgabe der berechneten Sichtweite und des zugehoerigen Winkels.
     std::cout << std::fixed << std::setprecision(4);
     std::cout << "Sie koennen " << sicht.laenge() / 1000.0 << " Km weit sehen." << std::endl;
     std::cout << "Sie sind " << gesamtHoehe << " Meter hoch." << std::endl;
