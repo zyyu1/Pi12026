@@ -158,6 +158,10 @@ bool Liste::loeschen(unsigned int matNr)
     {
         if (cursor->getData().getMatNr() == matNr)
         {
+            // 删除前先输出该学生的完整信息，满足题目对成功提示的要求。
+            std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
+            cursor->getData().ausgabe();
+
             if (cursor == front && cursor == back)
             {
                 delete cursor;

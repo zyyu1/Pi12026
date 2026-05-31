@@ -172,8 +172,7 @@ int main()
 
                 if (studentenListe.loeschen(matNr))
                 {
-                    std::cout << "Der Student mit der Matrikelnummer " << matNr
-                              << " wurde geloescht." << std::endl;
+                    // 成功提示已经在 loeschen() 中输出了完整学生数据，这里不再重复输出简略信息。
                 }
                 else
                 {
