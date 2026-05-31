@@ -14,10 +14,15 @@ extern int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int a
 extern void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 extern bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY);
 
-/*
- * Fuehrt einen moeglichst guenstigen Computerzug aus.
+/**
+ * @brief Fuehrt einen moeglichst guenstigen Computerzug aus.
  *
- * Die Schnittstelle ist bereits in othelloKI.h dokumentiert.
+ * Die KI simuliert alle gueltigen Zuege und waehlt den Zug aus,
+ * der dem Gegner anschliessend moeglichst wenige Antworten laesst.
+ *
+ * @param spielfeld Das aktuelle Spielfeld
+ * @param aktuellerSpieler Der Spieler, fuer den der Computer zieht
+ * @return true, wenn ein Zug ausgefuehrt wurde, sonst false
  */
 bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {

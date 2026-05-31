@@ -9,11 +9,22 @@
 // Dieses Programm berechnet Fibonacci-Zahlen
 // rekursiv und iterativ und vergleicht die Laufzeit beider Verfahren.
 
+/**
+ * @file fibonacci.cpp
+ * @brief Vergleicht rekursive und iterative Fibonacci-Berechnung inklusive Laufzeitmessung.
+ */
+
 #include <iostream>
 #include <chrono>           //Fuer die Zeitmessung der Programmausfuehrung使用标准时间工具
 
 // Rekursive Berechnung der n-ten Fibonacci-Zahl
 //from Versuch2.1 递归形式
+/**
+ * @brief Berechnet die n-te Fibonacci-Zahl rekursiv.
+ *
+ * @param n Index der gesuchten Fibonacci-Zahl
+ * @return Wert der n-ten Fibonacci-Zahl
+ */
 int fibonacciRekursiv(int n)
 {
     // Abbruchbedingung: f(0) = 0
@@ -38,6 +49,12 @@ int fibonacciRekursiv(int n)
 
 // Iterative Berechnung der n-ten Fibonacci-Zahl
 //定义 fibonacci迭代Iterativ函数，参数为整数 n，返回第 n 项
+/**
+ * @brief Berechnet die n-te Fibonacci-Zahl iterativ.
+ *
+ * @param n Index der gesuchten Fibonacci-Zahl
+ * @return Wert der n-ten Fibonacci-Zahl
+ */
 int fibonacci(int n)
 {
     // Startwerte fuer die ersten beiden Fibonacci-Zahlen
@@ -81,6 +98,11 @@ int fibonacci(int n)
 }
 
 // Hauptfunktion des Programms
+/**
+ * @brief Gibt Beispielwerte aus und vergleicht die Laufzeit beider Verfahren.
+ *
+ * @return 0 bei erfolgreicher Programmausfuehrung
+ */
 int main ()
 {
     // Ausgabe der Fibonacci-Zahlen von 0 bis 12

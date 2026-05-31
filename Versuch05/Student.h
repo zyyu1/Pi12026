@@ -8,6 +8,11 @@
 #include <string>
 
 /**
+ * @file Student.h
+ * @brief Deklaration der Klasse Student.
+ */
+
+/**
  * @brief Speichert die Stammdaten eines Studenten.
  */
 class Student
@@ -62,9 +67,13 @@ public:
     void ausgabe() const;
 
 private:
+    /** Matrikelnummer des Studenten. */
     unsigned int matNr;
+    /** Vollstaendiger Name des Studenten. */
     std::string name;
+    /** Geburtsdatum des Studenten. */
     std::string geburtstag;
+    /** Postadresse des Studenten. */
     std::string adresse;
 };
 

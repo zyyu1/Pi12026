@@ -5,6 +5,11 @@
 #include "Liste.h"
 
 /**
+ * @file Liste.cpp
+ * @brief Implementierung der doppelt verketteten Studentenliste.
+ */
+
+/**
  * @brief Erstellt eine leere Liste.
  */
 Liste::Liste(): front(nullptr), back(nullptr)
@@ -29,6 +34,7 @@ Liste::~Liste()
  */
 void Liste::pushBack(Student pData)
 {
+    // Das neue Element wird hinter dem bisherigen Listenende eingehangen.
     ListenElement* neuesElement = new ListenElement(pData, nullptr, back);
 
     if (front == nullptr)
@@ -51,6 +57,7 @@ void Liste::pushBack(Student pData)
  */
 void Liste::pushFront(Student pData)
 {
+    // Das neue Element wird vor dem bisherigen Listenanfang eingehangen.
     ListenElement* neuesElement = new ListenElement(pData, front, nullptr);
 
     if (front == nullptr)
@@ -79,6 +86,7 @@ void Liste::popFront()
 
     if (front == back)
     {
+        // Spezialfall: Die Liste enthaelt genau ein Element.
         delete front;
         front = nullptr;
         back = nullptr;
@@ -123,6 +131,7 @@ void Liste::ausgabeVorwaerts() const
 {
     ListenElement* cursor = front;
 
+    // Iteration vom Listenanfang bis zum Listenende.
     while (cursor != nullptr)
     {
         cursor->getData().ausgabe();
@@ -137,6 +146,7 @@ void Liste::ausgabeRueckwaerts() const
 {
     ListenElement* cursor = back;
 
+    // Iteration vom Listenende bis zum Listenanfang.
     while (cursor != nullptr)
     {
         cursor->getData().ausgabe();
@@ -154,6 +164,7 @@ bool Liste::loeschen(unsigned int matNr)
 {
     ListenElement* cursor = front;
 
+    // Suche linear nach der gewuenschten Matrikelnummer.
     while (cursor != nullptr)
     {
         if (cursor->getData().getMatNr() == matNr)
@@ -170,10 +181,12 @@ bool Liste::loeschen(unsigned int matNr)
             }
             else if (cursor == front)
             {
+                // Am Listenanfang kann die vorhandene popFront-Logik genutzt werden.
                 popFront();
             }
             else if (cursor == back)
             {
+                // Am Listenende muss nur der Rueckwaertszeiger aktualisiert werden.
                 back = back->getPrev();
                 back->setNext(nullptr);
                 delete cursor;

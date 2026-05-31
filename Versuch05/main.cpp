@@ -5,6 +5,11 @@
  *
  */
 
+/**
+ * @file main.cpp
+ * @brief Menuegesteuertes Hauptprogramm zur Verwaltung einer Studentenliste.
+ */
+
 #include <iostream>
 #include <limits>
 #include <string>
@@ -58,6 +63,7 @@ int main()
 
     if (abfrage != 'j')
     {
+        // Beispielbelegung, damit die Listenoperationen sofort getestet werden koennen.
         student = Student(34567, "Harro Simoneit", "19.06.1971", "Am Markt 1");
         studentenListe.pushBack(student);
         student = Student(74567, "Vera Schmitt", "23.07.1982", "Gartenstr. 23");
@@ -72,6 +78,7 @@ int main()
 
     do
     {
+        // Zentrales Menue fuer alle geforderten Listenoperationen.
         std::cout << "\nMenue:" << std::endl
                   << "-----------------------------" << std::endl
                   << "(1): Datenelement hinten hinzufuegen" << std::endl
@@ -89,6 +96,7 @@ int main()
         {
             case '1':
             {
+                // Neuer Student wird am Listenende angefuegt.
                 unsigned int matNr = 0;
                 std::string name;
                 std::string geburtstag;
@@ -116,6 +124,7 @@ int main()
 
             case '2':
             {
+                // Das erste Element wird gelesen, ausgegeben und anschliessend entfernt.
                 if (!studentenListe.empty())
                 {
                     student = studentenListe.dataFront();
@@ -132,6 +141,7 @@ int main()
 
             case '3':
             {
+                // Ausgabe in natuerlicher Reihenfolge vom Listenanfang zum Listenende.
                 if (!studentenListe.empty())
                 {
                     std::cout << "Inhalt der Liste in fortlaufender Reihenfolge:" << std::endl;
@@ -146,6 +156,7 @@ int main()
 
             case '4':
             {
+                // Rueckwaertsausgabe vom Listenende zum Listenanfang.
                 if (!studentenListe.empty())
                 {
                     std::cout << "Inhalt der Liste in umgekehrter Reihenfolge:" << std::endl;
@@ -160,6 +171,7 @@ int main()
 
             case '5':
             {
+                // Geloescht wird anhand der eindeutig vergebenen Matrikelnummer.
                 unsigned int matNr = 0;
 
                 if (!readUnsignedInt(
@@ -184,6 +196,7 @@ int main()
 
             case '6':
             {
+                // Neuer Student wird am Listenanfang eingefuegt.
                 unsigned int matNr = 0;
                 std::string name;
                 std::string geburtstag;

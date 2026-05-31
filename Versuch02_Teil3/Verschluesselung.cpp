@@ -8,6 +8,11 @@
 //////////////////////////////////////////////////////////////////////////////
 // Dieses Programm verschluesselt und entschluesselt
 // Woerter in Grossbuchstaben mit Hilfe einer Lookup-Tabelle.
+
+/**
+ * @file Verschluesselung.cpp
+ * @brief Verschluesselt und entschluesselt Woerter mit Hilfe von Lookup-Tabellen.
+ */
 //用二维数组做一个字母替换表,第一行保存明文字母 A-Z，第二行保存密文字母 A-Z 的某种排列，并且每个字母只能出现一次
 //然后写加密函数和解密函数，输入一个大写单词，输出原文、加密结果和解密结果
 
@@ -21,6 +26,13 @@ using namespace std;
 // und durch den zugeordneten Geheimtextbuchstaben ersetzt.
 //3.写加密函数
 //遍历单词,对每个字母去 lookup 表里查找,用对应的替换字母拼接成新字符串,返回新字符串
+/**
+ * @brief Verschluesselt ein Wort anhand einer Lookup-Tabelle.
+ *
+ * @param schluessel Zweizeilige Tabelle mit Klartext- und Geheimtextalphabet
+ * @param wort Zu verschluesselndes Wort
+ * @return Verschluesseltes Wort
+ */
 string verschluesseln(char schluessel[2][26], string wort)
 {
 	// String fuer das verschluesselte Wort
@@ -52,6 +64,13 @@ string verschluesseln(char schluessel[2][26], string wort)
 // Jeder Buchstabe des verschluesselten Wortes wird gesucht
 // und in den urspruenglichen Buchstaben zurueckverwandelt.
 //5.写解密函数 copy from verschluesseln
+/**
+ * @brief Entschluesselt ein Wort anhand einer Lookup-Tabelle.
+ *
+ * @param schluessel Zweizeilige Tabelle mit Geheimtext- und Klartextalphabet
+ * @param wort Zu entschluesselndes Wort
+ * @return Entschluesseltes Wort
+ */
 string entschluesseln(char schluessel[2][26], string wort)
 {
 	// String fuer den entschluesselten Klartext
@@ -79,6 +98,11 @@ string entschluesseln(char schluessel[2][26], string wort)
 
 
 // Hauptfunktion des Programms
+/**
+ * @brief Liest ein Wort ein, verschluesselt es und entschluesselt es wieder.
+ *
+ * @return 0 bei erfolgreicher Programmausfuehrung
+ */
 int main()
 {
 

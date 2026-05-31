@@ -11,12 +11,19 @@
 #include "Student.h"
 
 /**
+ * @file Liste.h
+ * @brief Deklaration einer doppelt verketteten Liste fuer Studenten.
+ */
+
+/**
  * @brief Verwaltet eine doppelt verkettete Liste von Studenten.
  */
 class Liste
 {
 private:
+    /** Zeiger auf das erste Element der Liste. */
     ListenElement* front;
+    /** Zeiger auf das letzte Element der Liste. */
     ListenElement* back;
 
 public:

@@ -8,13 +8,21 @@
 #include "Student.h"
 
 /**
+ * @file ListenElement.h
+ * @brief Deklaration eines Knotens fuer eine doppelt verkettete Studentenliste.
+ */
+
+/**
  * @brief Reprasentiert einen Knoten einer doppelt verketteten Studentenliste.
  */
 class ListenElement
 {
 private:
+    /** Im Knoten gespeicherter Student. */
     Student data;
+    /** Zeiger auf das folgende Listenelement. */
     ListenElement* next;
+    /** Zeiger auf das vorherige Listenelement. */
     ListenElement* prev;
 
 public:

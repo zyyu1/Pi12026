@@ -126,9 +126,7 @@ bool aufSpielfeldTest(const int posX, const int posY, const bool richtig, const 
 bool zugGueltigTest(const int eingabeFeld[GROESSE_Y][GROESSE_X], const int spieler, const int posX,
                      const int posY, const bool richtig, const int testNummer)
 {
-    // ueberprueft, ob der Zug fuer eine gegebene Position gueltig ist
-    // wenn AUSFUEHRLICH gleich 1 wird zusaetzlich das Spielfeld und die ungueltige Position ausgegeben
-    
+    // Prueft einen einzelnen Testfall fuer die Gueltigkeit eines Zugs.
 
     std::cout << "Fuehre Test " << testNummer + 1 << " fuer 'zugGueltig()' aus ..." << std::endl;
     std::cout << "----------------------------------" << std::endl << std::endl;
@@ -174,8 +172,7 @@ bool zugGueltigTest(const int eingabeFeld[GROESSE_Y][GROESSE_X], const int spiel
 bool zugAusfuehrenTest(int eingabeFeld[GROESSE_Y][GROESSE_X], const int ergebnisFeld[GROESSE_Y][GROESSE_X],
                        const int spieler, const int posX, const int posY, const int testNummer)
 {
-    // ueberprueft, ob fuer ein gegebenes Spielfeld der Zug fuer einen gegebenen Spieler korrekt ausgefuehrt wird
-    // wenn AUSFUEHRLICH gleich 1 werden zusaetzlich beide Spielfelder ausgegeben 
+    // Vergleicht das berechnete Spielfeld mit dem erwarteten Sollzustand.
 
     // Gibt eine Ueberschrift fuer den aktuellen Testfall aus.
     // 在控制台输出当前测试标题
@@ -258,9 +255,7 @@ bool zugAusfuehrenTest(int eingabeFeld[GROESSE_Y][GROESSE_X], const int ergebnis
 bool moeglicheZuegeTest(const int eingabeFeld[GROESSE_Y][GROESSE_X], const int spieler,
                          const int richtig, const int testNummer)
 {
-    // ueberprueft, ob alle moeglichen Zuege fuer einen Spieler gefunden werden
-    // wenn AUSFUEHRLICH gleich 1 wird zusaetzlich das Spielfeld, der berechnete falsche und der richtige Wert ausgegeben
-    
+    // Prueft die Anzahl der moeglichen Zuege fuer einen Spieler.
     std::cout << "Fuehre Test " << testNummer + 1 << " fuer 'moeglicheZuege()' aus ..." << std::endl;
     std::cout << "----------------------------------" << std::endl << std::endl;
 
@@ -303,15 +298,12 @@ bool moeglicheZuegeTest(const int eingabeFeld[GROESSE_Y][GROESSE_X], const int s
 // 运行全部测试
 bool ganzenTestAusfuehren()
 {
+    // Sammelt die Ergebnisse aller Testgruppen in einer gemeinsamen Rueckgabe.
     bool gesamtErgebnis = true;
 
-// Jede Testgruppe liegt in einem eigenen Block, damit lokale Namen getrennt bleiben.
-// Jeder Test steht in einem eigenen Block {}, damit es keine Namenskonflikte gibt
-// z.B. eingabeFeld oder korrektesErgebnis
+    // Jede Testgruppe liegt in einem eigenen Block, damit lokale Namen getrennt bleiben.
 
-// Testgruppe fuer die Funktion gewinner()
-// 测试 gewinner()
-// ---------- TESTE GEWINNER ---------- //
+    // Testgruppe fuer die Funktion gewinner().
     {
         int eingabeFeld[3][8][8] = {
             {   {1, 2, 1, 2, 1, 2, 1, 2},
