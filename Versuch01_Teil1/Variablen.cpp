@@ -36,7 +36,7 @@ int main()
     //读取已输入的整数并赋值
     std::cout << "Geben Sie bitte eine ganze Zahl ein: ";//把字符串送到 std::cout，然后std::cout 再把它显示到屏幕上
     std::cin >> iErste; //把用户输入的内容，从 std::cin 读出来，放进变量
-    std::cout << "Geben Sie bitte eine zweite ganze Zahl ein: ";
+    std::cout << "Geben Sie bitte eine zweite ganze Zahl(except 0) ein: "; 
     std::cin >> iZweite;
     std::cout << std::endl;
     
@@ -115,7 +115,7 @@ int main()
 
     //输出结果
     std::cout << "Name in der Form Vorname Nachname: " << sVornameName << std::endl;
-    std::cout << "Name in der Form Nachname, Vorname: " << sNameVorname << std::endl;
+    std::cout << "Name in der Form Nachname, Vorname(mindestens zwei Buchstaben): " << sNameVorname << std::endl;
     std::cout << std::endl;
 
 
