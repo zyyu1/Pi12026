@@ -398,6 +398,7 @@ int moeglicheZuege(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuelle
  * @param aktuellerSpieler Der Spieler, der am Zug ist.
  * @return true, wenn der Zug erfolgreich ausgefuehrt wurde, sonst false.
  */
+
 // 处理人类玩家输入，并在输入合法时执行该步
 bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler)
 {
@@ -469,11 +470,16 @@ void spielen(const int spielerTyp[2])
 
     int aktuellerSpieler = 1;
     zeigeSpielfeld(spielfeld);
+    //增加计数器,记录现在执行的轮数
+    int runden = 0;
 
     // solange noch Zuege bei einem der beiden Spieler moeglich sind
     // 只要任意一方还有合法走法，游戏就继续
     while (moeglicheZuege(spielfeld, 1) != 0 || moeglicheZuege(spielfeld, 2) != 0)
     {
+        //如果一方不能走了, 记录另一方行动的回合
+        runden++;
+
         if (moeglicheZuege(spielfeld, aktuellerSpieler) > 0)
         {
             // 根据玩家类型决定是人类下棋还是电脑下棋（COMPUTER = 2, MENSCH = 1）
@@ -487,6 +493,7 @@ void spielen(const int spielerTyp[2])
             }
 
             // 每一步后都重新显示棋盘
+            std::cout << "Runden : " << runden << std::endl;
             zeigeSpielfeld(spielfeld);
         }
         else
@@ -517,6 +524,7 @@ void spielen(const int spielerTyp[2])
             std::cout << "Fehler" << std::endl;
             break;
     }
+
 }
 
 /**
@@ -549,10 +557,63 @@ int main()
     //zeigeSpielfeld(spielfeld);
 
     //int spielerTyp[2] = { MENSCH, COMPUTER };  // Feld, das Informationen ueber den Typ des Spielers enthaelt. MENSCH(=1) oder COPMUTER(=2)
-    int spielerTyp[2] = {COMPUTER, COMPUTER };
+    //int spielerTyp[2] = {COMPUTER, COMPUTER };
     //int spielerTyp[2] = {MENSCH, MENSCH };
 
+//三种对局情况,执行判断
+    int spielerTyp[2];
+    char eingabe = ' ';
+
+    //spieler 1
+    std::cout << "Ist Spieler 1 ein Computer? (j/n) ";
+    std::cin >> eingabe;
+
+    if (eingabe == 'j' || eingabe == 'J')
+    {
+        spielerTyp[0] = COMPUTER;
+    }
+    else
+    {
+        spielerTyp[0] = MENSCH;
+    }
+
+    //spieler 2
+    std::cout << std::endl;
+    std::cout << "Ist Spieler 2 ein Computer? (j/n) ";
+    std::cin >> eingabe;
+
+    if (eingabe == 'j' || eingabe == 'J')
+    {
+        spielerTyp[1] = COMPUTER;
+    }
+    else
+    {
+        spielerTyp[1] = MENSCH;
+    }
+
+    std::cout << std::endl;
+    std::cout << "Startfeld" << std::endl;
+
+    // 最后调用 spielen() 函数，开始游戏
     spielen(spielerTyp);
+
+    //判断是否需要重新开始游戏
+    char neuesSpieleingabe = ' ';
+
+    std::cout << std::endl;
+    std::cout << "Neues Spiel? (j/n) "<< std::endl;
+    std::cin >> neuesSpieleingabe;
+
+    if (neuesSpieleingabe == 'j' || neuesSpieleingabe == 'J')
+    {
+        std::cout << std::endl;
+        std::cout << "Startfeld" << std::endl;
+        spielen(spielerTyp);
+    }
+    else
+    {
+        std::cout << "game stops!" << std::endl;
+    }
 
     return 0;
 }
