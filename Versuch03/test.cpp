@@ -50,6 +50,7 @@ bool gewinnerTest(const int eingabefeld[GROESSE_Y][GROESSE_X], const int richtig
     else
     {
         std::cout << "Test " << testNummer + 1 << " fehlgeschlagen" << std::endl << std::endl;
+        
         if (AUSFUEHRLICH == 1)
         {
             // Gibt bei Bedarf das Testspielfeld fuer die Fehlersuche aus.

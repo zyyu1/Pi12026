@@ -195,6 +195,7 @@ bool aufSpielfeld(const int posX, const int posY)
  * @return true, wenn der Zug gueltig ist, sonst false
  */
 // 判断当前玩家在指定位置落子是否合法
+// Ein Zug ist nur dann gueltig, wenn er mindestens einen gegnerischen Stein einschliesst. 
 bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY)
 {
     // 对手编号
@@ -286,6 +287,7 @@ bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSp
 // 在棋盘上执行一个合法落子，并翻转所有被夹住的对手棋子
 void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY)
 {
+    //copy from zugGueltig
     // 对手编号
     int gegner = 3 - aktuellerSpieler;
 
@@ -627,6 +629,8 @@ int main()
     // 最后调用 spielen() 函数，开始游戏
     // Startet das eigentliche Spiel mit den gewaehlten Spielertypen.
     spielen(spielerTyp);
+
+    
 
     //判断是否需要重新开始游戏
     // Fragt nach Spielende, ob eine neue Partie gestartet werden soll.
