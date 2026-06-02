@@ -18,14 +18,13 @@
 #include <chrono>           //Fuer die Zeitmessung der Programmausfuehrung使用标准时间工具
 
 // Rekursive Berechnung der n-ten Fibonacci-Zahl
-//from Versuch2.1 递归形式
 /**
  * @brief Berechnet die n-te Fibonacci-Zahl rekursiv.
  *
  * @param n Index der gesuchten Fibonacci-Zahl
  * @return Wert der n-ten Fibonacci-Zahl
  */
-int fibonacciRekursiv(int n)
+int fibonacciRekursiv(int n) //copy from Versuch2.1 rekursiv
 {
     // Abbruchbedingung: f(0) = 0
     // 递归结束条件 1：f(0) = 0
@@ -62,8 +61,8 @@ int fibonacci(int n)
     int previousFib = 0;
     int currentFib = 1;
 
-    // Behandlung der Sonderfaelle f(0) und f(1)
-    //首先处理边界
+    // Abfrage der Basisfaelle, um die Iteration zu starten
+    //首先处理边界情况
 
     //f(0) 返回 0
     if(n == 0)
@@ -97,6 +96,8 @@ int fibonacci(int n)
     return currentFib;
 }
 
+
+
 // Hauptfunktion des Programms
 /**
  * @brief Gibt Beispielwerte aus und vergleicht die Laufzeit beider Verfahren.
@@ -116,6 +117,8 @@ int main ()
     }
 
 
+
+
     // Vergleich der rekursiven und iterativen Berechnung fuer n = 42
     //3.比较n=42,两个方式的运算速度,并给出原因
     int n = 42;
@@ -131,13 +134,12 @@ int main ()
     //b.量化运行时间
 
     // Start- und Endzeit der rekursiven Berechnung speichern
-    //Rekursiv
+        //Rekursiv
     auto startRekursiv = std::chrono::high_resolution_clock::now(); //保存开始时间节点, auto让程序自己判断数据类型
     int ergebnisRekursiv = fibonacciRekursiv(n); //调用递归函数, 计算f(n),并把结果保存到ergebnisRekursiv
     auto endRekursiv = std::chrono::high_resolution_clock::now(); //记录结束时间
 
-    // Start- und Endzeit der iterativen Berechnung speichern
-    //Iterativ
+        //Iterativ
     auto startIterativ = std::chrono::high_resolution_clock::now();
     int ergebnisIterativ = fibonacci(n);
     auto endIterativ = std::chrono::high_resolution_clock::now();
@@ -160,12 +162,14 @@ int main ()
     std::cout << "Zeit iterativ: " << dauerIterativ.count() << " Nanosekunden" << std::endl;
 
     
+    //zusatz
+
     //4. n = 47 Overflow
     //Iterativ: f(47) = -1323752223
     //Rekursiv: f(47) = -1323752223
   
     // Beispiel fuer einen Integer-Ueberlauf bei n = 47
-    // Ab dieser Stelle ist das Ergebnis fuer den Datentyp int zu gross
+    // Ab dieser Stelle ist das Ergebnis fuer den Datentyp int zu gross, int 2^31-1
     n = 47;
     std::cout << "Iterativ: f(" << n << ") = " << fibonacci(n) << std::endl ;
     std::cout << "Rekursiv: f(" << n << ") = " << fibonacciRekursiv(n) << std::endl ;

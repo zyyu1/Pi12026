@@ -37,6 +37,7 @@ string verschluesseln(char schluessel[2][26], string wort)
 {
 	// String fuer das verschluesselte Wort
 	std::string geheim = "";
+	
 	int length = wort.length();
 	const int anzahlBuchstaben = 26;
 
@@ -136,6 +137,7 @@ int main()
         }
     };
 
+	
 	// Variablen fuer Eingabewort, Geheimtext und Klartext
 	//4.Verschlüsselung Testen 在 main 里测试加密
 
@@ -158,9 +160,9 @@ int main()
 	std::cout << "Verschluesselt: " << geheim << std::endl;
 
 	//6.输出解密结果
-	std::string klarText = "";
-
 	// Entschluesselung des verschluesselten Wortes
+	std::string klarText = "";
+	
 	klarText = entschluesseln(elookupTabelle, geheim);
 	
 	// Ausgabe des entschluesselten Wortes

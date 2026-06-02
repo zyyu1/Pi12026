@@ -8,18 +8,19 @@
 
 // Dieses Programm berechnet Fibonacci-Zahlen rekursiv
 // und gibt die Werte von f(0) bis f(25) aus.
-
+// Beispiel fuer die Fibonacci-Folge: 0, 1, 1, 2, 3, 5, 8, 13, ...
 /**
  * @file Fibonacci.cpp
  * @brief Berechnet Fibonacci-Zahlen rekursiv und gibt eine Wertetabelle aus.
  */
 
-#include <iostream> // Fuer die Ausgabe mit std::cout
+#include <iostream> 
 
-// Beispiel fuer die Fibonacci-Folge: 0, 1, 1, 2, 3, 5, 8, 13, ...
 // Rekursive Berechnung der n-ten Fibonacci-Zahl
 //写出Fibonacci-Zahlen的递归形公式 f(n) = f(n−1) + f(n−2)
-//// 递归：一个函数在自己的定义中调用自己。
+//Die Zahl ergibt sich aus der Summe der beiden vorherigen Fibonacci-Zahlen
+//递归：一个函数在自己的定义中调用自己sich selbst aufruft
+
 
 // Funktion zur rekursiven Berechnung einer Fibonacci-Zahl
 // 递归计算第 n 个 Fibonacci 数
@@ -45,8 +46,6 @@ int fibonacci(int n)
         return 1;
     }
 
-    // Rekursiver Fall: Die Zahl ergibt sich aus der Summe
-    // der beiden vorherigen Fibonacci-Zahlen
     // 其他情况可满足递归公式：f(n) = f(n-1) + f(n-2)
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
