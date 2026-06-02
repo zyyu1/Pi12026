@@ -48,6 +48,7 @@ int main()
 
     //复制到新的结构体变量
     //1.逐个元素复制
+    //jedes Element einzeln kopieren
     Person nKopieEinzeln = {};
 
     nKopieEinzeln.sNachname = nBenutzer.sNachname;
@@ -64,6 +65,7 @@ int main()
     std::cout << std::endl;
 
     //2.整个结构体直接赋值复制
+    //die gesamte Struktur mit einer Zuweisung赋值 direkt kopieren
     Person nKopieGesamt = {};
 
     nKopieGesamt = nBenutzer;

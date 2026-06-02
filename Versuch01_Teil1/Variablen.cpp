@@ -150,7 +150,7 @@ int main()
 
 
     //7.用 % 计算字母在字母表中的位置,不区分大小写
-    //in asc2, A=65, a=97, mod32  
+    //in asc2, A=65, a=97, mod32 大小写输出的数字一样
 
     int iPosition1 = 0;
     int iPosition2 = 0;
