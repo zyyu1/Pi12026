@@ -81,13 +81,13 @@ int main()
         // Zentrales Menue fuer alle geforderten Listenoperationen.
         std::cout << "\nMenue:" << std::endl
                   << "-----------------------------" << std::endl
-                  << "(1): Datenelement hinten hinzufuegen" << std::endl
-                  << "(2): Datenelement vorne entfernen" << std::endl
-                  << "(3): Datenbank ausgeben" << std::endl
-                  << "(4): Datenbank rueckwaerts ausgeben" << std::endl
-                  << "(5): Student loeschen" << std::endl
+                  << "(1): Datenelement hinten hinzufuegen" << std::endl  //数据库末尾添加一个学生
+                  << "(2): Datenelement vorne entfernen" << std::endl     //删除数据库第一个学生
+                  << "(3): Datenbank ausgeben" << std::endl               //数据库正序输出
+                  << "(4): Datenbank rueckwaerts ausgeben" << std::endl   //数据库逆序输出
+                  << "(5): Student loeschen" << std::endl                 //根据学生的唯一学号删除数据库中的一个学生
                   // 单独输出退出项，避免被上一行的注释或拼接错误一起吞掉。
-                  << "(6): Datenelement vorne hinzufuegen" << std::endl
+                  << "(6): Datenelement vorne hinzufuegen" << std::endl   //数据库前面添加一个学生
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
         clearInputLine();
@@ -96,6 +96,7 @@ int main()
         {
             case '1':
             {
+                // 数据库末尾添加一个学生
                 // Neuer Student wird am Listenende angefuegt.
                 unsigned int matNr = 0;
                 std::string name;
@@ -124,6 +125,7 @@ int main()
 
             case '2':
             {
+                // 删除数据库第一个学生
                 // Das erste Element wird gelesen, ausgegeben und anschliessend entfernt.
                 if (!studentenListe.empty())
                 {
@@ -141,6 +143,7 @@ int main()
 
             case '3':
             {
+                //输出数据库正序
                 // Ausgabe in natuerlicher Reihenfolge vom Listenanfang zum Listenende.
                 if (!studentenListe.empty())
                 {
@@ -156,6 +159,7 @@ int main()
 
             case '4':
             {
+                //输出数据库逆序
                 // Rueckwaertsausgabe vom Listenende zum Listenanfang.
                 if (!studentenListe.empty())
                 {
@@ -171,6 +175,7 @@ int main()
 
             case '5':
             {
+                // 根据学生的唯一学号删除数据库中的一个学生
                 // Geloescht wird anhand der eindeutig vergebenen Matrikelnummer.
                 unsigned int matNr = 0;
 
@@ -196,6 +201,7 @@ int main()
 
             case '6':
             {
+                //数据库前面添加一个学生
                 // Neuer Student wird am Listenanfang eingefuegt.
                 unsigned int matNr = 0;
                 std::string name;
