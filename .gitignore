@@ -12,3 +12,9 @@ CMakeFiles/
 cmake_install.cmake
 compile_commands.json
 .cmake/
+
+# Nested CMake-generated files
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/compile_commands.json
