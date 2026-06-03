@@ -40,7 +40,6 @@ bool readUnsignedInt(const std::string& prompt, unsigned int& value)
 
     if (!(std::cin >> value))
     {
-        // 非数字输入会让输入流进入失败状态，这里重置状态并清空残留输入。
         std::cin.clear();
         clearInputLine();
         return false;
@@ -87,7 +86,6 @@ int main()
                   << "(4): Datenbank rueckwaerts ausgeben" << std::endl
                   << "(5): Student suchen" << std::endl
                   << "(6): Student loeschen" << std::endl
-                  // 单独输出退出项，避免被上一行的注释或拼接错误一起吞掉。
                   << "(7): Datenelement vorne hinzufuegen" << std::endl
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
@@ -212,7 +210,7 @@ int main()
 
                 if (studentenListe.loeschen(matNr))
                 {
-                    // 成功提示已经在 loeschen() 中输出了完整学生数据，这里不再重复输出简略信息。
+                    // Erfolgreiche Ausgabe erfolgt bereits in loeschen().
                 }
                 else
                 {
@@ -255,7 +253,6 @@ int main()
                 break;
 
             default:
-                // 用户输入了未定义的菜单项时，给出明确提示。
                 std::cout << "Falsche Eingabe, bitte nochmal." << std::endl;
                 break;
         }
