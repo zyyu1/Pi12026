@@ -6,21 +6,40 @@
 // Inhalt: Hauptprogramm
 //////////////////////////////////////////////////////////////////////////////
 
-#include <iostream>
+// Dieses Programm berechnet Fibonacci-Zahlen rekursiv
+// und gibt die Werte von f(0) bis f(25) aus.
+// Beispiel fuer die Fibonacci-Folge: 0, 1, 1, 2, 3, 5, 8, 13, ...
+/**
+ * @file Fibonacci.cpp
+ * @brief Berechnet Fibonacci-Zahlen rekursiv und gibt eine Wertetabelle aus.
+ */
 
-//Fibonacci-Zahlen: 0, 1, 1, 2, 3, 5, 8, 13, . . .
-//写出Fibonacci-Zahlen的递归形公式f(n) = f(n−1) + f(n−2)
-//// 递归：一个函数在自己的定义中调用自己。
+#include <iostream> 
 
+// Rekursive Berechnung der n-ten Fibonacci-Zahl
+//写出Fibonacci-Zahlen的递归形公式 f(n) = f(n−1) + f(n−2)
+//Die Zahl ergibt sich aus der Summe der beiden vorherigen Fibonacci-Zahlen
+//递归：一个函数在自己的定义中调用自己sich selbst aufruft
+
+
+// Funktion zur rekursiven Berechnung einer Fibonacci-Zahl
 // 递归计算第 n 个 Fibonacci 数
+/**
+ * @brief Berechnet die n-te Fibonacci-Zahl rekursiv.
+ *
+ * @param n Index der gesuchten Fibonacci-Zahl
+ * @return Wert der n-ten Fibonacci-Zahl
+ */
 int fibonacci(int n)
 {
+    // Abbruchbedingung: Die 0. Fibonacci-Zahl ist 0
     // 递归结束条件 1：f(0) = 0
     if (n == 0)
     {
         return 0;
     }
 
+    // Abbruchbedingung: Die 1. Fibonacci-Zahl ist 1
     // 递归结束条件 2：f(1) = 1
     if (n == 1)
     {
@@ -31,8 +50,15 @@ int fibonacci(int n)
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
+// Hauptfunktion des Programms
+/**
+ * @brief Gibt die Fibonacci-Zahlen von f(0) bis f(25) aus.
+ *
+ * @return 0 bei erfolgreicher Programmausfuehrung
+ */
 int main()
 {
+    // Ausgabe der Fibonacci-Zahlen von f(0) bis f(25)
     //用for循环依次输出 n = 0 到 25 的 Fibonacci 值
     for (int i = 0; i <= 25; i++)
     {

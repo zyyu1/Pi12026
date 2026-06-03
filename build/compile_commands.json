@@ -1,0 +1,86 @@
+[
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch01_Teil1",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V01_Teil1.dir\\Variablen.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch01_Teil1\\Variablen.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch01_Teil1/Variablen.cpp",
+  "output": "Versuch01_Teil1/CMakeFiles/V01_Teil1.dir/Variablen.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch01_Teil2",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V01_Teil2.dir\\Strukturen.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch01_Teil2\\Strukturen.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch01_Teil2/Strukturen.cpp",
+  "output": "Versuch01_Teil2/CMakeFiles/V01_Teil2.dir/Strukturen.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch02_Teil1",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V02_Teil1.dir\\Fibonacci.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch02_Teil1\\Fibonacci.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch02_Teil1/Fibonacci.cpp",
+  "output": "Versuch02_Teil1/CMakeFiles/V02_Teil1.dir/Fibonacci.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch02_Teil2",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V02_Teil2.dir\\fibonacci.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch02_Teil2\\fibonacci.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch02_Teil2/fibonacci.cpp",
+  "output": "Versuch02_Teil2/CMakeFiles/V02_Teil2.dir/fibonacci.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch02_Teil3",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V02_Teil3.dir\\Verschluesselung.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch02_Teil3\\Verschluesselung.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch02_Teil3/Verschluesselung.cpp",
+  "output": "Versuch02_Teil3/CMakeFiles/V02_Teil3.dir/Verschluesselung.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch03",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V03.dir\\othello.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch03\\othello.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch03/othello.cpp",
+  "output": "Versuch03/CMakeFiles/V03.dir/othello.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch03",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V03.dir\\othelloKI.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch03\\othelloKI.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch03/othelloKI.cpp",
+  "output": "Versuch03/CMakeFiles/V03.dir/othelloKI.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch03",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V03.dir\\test.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch03\\test.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch03/test.cpp",
+  "output": "Versuch03/CMakeFiles/V03.dir/test.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch04",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V04.dir\\main.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch04\\main.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch04/main.cpp",
+  "output": "Versuch04/CMakeFiles/V04.dir/main.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch04",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V04.dir\\Vektor.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch04\\Vektor.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch04/Vektor.cpp",
+  "output": "Versuch04/CMakeFiles/V04.dir/Vektor.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch05",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V05.dir\\main.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch05\\main.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch05/main.cpp",
+  "output": "Versuch05/CMakeFiles/V05.dir/main.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch05",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V05.dir\\Liste.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch05\\Liste.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch05/Liste.cpp",
+  "output": "Versuch05/CMakeFiles/V05.dir/Liste.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch05",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V05.dir\\ListenElement.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch05\\ListenElement.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch05/ListenElement.cpp",
+  "output": "Versuch05/CMakeFiles/V05.dir/ListenElement.cpp.obj"
+},
+{
+  "directory": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build/Versuch05",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\V05.dir\\Student.cpp.obj -c \"E:\\learning\\rwth\\kurse\\(PR) Praktikum Informatik 1_20260515_1539\\pi12026\\Versuch05\\Student.cpp\"",
+  "file": "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/Versuch05/Student.cpp",
+  "output": "Versuch05/CMakeFiles/V05.dir/Student.cpp.obj"
+}
+]

@@ -1,0 +1,340 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-.-Debug-f040eec181a89de70dbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Versuch01_Teil1",
+					"jsonFile" : "directory-Versuch01_Teil1-Debug-3948a0777df4ff523e9b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Versuch01_Teil1",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Versuch01_Teil2",
+					"jsonFile" : "directory-Versuch01_Teil2-Debug-4bd001afcdf11bcdb824.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "Versuch01_Teil2",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "Versuch02_Teil1",
+					"jsonFile" : "directory-Versuch02_Teil1-Debug-1d007397c8869593edd1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "Versuch02_Teil1",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Versuch02_Teil2",
+					"jsonFile" : "directory-Versuch02_Teil2-Debug-f6cd807de510ec1bb0ec.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "Versuch02_Teil2",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "Versuch02_Teil3",
+					"jsonFile" : "directory-Versuch02_Teil3-Debug-b92e5dd21f07c91f2fe3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "Versuch02_Teil3",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "Versuch03",
+					"jsonFile" : "directory-Versuch03-Debug-4bfcb8b1308bb9a65e84.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "Versuch03",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "Versuch04",
+					"jsonFile" : "directory-Versuch04-Debug-26f5d5770fb43070253f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "Versuch04",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "Versuch05",
+					"jsonFile" : "directory-Versuch05-Debug-1749d3f51b470be5d924.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 8,
+					"source" : "Versuch05",
+					"targetIndexes" : 
+					[
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Pi12026"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Versuch01_Teil1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Versuch01_Teil2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "Versuch02_Teil1",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "Versuch02_Teil2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Versuch02_Teil3",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "Versuch03",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "Versuch04",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "Versuch05",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "V01_Teil1::@af98c62ffa1e5bc2937e",
+					"jsonFile" : "target-V01_Teil1-Debug-cec905a7e898c2bfa4b0.json",
+					"name" : "V01_Teil1",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "V01_Teil2::@379c9b5c34cf9db1bf2e",
+					"jsonFile" : "target-V01_Teil2-Debug-4914e36a1778f0f0d34c.json",
+					"name" : "V01_Teil2",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "V02_Teil1::@7c4dd3ae31c72534aec3",
+					"jsonFile" : "target-V02_Teil1-Debug-747f1fff76f89858ca46.json",
+					"name" : "V02_Teil1",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "V02_Teil2::@e7a4040cdd8f75b3da93",
+					"jsonFile" : "target-V02_Teil2-Debug-ab060d8743d08c06b440.json",
+					"name" : "V02_Teil2",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "V02_Teil3::@7339530f1883b0f051e7",
+					"jsonFile" : "target-V02_Teil3-Debug-2b4195f01fce993a661a.json",
+					"name" : "V02_Teil3",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "V03::@425d276e5e8fee530b39",
+					"jsonFile" : "target-V03-Debug-c9e65e88ce2cdea953a8.json",
+					"name" : "V03",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "V04::@12769786f33ee5b29274",
+					"jsonFile" : "target-V04-Debug-315c6699c258e5bbdf75.json",
+					"name" : "V04",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "V05::@d37a7cf51971afa09080",
+					"jsonFile" : "target-V05-Debug-15fa493cda6b016092f5.json",
+					"name" : "V05",
+					"projectIndex" : 8
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026/build",
+		"source" : "E:/learning/rwth/kurse/(PR) Praktikum Informatik 1_20260515_1539/pi12026"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	}
+}

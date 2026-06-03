@@ -5,20 +5,20 @@
 #include "ListenElement.h"
 
 /**
- * @brief Konstruktor, der ein neues Listenelemente mit allen Werten erstellt
- *
- * @param pData Ein Objekt der Klasse Student
- * @param pNext Zeiger auf das naechste Listenelement
+ * @file ListenElement.cpp
+ * @brief Implementierung eines Knotens der doppelt verketteten Liste.
  */
-ListenElement::ListenElement(Student pData, ListenElement* pNext):
-    data(pData), next(pNext)
+
+/*
+ * Die oeffentliche Schnittstelle ist in ListenElement.h dokumentiert.
+ */
+ListenElement::ListenElement(Student pData, ListenElement* pNext, ListenElement* pPrev) :
+    data(pData), next(pNext), prev(pPrev)
 {
 }
 
 /**
- * @brief Fuegt ein Objekt der Klasse Student ein
- *
- * @param pData Zeiger auf ein Objekt der Klasse Student
+ * @brief Ersetzt die gespeicherten Studentendaten.
  */
 void ListenElement::setData(Student pData)
 {
@@ -26,9 +26,7 @@ void ListenElement::setData(Student pData)
 }
 
 /**
- * @brief Fuegt einen Zeiger auf das naechste Listenelement ein
- *
- * @param pNext Zeiger auf das naechste Listenelement
+ * @brief Aktualisiert den Zeiger auf das naechste Element.
  */
 void ListenElement::setNext(ListenElement* pNext)
 {
@@ -36,9 +34,15 @@ void ListenElement::setNext(ListenElement* pNext)
 }
 
 /**
- * @brief Gibt ein Objekt der Klasse Student zurueck
- *
- * @return Ein Zeiger auf ein Objekt der Klasse Student
+ * @brief Aktualisiert den Zeiger auf das vorherige Element.
+ */
+void ListenElement::setPrev(ListenElement* pPrev)
+{
+    prev = pPrev;
+}
+
+/**
+ * @brief Liefert die gespeicherten Studentendaten.
  */
 Student ListenElement::getData() const
 {
@@ -46,11 +50,17 @@ Student ListenElement::getData() const
 }
 
 /**
- * @brief Gibt einen Zeiger auf das naechste Listenelement zurueck
- *
- * @return Zeiger auf das naechste Listenelement
+ * @brief Liefert den Nachfolgerknoten.
  */
 ListenElement* ListenElement::getNext() const
 {
     return next;
+}
+
+/**
+ * @brief Liefert den Vorgaengerknoten.
+ */
+ListenElement* ListenElement::getPrev() const
+{
+    return prev;
 }

@@ -6,27 +6,25 @@
 #include "Student.h"
 
 /**
- * @brief Konstruktor, der einen neuen Studenten mit allen Werten erstellt
- *
- * @param matNr Matrikelnummer
- * @param name Name
- * @param geburtstag Geburtstag
- * @param adresse Adresse
+ * @file Student.cpp
+ * @brief Implementierung der Klasse Student.
+ */
+
+/*
+ * Die oeffentliche Schnittstelle ist in Student.h dokumentiert.
  */
 Student::Student(unsigned int matNr, std::string name, std::string geburtstag, std::string adresse) :
 matNr(matNr), name(name), geburtstag(geburtstag), adresse(adresse)
 { }
 
 /**
- * @brief Standardkonstruktor, der einen leeren Studenten erstellt
+ * @brief Erstellt einen Studenten mit leeren Standardwerten.
  */
 Student::Student() : matNr(0), name(""), geburtstag(""), adresse("")
 { }
 
 /**
- * @brief Gibt die Matrikelnummer des Studenten zurueck
- *
- * @return Matrikelnummer
+ * @brief Liefert die Matrikelnummer.
  */
 unsigned int Student::getMatNr() const
 {
@@ -34,9 +32,7 @@ unsigned int Student::getMatNr() const
 }
 
 /**
- * @brief Gibt den Namen des Studenten zurueck
- *
- * @return Name
+ * @brief Liefert den Namen.
  */
 std::string Student::getName() const
 {
@@ -44,9 +40,7 @@ std::string Student::getName() const
 }
 
 /**
- * @brief Gibt den Geburtstag des Studenten zurueck
- *
- * @return Geburtstag
+ * @brief Liefert das Geburtsdatum.
  */
 std::string Student::getGeburtstag() const
 {
@@ -54,9 +48,7 @@ std::string Student::getGeburtstag() const
 }
 
 /**
- * @brief Gibt die Adresse des Studenten zurueck
- *
- * @return Adresse
+ * @brief Liefert die Adresse.
  */
 std::string Student::getAdresse() const
 {
@@ -64,7 +56,7 @@ std::string Student::getAdresse() const
 }
 
 /**
- * @brief Gibt alle Daten des Studenten in einer Zeile aus
+ * @brief Gibt alle gespeicherten Stammdaten in einer Zeile aus.
  */
 void Student::ausgabe() const
 {

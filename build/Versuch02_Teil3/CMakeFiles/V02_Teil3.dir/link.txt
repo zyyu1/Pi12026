@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\V02_Teil3.dir/objects.a
+D:\mingw64\bin\ar.exe qc CMakeFiles\V02_Teil3.dir/objects.a @CMakeFiles\V02_Teil3.dir\objects1.rsp
+D:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\V02_Teil3.dir/objects.a -Wl,--no-whole-archive -o V02_Teil3.exe -Wl,--out-implib,libV02_Teil3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\V02_Teil3.dir\linkLibs.rsp

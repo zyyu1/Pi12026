@@ -6,7 +6,7 @@
  *
  * Stellt eine KI fuer das Spiel Othello zur Verfuegung
  */
-//电脑玩家
+// 电脑玩家
 
 #ifndef OTHELLOKI_H_
 #define OTHELLOKI_H_
@@ -14,11 +14,11 @@
 #include "config.h"
 
 /**
- * Eine Funktion, die eine KI fuer das Spiel Othello zur Verfuegung stellt
+ * @brief Berechnet und fuehrt einen Computerzug fuer Othello aus.
  *
  * @param spielfeld Das aktuelle Spielfeld
- * @param aktuellerSpieler Der aktuelle Spieler
- * @return True wenn der Zug ausgefuehrt wurde. False wenn kein Zug moeglich ist.
+ * @param aktuellerSpieler Der Spieler, fuer den der Computerzug berechnet wird
+ * @return true, wenn ein Zug ausgefuehrt wurde, sonst false
  */
 bool computerZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler);
 
