@@ -1,4 +1,4 @@
-/** @mainpage
+j/** @mainpage
  *
  * Praktikum Informatik 1 MMXXVI <BR>
  * Versuch 3: Komplexere Projekte und Dokumentation

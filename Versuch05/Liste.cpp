@@ -32,11 +32,14 @@ Liste::~Liste()
  *
  * @param pData Einzufuegender Student
  */
+//增加一个学生到列表末尾
 void Liste::pushBack(Student pData)
 {
     // Das neue Element wird hinter dem bisherigen Listenende eingehangen.
+    //创建一个新的列表元素，并将其链接到当前列表末尾
     ListenElement* neuesElement = new ListenElement(pData, nullptr, back);
 
+    //找到当前列表末尾，并将新元素链接到末尾
     if (front == nullptr)
     {
         front = neuesElement;
@@ -44,6 +47,7 @@ void Liste::pushBack(Student pData)
     }
     else
     {
+        //当前列表末尾的下一个元素指向新元素，并将新元素的前一个元素指向当前列表末尾
         back->setNext(neuesElement);
         neuesElement->setPrev(back);
         back = neuesElement;
