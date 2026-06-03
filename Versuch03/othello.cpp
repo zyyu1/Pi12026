@@ -171,6 +171,7 @@ int gewinner(const int spielfeld[GROESSE_Y][GROESSE_X])
  * @return true, wenn die Position innerhalb des Spielfelds liegt, sonst false
  */
 // 判断一个坐标是否位于棋盘内部
+//prueft, ob eine Position auf dem Spielfeld liegt.
 bool aufSpielfeld(const int posX, const int posY)
 {
     // Akzeptiert nur Koordinaten innerhalb der festen Spielfeldgroesse.
@@ -514,8 +515,8 @@ void spielen(const int spielerTyp[2])
             }
 
             // 每一步后都重新显示棋盘
-            std::cout << "Runden : " << runden << std::endl;
             // Gibt nach jedem erfolgreichen Zug die Rundenzahl und das Feld aus.
+            std::cout << "Runden : " << runden << std::endl;
             zeigeSpielfeld(spielfeld);
         }
         else
@@ -532,23 +533,23 @@ void spielen(const int spielerTyp[2])
 
     switch (gewinner(spielfeld))
     {
-                // Leeres Feld
-                case 0:
+            // Leeres Feld
+            case 0:
             std::cout << "Es ist ein Unentschieden." << std::endl;
             break;
 
-                // Stein von Spieler 1
-                case 1:
+            // Stein von Spieler 1
+            case 1:
             std::cout << "Spieler 1 gewinnt !" << std::endl;
             break;
 
-                // Stein von Spieler 2
-                case 2:
+            // Stein von Spieler 2
+            case 2:
             std::cout << "Spieler 2 gewinnt !" << std::endl;
             break;
 
-                // Sicherheitsabbruch bei unzulaessigen Feldwerten
-                default:
+            // Sicherheitsabbruch bei unzulaessigen Feldwerten
+            default:
             std::cout << "Fehler" << std::endl;
             break;
     }
@@ -567,6 +568,7 @@ int main()
         // 先运行完整测试，确保核心逻辑正确
         // Startet vor dem Spiel alle automatisierten Tests.
         bool gesamtErgebnis = ganzenTestAusfuehren();
+        
         if (gesamtErgebnis == true)
         {
             std::cout << "ALLE TESTS BESTANDEN!" << std::endl;
