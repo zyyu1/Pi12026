@@ -165,6 +165,7 @@ bool Liste::suchen(unsigned int matNr, Student& gefundenerStudent) const
 {
     ListenElement* cursor = front;
 
+    //遍历列表并比较学号
     // Durchlaeuft die Liste linear und vergleicht die Matrikelnummern.
     while (cursor != nullptr)
     {
