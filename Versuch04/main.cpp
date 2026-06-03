@@ -33,7 +33,6 @@ int main()
 {
     // Bei Bedarf kann dieser Block auf true gesetzt werden, um die
     // einzelnen Memberfunktionen der Klasse Vektor separat zu testen.
-    
     //单独测试各个Verctor成员函数的代码块，设置为true时执行测试, 默认为false
     const bool TEST_VEKTOR = false;
 
@@ -63,20 +62,27 @@ int main()
     }
 
     // Hoehenangaben in Metern: Augenhoehe, Plattformhoehe und Erdradius.
+    //初始化高度参数：眼睛高度、平台高度和地球半径
     const double height = 1.7;
     const double platformHeight = 555.7;
     const double radius = 6371000.0;
     const double gesamtHoehe = platformHeight + height;
 
     // Erdmittelpunkt im Ursprung, Beobachter senkrecht ueber dem Nordpol.
+    //初始定义, 地球中心在原点，观察者垂直于北极上方
     Vektor erdRadius(0, radius, 0);
     Vektor aussichtsPunkt(0, gesamtHoehe + radius, 0);
+
+    // Sichtlinie vom Beobachter zum Horizont, initial gleich der Differenz aus Aussichtspunkt und Erdradius
+     //从观察者到地平线的视线，初始值为aussichtsPunkt和erdRadius的差
     Vektor sicht = aussichtsPunkt.sub(erdRadius);
 
     // Der Radiusvektor wird schrittweise gedreht, bis die Sichtlinie tangential wird.
-    const double alpha = -0.00000001;
+    //逐步旋转半径向量，直到视线变为切线
+    const double alpha = -0.00000001;   //顺时针 Uhrzeigersinn
     int schritte = 0;
 
+    //只要erdRadius和sicht的点积大于0，继续旋转erdRadius并更新sicht，直到它们变为切线（点积为0）orthogonal
     while (erdRadius.skalarProd(sicht) > 0)
     {
         erdRadius.rotiereUmZ(alpha);
@@ -85,6 +91,7 @@ int main()
     }
 
     // Ausgabe der berechneten Sichtweite und des zugehoerigen Winkels.
+    //输出计算得到的视距和相关角度
     std::cout << std::fixed << std::setprecision(4);
     std::cout << "Sie koennen " << sicht.laenge() / 1000.0 << " Km weit sehen." << std::endl;
     std::cout << "Sie sind " << gesamtHoehe << " Meter hoch." << std::endl;
