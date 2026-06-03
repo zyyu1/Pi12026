@@ -85,9 +85,10 @@ int main()
                   << "(2): Datenelement vorne entfernen" << std::endl
                   << "(3): Datenbank ausgeben" << std::endl
                   << "(4): Datenbank rueckwaerts ausgeben" << std::endl
-                  << "(5): Student loeschen" << std::endl
+                  << "(5): Student suchen" << std::endl
+                  << "(6): Student loeschen" << std::endl
                   // 单独输出退出项，避免被上一行的注释或拼接错误一起吞掉。
-                  << "(6): Datenelement vorne hinzufuegen" << std::endl
+                  << "(7): Datenelement vorne hinzufuegen" << std::endl
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
         clearInputLine();
@@ -171,6 +172,33 @@ int main()
 
             case '5':
             {
+                // Gesucht wird anhand der eindeutig vergebenen Matrikelnummer.
+                unsigned int matNr = 0;
+                Student gefundenerStudent;
+
+                if (!readUnsignedInt(
+                        "Bitte geben Sie die Matrikelnummer des Studenten ein, der gesucht werden soll: ",
+                        matNr))
+                {
+                    std::cout << "Ungueltige Matrikelnummer." << std::endl;
+                    break;
+                }
+
+                if (studentenListe.suchen(matNr, gefundenerStudent))
+                {
+                    std::cout << "Der folgende Student wurde gefunden:" << std::endl;
+                    gefundenerStudent.ausgabe();
+                }
+                else
+                {
+                    std::cout << "Kein Student mit der Matrikelnummer " << matNr
+                              << " gefunden." << std::endl;
+                }
+                break;
+            }
+
+            case '6':
+            {
                 // Geloescht wird anhand der eindeutig vergebenen Matrikelnummer.
                 unsigned int matNr = 0;
 
@@ -194,7 +222,7 @@ int main()
                 break;
             }
 
-            case '6':
+            case '7':
             {
                 // Neuer Student wird am Listenanfang eingefuegt.
                 unsigned int matNr = 0;

@@ -96,6 +96,15 @@ public:
     void ausgabeRueckwaerts() const;
 
     /**
+     * @brief Sucht einen Studenten ueber die Matrikelnummer.
+     *
+     * @param matNr Matrikelnummer des gesuchten Studenten
+     * @param gefundenerStudent Referenz fuer die Rueckgabe der gefundenen Studentendaten
+     * @return true, wenn ein passender Student gefunden wurde, sonst false
+     */
+    bool suchen(unsigned int matNr, Student& gefundenerStudent) const;
+
+    /**
      * @brief Sucht einen Studenten ueber die Matrikelnummer und entfernt ihn aus der Liste.
      *
      * @param matNr Matrikelnummer des zu loeschenden Studenten

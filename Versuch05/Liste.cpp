@@ -155,6 +155,32 @@ void Liste::ausgabeRueckwaerts() const
 }
 
 /**
+ * @brief Sucht einen Studenten ueber die Matrikelnummer.
+ *
+ * @param matNr Matrikelnummer des gesuchten Studenten
+ * @param gefundenerStudent Referenz fuer die Rueckgabe der gefundenen Studentendaten
+ * @return true, wenn ein passender Student gefunden wurde, sonst false
+ */
+bool Liste::suchen(unsigned int matNr, Student& gefundenerStudent) const
+{
+    ListenElement* cursor = front;
+
+    // Durchlaeuft die Liste linear und vergleicht die Matrikelnummern.
+    while (cursor != nullptr)
+    {
+        if (cursor->getData().getMatNr() == matNr)
+        {
+            gefundenerStudent = cursor->getData();
+            return true;
+        }
+
+        cursor = cursor->getNext();
+    }
+
+    return false;
+}
+
+/**
  * @brief Sucht einen Studenten ueber die Matrikelnummer und entfernt ihn aus der Liste.
  *
  * @param matNr Matrikelnummer des zu loeschenden Studenten
