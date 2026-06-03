@@ -2,3 +2,13 @@
 *.obj
 *.pdb
 *.ilk
+
+# Local CMake build directories and caches
+build/
+build-mingw/
+out/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+.cmake/
