@@ -22,6 +22,7 @@
 /*
  * Die Klassenschnittstelle ist in Vektor.h dokumentiert.
  */
+//建立构造函数，初始化成员变量
 Vektor::Vektor(double inX, double inY, double inZ) : x(inX), y(inY), z(inZ)
 {
 }
@@ -33,6 +34,7 @@ Vektor::~Vektor()
 /**
  * @brief Gibt alle drei Komponenten formatiert auf der Konsole aus.
  */
+//输出向量的三个分量，格式化显示
 void Vektor::ausgabe() const
 {
     std::cout << "X-Komponente: " << x << std::endl;
@@ -43,6 +45,7 @@ void Vektor::ausgabe() const
 /**
  * @brief Berechnet den Betrag des aktuellen Vektors.
  */
+//计算向量的长度，使用欧几里得范数
 double Vektor::laenge() const
 {
     const double laenge = std::sqrt((x * x) + (y * y) + (z * z));
@@ -52,6 +55,7 @@ double Vektor::laenge() const
 /**
  * @brief Bildet die komponentenweise Differenz zweier Vektoren.
  */
+//计算两个向量的差，返回一个新的向量
 Vektor Vektor::sub(const Vektor& input) const
 {
     const Vektor differenz(x - input.x, y - input.y, z - input.z);
@@ -61,6 +65,7 @@ Vektor Vektor::sub(const Vektor& input) const
 /**
  * @brief Berechnet das Skalarprodukt des aktuellen Vektors mit input.
  */
+//计算两个向量的点积，返回一个标量值
 double Vektor::skalarProd(const Vektor& input) const
 {
     const double a = x * input.x;
@@ -74,6 +79,7 @@ double Vektor::skalarProd(const Vektor& input) const
 /**
  * @brief Bestimmt den Winkel zwischen zwei Vektoren in Grad.
  */
+//计算两个向量之间的夹角，返回一个角度值
 double Vektor::winkel(const Vektor& input) const
 {
     const double skalarprodukt = skalarProd(input);
@@ -107,6 +113,7 @@ double Vektor::winkel(const Vektor& input) const
 /**
  * @brief Rotiert den Vektor in der x-y-Ebene um die z-Achse.
  */
+//使用旋转矩阵绕z轴旋转向量，更新x和y分量
 void Vektor::rotiereUmZ(const double rad)
 {
     const double newX = x * std::cos(rad) - y * std::sin(rad);
