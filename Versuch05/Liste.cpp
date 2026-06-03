@@ -142,10 +142,12 @@ void Liste::ausgabeVorwaerts() const
 /**
  * @brief Gibt die Liste von hinten nach vorne aus.
  */
+//给出列表的逆序输出
 void Liste::ausgabeRueckwaerts() const
 {
     ListenElement* cursor = back;
 
+    //迭代从列表末尾到列表开头
     // Iteration vom Listenende bis zum Listenanfang.
     while (cursor != nullptr)
     {
