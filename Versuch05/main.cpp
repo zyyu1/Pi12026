@@ -80,13 +80,13 @@ int main()
         // Zentrales Menue fuer alle geforderten Listenoperationen.
         std::cout << "\nMenue:" << std::endl
                   << "-----------------------------" << std::endl
-                  << "(1): Datenelement hinten hinzufuegen" << std::endl
-                  << "(2): Datenelement vorne entfernen" << std::endl
-                  << "(3): Datenbank ausgeben" << std::endl
-                  << "(4): Datenbank rueckwaerts ausgeben" << std::endl
-                  << "(5): Student suchen" << std::endl
-                  << "(6): Student loeschen" << std::endl
-                  << "(7): Datenelement vorne hinzufuegen" << std::endl
+                  << "(1): Datenelement hinten hinzufuegen" << std::endl       //在末尾添加数据元素
+                  << "(2): Datenelement vorne entfernen" << std::endl          //从前面删除数据元素
+                  << "(3): Datenbank ausgeben" << std::endl                    //
+                  << "(4): Datenbank rueckwaerts ausgeben" << std::endl        //逆序
+                  << "(5): Student suchen" << std::endl                        //根据学号搜索
+                  << "(6): Student loeschen" << std::endl                      //根据学号删除
+                  << "(7): Datenelement vorne hinzufuegen" << std::endl       //在前面添加数据元素
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
         clearInputLine();
@@ -95,6 +95,7 @@ int main()
         {
             case '1':
             {
+                //在末尾添加数据元素
                 // Neuer Student wird am Listenende angefuegt.
                 unsigned int matNr = 0;
                 std::string name;
@@ -123,6 +124,7 @@ int main()
 
             case '2':
             {
+                //从前面删除数据元素
                 // Das erste Element wird gelesen, ausgegeben und anschliessend entfernt.
                 if (!studentenListe.empty())
                 {
@@ -140,6 +142,7 @@ int main()
 
             case '3':
             {
+                //从前面删除数据元素
                 // Ausgabe in natuerlicher Reihenfolge vom Listenanfang zum Listenende.
                 if (!studentenListe.empty())
                 {
@@ -155,6 +158,7 @@ int main()
 
             case '4':
             {
+                //逆序  
                 // Rueckwaertsausgabe vom Listenende zum Listenanfang.
                 if (!studentenListe.empty())
                 {
@@ -170,6 +174,7 @@ int main()
 
             case '5':
             {
+                //根据学号搜索
                 // Gesucht wird anhand der eindeutig vergebenen Matrikelnummer.
                 unsigned int matNr = 0;
                 Student gefundenerStudent;
@@ -197,6 +202,7 @@ int main()
 
             case '6':
             {
+                //根据学号删除
                 // Geloescht wird anhand der eindeutig vergebenen Matrikelnummer.
                 unsigned int matNr = 0;
 
@@ -222,6 +228,7 @@ int main()
 
             case '7':
             {
+                //在前面添加数据元素
                 // Neuer Student wird am Listenanfang eingefuegt.
                 unsigned int matNr = 0;
                 std::string name;
