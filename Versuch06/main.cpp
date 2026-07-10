@@ -213,6 +213,11 @@ bool saveStudentsToFile(const std::string& dateiname, const std::vector<Student>
 }
 }
 
+/**
+ * @brief Runs the interactive menu for managing the student database.
+ *
+ * @return Program exit status
+ */
 int main()
 {
     // Versuch06: The doubly linked list is replaced by std::vector.
@@ -232,8 +237,7 @@ int main()
                   << "(7): Datenelement vorne entfernen" << std::endl           //从前面删除数据元素
                   //new added
                   << "(8): Daten aus einer Datei einlesen" << std::endl         //从文件中读取数据
-                  << "(9): Daten in einer Datei speichern" << std::endl         //将数据保存到文件中
-                  << "(s): Student suchen" << std::endl                         //根据学号搜索
+                  << "(9): Daten in einer Datei speichern" << std::endl         //将数据保存到文件
                   << "(0): Beenden" << std::endl;                           
         std::cin >> abfrage;
         clearInputLine();
@@ -371,32 +375,6 @@ int main()
                 else
                 {
                     std::cout << "Die Datei konnte nicht zum Schreiben geoeffnet werden." << std::endl;
-                }
-                break;
-            }
-
-            //根据学号搜索学生
-            case 's':
-            {
-                unsigned int matNr = 0;
-                if (!readUnsignedInt(
-                        "Bitte geben Sie die Matrikelnummer des Studenten ein, der gesucht werden soll: ",
-                        matNr))
-                {
-                    std::cout << "Ungueltige Matrikelnummer." << std::endl;
-                    break;
-                }
-
-                std::vector<Student>::iterator it = findStudentByMatNr(studentenListe, matNr);
-                if (it != studentenListe.end())
-                {
-                    std::cout << "Der folgende Student wurde gefunden:" << std::endl;
-                    it->ausgabe();
-                }
-                else
-                {
-                    std::cout << "Kein Student mit der Matrikelnummer " << matNr
-                              << " gefunden." << std::endl;
                 }
                 break;
             }

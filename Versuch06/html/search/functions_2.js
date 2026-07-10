@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['student_0',['Student',['../class_student.html#af9168cedbfa5565cf0b20c1a9d3f5c9d',1,'Student::Student()'],['../class_student.html#ad0924c430eca591dad62412b9ddb50bf',1,'Student::Student(unsigned int matNr, std::string name, std::string geburtstag, std::string address)']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
 ];

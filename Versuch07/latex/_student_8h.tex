@@ -1,0 +1,61 @@
+\doxysection{Student.\+h File Reference}
+\hypertarget{_student_8h}{}\label{_student_8h}\index{Student.h@{Student.h}}
+
+
+Declaration of the \doxylink{class_student}{Student} class used in Versuch07.  
+
+
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_student}{Student}}
+\begin{DoxyCompactList}\small\item\em Stores the master data of a student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{_student_8h_aadd1864a776093e95f449dc91906f9eb}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_student}{Student}} \&student)
+\begin{DoxyCompactList}\small\item\em Writes a student\textquotesingle{}s data to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{class_student}{Student} class used in Versuch07. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_student_8h_aadd1864a776093e95f449dc91906f9eb}\index{Student.h@{Student.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Student.h@{Student.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{_student_8h_aadd1864a776093e95f449dc91906f9eb} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{student}{}\end{DoxyParamCaption})}
+
+
+
+Writes a student\textquotesingle{}s data to an output stream. 
+
+This overload enables statements such as {\ttfamily std\+::cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} student \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} std\+::endl;}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Output stream to print to \\
+\hline
+{\em student} & \doxylink{class_student}{Student} whose data is to be printed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream
+\end{DoxyReturn}
+Writes a student\textquotesingle{}s data to an output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Output stream to write to \\
+\hline
+{\em student} & \doxylink{class_student}{Student} object to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream 
+\end{DoxyReturn}

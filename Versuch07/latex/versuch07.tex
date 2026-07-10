@@ -1,0 +1,16 @@
+\chapter{Versuch07}
+\hypertarget{versuch07}{}\label{versuch07}\index{Versuch07@{Versuch07}}
+Overview of the extensions implemented for Versuch07.
+
+This exercise extends the student management program from Versuch06.
+
+Implemented features\+:
+\begin{DoxyItemize}
+\item comparison operators {\ttfamily \texorpdfstring{$<$}{<}}, {\ttfamily \texorpdfstring{$>$}{>}} and {\ttfamily ==} in class \doxylink{class_student}{Student}
+\item output of \doxylink{class_student}{Student} objects via {\ttfamily std\+::ostream}
+\item stream operator {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} for direct output with {\ttfamily std\+::cout}
+\item sorting the student list with {\ttfamily std\+::sort}
+\item deleting a student with {\ttfamily std\+::find}
+\end{DoxyItemize}
+
+The comparison operators use the matriculation number as the ordering key. 

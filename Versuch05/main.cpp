@@ -85,9 +85,8 @@ int main()
                   << "(2): Datenelement vorne entfernen" << std::endl          //从前面删除数据元素
                   << "(3): Datenbank ausgeben" << std::endl                    //当前数据显示
                   << "(4): Datenbank rueckwaerts ausgeben" << std::endl        //数据逆序输出
-                  << "(5): Student suchen" << std::endl                        //根据学号搜索
-                  << "(6): Student loeschen" << std::endl                      //根据学号删除
-                  << "(7): Datenelement vorne hinzufuegen" << std::endl       //在前面添加数据元素
+                  << "(5): Student loeschen" << std::endl                      //根据学号删除
+                  << "(6): Datenelement vorne hinzufuegen" << std::endl       //在前面添加数据元素
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
         clearInputLine();
@@ -173,38 +172,17 @@ int main()
                 break;
             }
 
+
             case '5':
-            {
-                //根据学号搜索
-                // Gesucht wird anhand der eindeutig vergebenen Matrikelnummer.
-                unsigned int matNr = 0;
-                Student gefundenerStudent;
-
-                if (!readUnsignedInt(
-                        "Bitte geben Sie die Matrikelnummer des Studenten ein, der gesucht werden soll: ",
-                        matNr))
-                {
-                    std::cout << "Ungueltige Matrikelnummer." << std::endl;
-                    break;
-                }
-
-                if (studentenListe.suchen(matNr, gefundenerStudent))
-                {
-                    std::cout << "Der folgende Student wurde gefunden:" << std::endl;
-                    gefundenerStudent.ausgabe();
-                }
-                else
-                {
-                    std::cout << "Kein Student mit der Matrikelnummer " << matNr
-                              << " gefunden." << std::endl;
-                }
-                break;
-            }
-
-            case '6':
             {
                 //根据学号删除
                 // Geloescht wird anhand der eindeutig vergebenen Matrikelnummer.
+                if (studentenListe.empty())
+                {
+                    std::cout << "Die Liste ist leer!" << std::endl;
+                    break;
+                }
+
                 unsigned int matNr = 0;
 
                 if (!readUnsignedInt(
@@ -227,7 +205,7 @@ int main()
                 break;
             }
 
-            case '7':
+            case '6':
             {
                 //在前面添加数据元素
                 // Neuer Student wird am Listenanfang eingefuegt.
