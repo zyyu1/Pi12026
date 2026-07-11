@@ -1,0 +1,58 @@
+\doxysection{Datum.\+cpp File Reference}
+\hypertarget{_datum_8cpp}{}\label{_datum_8cpp}\index{Datum.cpp@{Datum.cpp}}
+{\ttfamily \#include "{}Datum.\+h"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{_datum_8cpp_ac3075fae14570b9c38d7f8c1a9a5fcef}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_datum}{Datum}} \&datum)
+\begin{DoxyCompactList}\small\item\em Überladung des Ausgabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{_datum_8cpp_a5919b2bf1198fa21a564a25e481744c5}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_datum}{Datum}} \&datum)
+\begin{DoxyCompactList}\small\item\em Überladung des Eingabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Praktikum Informatik 1 MMXXVI 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_datum_8cpp_ac3075fae14570b9c38d7f8c1a9a5fcef}\index{Datum.cpp@{Datum.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Datum.cpp@{Datum.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{_datum_8cpp_ac3075fae14570b9c38d7f8c1a9a5fcef} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{class_datum}{Datum}} \&}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Überladung des Ausgabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::ostream\&} & out\+: Argument auf der linken Seite des Operators \\
+\hline
+{\em const} & \doxylink{class_datum}{Datum}\& d\+: Argument auf der rechten Seite des Operators\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\&\+: Rückgabe des Streams auf den das \doxylink{class_datum}{Datum} geschrieben wurde 
+\end{DoxyReturn}
+\Hypertarget{_datum_8cpp_a5919b2bf1198fa21a564a25e481744c5}\index{Datum.cpp@{Datum.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Datum.cpp@{Datum.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{_datum_8cpp_a5919b2bf1198fa21a564a25e481744c5} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{, }\item[{\mbox{\hyperlink{class_datum}{Datum}} \&}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Überladung des Eingabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::istream\&} & out\+: Argument auf der linken Seite des Operators \\
+\hline
+{\em const} & \doxylink{class_datum}{Datum}\& d\+: Argument auf der rechten Seite des Operators\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::istream\&\+: Rückgabe des Streams in den das \doxylink{class_datum}{Datum} geschrieben wurde 
+\end{DoxyReturn}

@@ -1,0 +1,31 @@
+\doxysection{Magazin.\+h}
+\hypertarget{_magazin_8h_source}{}\label{_magazin_8h_source}\mbox{\hyperlink{_magazin_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ MAGAZIN\_H\_}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MAGAZIN\_H\_}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_datum_8h}{Datum.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_medium_8h}{Medium.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_magazin_a6bffe363cf7bc99e5692da280db7c3db}{Magazin}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_medium_aa8bd867d2e3644022a117433e3321f18}{Medium}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_magazin_a6bffe363cf7bc99e5692da280db7c3db}{Magazin}}(std::string\ initTitel,\ \mbox{\hyperlink{class_datum}{Datum}}\ initAusgabe,\ std::string\ initSparte);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_magazin_a349159873d7208aefba8cabeed3c5b92}{ausgabe}}(std::ostream\&\ out)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_magazin_af64fe3e3431aa4493e1b5d701696a9e1}{ausleihen}}(\mbox{\hyperlink{class_person}{Person}}\ person,\ \mbox{\hyperlink{class_datum}{Datum}}\ ausleihdatum)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_datum}{Datum}}\ datumAusgabe;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ std::string\ sparte;}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
