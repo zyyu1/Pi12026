@@ -1,0 +1,9 @@
+add_executable(Versuch08
+    Buecherei.cpp
+    Buch.cpp
+    Datum.cpp
+    DVD.cpp
+    Magazin.cpp
+    Medium.cpp
+    Person.cpp
+)
