@@ -1,0 +1,102 @@
+\doxysection{Add\+Street\+Dialog Class Reference}
+\hypertarget{class_add_street_dialog}{}\label{class_add_street_dialog}\index{AddStreetDialog@{AddStreetDialog}}
+
+
+Dialog for choosing the two endpoint cities of a new street.  
+
+
+
+
+{\ttfamily \#include $<$addstreetdialog.\+h$>$}
+
+Inheritance diagram for Add\+Street\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_add_street_dialog}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_add_street_dialog_ad3896e7534f2090cf72170265a31e3c2}{Add\+Street\+Dialog}} (const QString\+List \&city\+Names, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Creates the add-\/street dialog. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_add_street_dialog_a0dbdf07708e32130a6de60e2aa815a94}{\texorpdfstring{$\sim$}{\string~}\+Add\+Street\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the dialog. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_add_street_dialog_afdbc448ce30ddf9af23ed1d46d071006}{get\+First\+City\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the first selected or manually entered city name. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_add_street_dialog_aa9227c4c4ad5fe8521ea2a5ebb621f84}{get\+Second\+City\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the second selected or manually entered city name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dialog for choosing the two endpoint cities of a new street. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_add_street_dialog_ad3896e7534f2090cf72170265a31e3c2}\index{AddStreetDialog@{AddStreetDialog}!AddStreetDialog@{AddStreetDialog}}
+\index{AddStreetDialog@{AddStreetDialog}!AddStreetDialog@{AddStreetDialog}}
+\doxysubsubsection{\texorpdfstring{AddStreetDialog()}{AddStreetDialog()}}
+{\footnotesize\ttfamily \label{class_add_street_dialog_ad3896e7534f2090cf72170265a31e3c2} 
+Add\+Street\+Dialog\+::\+Add\+Street\+Dialog (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{city\+Names}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates the add-\/street dialog. 
+
+Sets up the dialog and fills the combo boxes with city names.
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Names} & Names used to fill the combo boxes. \\
+\hline
+{\em parent} & Parent widget. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_add_street_dialog_a0dbdf07708e32130a6de60e2aa815a94}\index{AddStreetDialog@{AddStreetDialog}!````~AddStreetDialog@{\texorpdfstring{$\sim$}{\string~}AddStreetDialog}}
+\index{````~AddStreetDialog@{\texorpdfstring{$\sim$}{\string~}AddStreetDialog}!AddStreetDialog@{AddStreetDialog}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AddStreetDialog()}{\string~AddStreetDialog()}}
+{\footnotesize\ttfamily \label{class_add_street_dialog_a0dbdf07708e32130a6de60e2aa815a94} 
+Add\+Street\+Dialog\+::\texorpdfstring{$\sim$}{\string~}\+Add\+Street\+Dialog (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the dialog. 
+
+Releases the generated user interface. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_add_street_dialog_afdbc448ce30ddf9af23ed1d46d071006}\index{AddStreetDialog@{AddStreetDialog}!getFirstCityName@{getFirstCityName}}
+\index{getFirstCityName@{getFirstCityName}!AddStreetDialog@{AddStreetDialog}}
+\doxysubsubsection{\texorpdfstring{getFirstCityName()}{getFirstCityName()}}
+{\footnotesize\ttfamily \label{class_add_street_dialog_afdbc448ce30ddf9af23ed1d46d071006} 
+QString Add\+Street\+Dialog\+::get\+First\+City\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the first selected or manually entered city name. 
+
+Returns the first city name, preferring manual input over combo-\/box selection.
+
+\begin{DoxyReturn}{Returns}
+Name of the first city. 
+\end{DoxyReturn}
+\Hypertarget{class_add_street_dialog_aa9227c4c4ad5fe8521ea2a5ebb621f84}\index{AddStreetDialog@{AddStreetDialog}!getSecondCityName@{getSecondCityName}}
+\index{getSecondCityName@{getSecondCityName}!AddStreetDialog@{AddStreetDialog}}
+\doxysubsubsection{\texorpdfstring{getSecondCityName()}{getSecondCityName()}}
+{\footnotesize\ttfamily \label{class_add_street_dialog_aa9227c4c4ad5fe8521ea2a5ebb621f84} 
+QString Add\+Street\+Dialog\+::get\+Second\+City\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the second selected or manually entered city name. 
+
+Returns the second city name, preferring manual input over combo-\/box selection.
+
+\begin{DoxyReturn}{Returns}
+Name of the second city. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{addstreetdialog_8h}{addstreetdialog.\+h}}\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{addstreetdialog_8cpp}{addstreetdialog.\+cpp}}\end{DoxyCompactItemize}

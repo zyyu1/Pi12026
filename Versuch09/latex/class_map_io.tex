@@ -1,0 +1,70 @@
+\doxysection{Map\+Io Class Reference}
+\hypertarget{class_map_io}{}\label{class_map_io}\index{MapIo@{MapIo}}
+
+
+Abstract base class for map data providers.  
+
+
+
+
+{\ttfamily \#include $<$mapio.\+h$>$}
+
+Inheritance diagram for Map\+Io\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_io}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_map_io_a72ae6ca54e382dc9cad4b92e92df90c2}{\texorpdfstring{$\sim$}{\string~}\+Map\+Io}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_map_io_af33256d5aeeb5e36d26660da24bc8ec9}{fill\+Map}} (\mbox{\hyperlink{class_abstract_map}{Abstract\+Map}} \&map)=0
+\begin{DoxyCompactList}\small\item\em Adds cities and streets to the provided map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for map data providers. 
+
+Implementations fill an \doxylink{class_abstract_map}{Abstract\+Map} with cities and streets from a certain source, for example hardcoded data or text files. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_map_io_a72ae6ca54e382dc9cad4b92e92df90c2}\index{MapIo@{MapIo}!````~MapIo@{\texorpdfstring{$\sim$}{\string~}MapIo}}
+\index{````~MapIo@{\texorpdfstring{$\sim$}{\string~}MapIo}!MapIo@{MapIo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapIo()}{\string~MapIo()}}
+{\footnotesize\ttfamily \label{class_map_io_a72ae6ca54e382dc9cad4b92e92df90c2} 
+Map\+Io\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Io (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+Virtual base destructor for map input providers. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_io_af33256d5aeeb5e36d26660da24bc8ec9}\index{MapIo@{MapIo}!fillMap@{fillMap}}
+\index{fillMap@{fillMap}!MapIo@{MapIo}}
+\doxysubsubsection{\texorpdfstring{fillMap()}{fillMap()}}
+{\footnotesize\ttfamily \label{class_map_io_af33256d5aeeb5e36d26660da24bc8ec9} 
+virtual void Map\+Io\+::fill\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_map}{Abstract\+Map}} \&}]{map}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds cities and streets to the provided map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \doxylink{class_map}{Map} object that will be filled with data. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_map_io_fileinput_a6e1cfff6148e731f45c0351a1a913d33}{Map\+Io\+Fileinput}}, and \mbox{\hyperlink{class_map_io_nrw_a669f358ac5d8c6dd7986a04bc5093743}{Map\+Io\+Nrw}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{mapio_8h}{mapio.\+h}}\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{mapio_8cpp}{mapio.\+cpp}}\end{DoxyCompactItemize}

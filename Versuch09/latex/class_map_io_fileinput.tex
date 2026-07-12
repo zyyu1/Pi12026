@@ -1,0 +1,124 @@
+\doxysection{Map\+Io\+Fileinput Class Reference}
+\hypertarget{class_map_io_fileinput}{}\label{class_map_io_fileinput}\index{MapIoFileinput@{MapIoFileinput}}
+
+
+Reads map data from two text files.  
+
+
+
+
+{\ttfamily \#include $<$mapiofileinput.\+h$>$}
+
+Inheritance diagram for Map\+Io\+Fileinput\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_io_fileinput}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_io_fileinput_aa569f7382b7526715bcda6b50529717f}{Map\+Io\+Fileinput}} (QString \mbox{\hyperlink{class_map_io_fileinput_ada3087c9dd58aa6346c7483d8b6ec95f}{path\+To\+City\+File}}, QString \mbox{\hyperlink{class_map_io_fileinput_a05180ceb3b4175033cc78410a822a6ab}{path\+To\+Street\+File}})
+\begin{DoxyCompactList}\small\item\em Creates a file-\/based map reader. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_map_io_fileinput_a1e8002fa9a6934b7f836b5fcea26d2d6}{\texorpdfstring{$\sim$}{\string~}\+Map\+Io\+Fileinput}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the file input object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_io_fileinput_a6e1cfff6148e731f45c0351a1a913d33}{fill\+Map}} (\mbox{\hyperlink{class_abstract_map}{Abstract\+Map}} \&map) override
+\begin{DoxyCompactList}\small\item\em Fills a map from the configured input files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_map_io}{Map\+Io}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_map_io_a72ae6ca54e382dc9cad4b92e92df90c2}{\texorpdfstring{$\sim$}{\string~}\+Map\+Io}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_map_io_fileinput_ada3087c9dd58aa6346c7483d8b6ec95f}{path\+To\+City\+File}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} File path of the city data file. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_map_io_fileinput_a05180ceb3b4175033cc78410a822a6ab}{path\+To\+Street\+File}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads map data from two text files. 
+
+One file contains city data, the other contains street connections. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_map_io_fileinput_aa569f7382b7526715bcda6b50529717f}\index{MapIoFileinput@{MapIoFileinput}!MapIoFileinput@{MapIoFileinput}}
+\index{MapIoFileinput@{MapIoFileinput}!MapIoFileinput@{MapIoFileinput}}
+\doxysubsubsection{\texorpdfstring{MapIoFileinput()}{MapIoFileinput()}}
+{\footnotesize\ttfamily \label{class_map_io_fileinput_aa569f7382b7526715bcda6b50529717f} 
+Map\+Io\+Fileinput\+::\+Map\+Io\+Fileinput (\begin{DoxyParamCaption}\item[{QString}]{path\+To\+City\+File}{, }\item[{QString}]{path\+To\+Street\+File}{}\end{DoxyParamCaption})}
+
+
+
+Creates a file-\/based map reader. 
+
+Stores the file paths used for later map import.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+To\+City\+File} & Path to the city input file. \\
+\hline
+{\em path\+To\+Street\+File} & Path to the street input file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_map_io_fileinput_a1e8002fa9a6934b7f836b5fcea26d2d6}\index{MapIoFileinput@{MapIoFileinput}!````~MapIoFileinput@{\texorpdfstring{$\sim$}{\string~}MapIoFileinput}}
+\index{````~MapIoFileinput@{\texorpdfstring{$\sim$}{\string~}MapIoFileinput}!MapIoFileinput@{MapIoFileinput}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapIoFileinput()}{\string~MapIoFileinput()}}
+{\footnotesize\ttfamily \label{class_map_io_fileinput_a1e8002fa9a6934b7f836b5fcea26d2d6} 
+Map\+Io\+Fileinput\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Io\+Fileinput (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the file input object. 
+
+Destroys the file-\/based map reader. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_io_fileinput_a6e1cfff6148e731f45c0351a1a913d33}\index{MapIoFileinput@{MapIoFileinput}!fillMap@{fillMap}}
+\index{fillMap@{fillMap}!MapIoFileinput@{MapIoFileinput}}
+\doxysubsubsection{\texorpdfstring{fillMap()}{fillMap()}}
+{\footnotesize\ttfamily \label{class_map_io_fileinput_a6e1cfff6148e731f45c0351a1a913d33} 
+void Map\+Io\+Fileinput\+::fill\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_map}{Abstract\+Map}} \&}]{map}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fills a map from the configured input files. 
+
+Reads city and street data from the configured files and adds them to the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \doxylink{class_map}{Map} object that receives the parsed data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_map_io_af33256d5aeeb5e36d26660da24bc8ec9}{Map\+Io}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_map_io_fileinput_ada3087c9dd58aa6346c7483d8b6ec95f}\index{MapIoFileinput@{MapIoFileinput}!pathToCityFile@{pathToCityFile}}
+\index{pathToCityFile@{pathToCityFile}!MapIoFileinput@{MapIoFileinput}}
+\doxysubsubsection{\texorpdfstring{pathToCityFile}{pathToCityFile}}
+{\footnotesize\ttfamily \label{class_map_io_fileinput_ada3087c9dd58aa6346c7483d8b6ec95f} 
+QString Map\+Io\+Fileinput\+::path\+To\+City\+File\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\texorpdfstring{$<$}{<} File path of the city data file. 
+
+File path of the street data file. \Hypertarget{class_map_io_fileinput_a05180ceb3b4175033cc78410a822a6ab}\index{MapIoFileinput@{MapIoFileinput}!pathToStreetFile@{pathToStreetFile}}
+\index{pathToStreetFile@{pathToStreetFile}!MapIoFileinput@{MapIoFileinput}}
+\doxysubsubsection{\texorpdfstring{pathToStreetFile}{pathToStreetFile}}
+{\footnotesize\ttfamily \label{class_map_io_fileinput_a05180ceb3b4175033cc78410a822a6ab} 
+QString Map\+Io\+Fileinput\+::path\+To\+Street\+File\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{mapiofileinput_8h}{mapiofileinput.\+h}}\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{mapiofileinput_8cpp}{mapiofileinput.\+cpp}}\end{DoxyCompactItemize}

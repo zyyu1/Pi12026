@@ -1,0 +1,52 @@
+\doxysection{Dijkstra Class Reference}
+\hypertarget{class_dijkstra}{}\label{class_dijkstra}\index{Dijkstra@{Dijkstra}}
+
+
+Utility class that provides shortest-\/path search using \doxylink{class_dijkstra}{Dijkstra}\textquotesingle{}s algorithm.  
+
+
+
+
+{\ttfamily \#include $<$dijkstra.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QVector$<$ \mbox{\hyperlink{class_street}{Street}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_dijkstra_a0aa8a6e5b8881b26150d7d29a0b2e354}{search}} (const \mbox{\hyperlink{class_abstract_map}{Abstract\+Map}} \&map, QString start, QString target)
+\begin{DoxyCompactList}\small\item\em Finds the shortest path between two cities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class that provides shortest-\/path search using \doxylink{class_dijkstra}{Dijkstra}\textquotesingle{}s algorithm. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dijkstra_a0aa8a6e5b8881b26150d7d29a0b2e354}\index{Dijkstra@{Dijkstra}!search@{search}}
+\index{search@{search}!Dijkstra@{Dijkstra}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily \label{class_dijkstra_a0aa8a6e5b8881b26150d7d29a0b2e354} 
+QVector$<$ \mbox{\hyperlink{class_street}{Street}} \texorpdfstring{$\ast$}{*} $>$ Dijkstra\+::search (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_map}{Abstract\+Map}} \&}]{map}{, }\item[{QString}]{start}{, }\item[{QString}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finds the shortest path between two cities. 
+
+Searches the shortest path between two cities using \doxylink{class_dijkstra}{Dijkstra}\textquotesingle{}s algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \doxylink{class_map}{Map} on which the search is performed. \\
+\hline
+{\em start} & Name of the start city. \\
+\hline
+{\em target} & Name of the target city. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of streets forming the shortest path. Empty if no connection was found. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{dijkstra_8h}{dijkstra.\+h}}\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{dijkstra_8cpp}{dijkstra.\+cpp}}\end{DoxyCompactItemize}

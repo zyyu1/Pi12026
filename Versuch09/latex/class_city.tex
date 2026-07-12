@@ -1,0 +1,124 @@
+\doxysection{City Class Reference}
+\hypertarget{class_city}{}\label{class_city}\index{City@{City}}
+
+
+Represents a city on the map.  
+
+
+
+
+{\ttfamily \#include $<$city.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_city_a9e29f32d33f56bdf59cba425a7e08bd8}{City}} (QString name, int x, int y)
+\begin{DoxyCompactList}\small\item\em Creates a new city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_city_a53cf9e484a56569a8a60b91787ce428b}{draw}} (QGraphics\+Scene \&scene) const
+\begin{DoxyCompactList}\small\item\em Draws the city into a graphics scene. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the city name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_city_af515909e9e733566a5005fdc732f608e}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Returns the x coordinate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_city_a9e787273ca3421eb6ed3ce9c556359d0}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Returns the y coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a city on the map. 
+
+A city has a name and a two-\/dimensional position used for drawing and distance calculations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_city_a9e29f32d33f56bdf59cba425a7e08bd8}\index{City@{City}!City@{City}}
+\index{City@{City}!City@{City}}
+\doxysubsubsection{\texorpdfstring{City()}{City()}}
+{\footnotesize\ttfamily \label{class_city_a9e29f32d33f56bdf59cba425a7e08bd8} 
+City\+::\+City (\begin{DoxyParamCaption}\item[{QString}]{name}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new city. 
+
+Constructs a city with name and coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Display name of the city. \\
+\hline
+{\em x} & X coordinate in the graphics scene. \\
+\hline
+{\em y} & Y coordinate in the graphics scene. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_city_a53cf9e484a56569a8a60b91787ce428b}\index{City@{City}!draw@{draw}}
+\index{draw@{draw}!City@{City}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_city_a53cf9e484a56569a8a60b91787ce428b} 
+void City\+::draw (\begin{DoxyParamCaption}\item[{QGraphics\+Scene \&}]{scene}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the city into a graphics scene. 
+
+Draws the city marker and its label into the scene.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & Scene that receives the city marker and label. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_city_ad73598d937870a165cb530958106ff07}\index{City@{City}!getName@{getName}}
+\index{getName@{getName}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_city_ad73598d937870a165cb530958106ff07} 
+QString City\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the city name. 
+
+Returns the display name of the city.
+
+\begin{DoxyReturn}{Returns}
+Name of the city. 
+\end{DoxyReturn}
+\Hypertarget{class_city_af515909e9e733566a5005fdc732f608e}\index{City@{City}!getX@{getX}}
+\index{getX@{getX}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily \label{class_city_af515909e9e733566a5005fdc732f608e} 
+int City\+::getX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the x coordinate. 
+
+Returns the x coordinate of the city.
+
+\begin{DoxyReturn}{Returns}
+X position of the city. 
+\end{DoxyReturn}
+\Hypertarget{class_city_a9e787273ca3421eb6ed3ce9c556359d0}\index{City@{City}!getY@{getY}}
+\index{getY@{getY}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily \label{class_city_a9e787273ca3421eb6ed3ce9c556359d0} 
+int City\+::getY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the y coordinate. 
+
+Returns the y coordinate of the city.
+
+\begin{DoxyReturn}{Returns}
+Y position of the city. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{city_8h}{city.\+h}}\item 
+ Praktikum Informatik 1\+\_\+20260515\+\_\+1539/pi12026/\+Versuch09/\+Streetplanner/\+Streetplanner/\mbox{\hyperlink{city_8cpp}{city.\+cpp}}\end{DoxyCompactItemize}
