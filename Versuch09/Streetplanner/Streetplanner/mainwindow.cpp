@@ -11,8 +11,10 @@
 
 #include <QDebug>
 #include <QFileDialog>
+#include <QFile>
 #include <QMessageBox>
 #include <QRandomGenerator>
+#include <QTextStream>
 
 #include <cmath>
 
@@ -437,7 +439,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->checkBox_showTests->setChecked(false);
 
     // Hide the optional test controls until the checkbox is enabled.
-    ui->label_test->setVisible(false);
     ui->label_testInput->setVisible(false);
     ui->lineEdit_testInput->setVisible(false);
     ui->pushButton->setVisible(false);
@@ -655,7 +656,6 @@ void MainWindow::on_pushButton_addStreet_clicked()
 void MainWindow::on_checkBox_showTests_clicked(bool checked)
 {
     // Toggle all test-related widgets together.
-    ui->label_test->setVisible(checked);
     ui->label_testInput->setVisible(checked);
     ui->lineEdit_testInput->setVisible(checked);
     ui->pushButton->setVisible(checked);
@@ -726,9 +726,60 @@ void MainWindow::on_actionOpen_triggered()
 }
 
 /**
- * @brief Placeholder slot for the save action.
+ * @brief Saves the current map into separate city and street text files.
  */
 void MainWindow::on_actionSave_triggered()
 {
-    QMessageBox::information(this, "Save", "Save was clicked.");
+    // Ask for the target file that will receive all city definitions.
+    QString cityFilePath = QFileDialog::getSaveFileName(this, "Save city file", "", "Text files (*.txt);;All files (*)");
+
+    if (cityFilePath.isEmpty())
+    {
+        return;
+    }
+
+    // Ask for the second target file that will receive all street definitions.
+    QString streetFilePath = QFileDialog::getSaveFileName(this, "Save street file", "", "Text files (*.txt);;All files (*)");
+
+    if (streetFilePath.isEmpty())
+    {
+        return;
+    }
+
+    QFile cityFile(cityFilePath);
+    QFile streetFile(streetFilePath);
+
+    if (!cityFile.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QMessageBox::warning(this, "Save", "The city file could not be opened for writing.");
+        return;
+    }
+
+    if (!streetFile.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        cityFile.close();
+        QMessageBox::warning(this, "Save", "The street file could not be opened for writing.");
+        return;
+    }
+
+    QTextStream cityStream(&cityFile);
+    QTextStream streetStream(&streetFile);
+
+    // Save each city in the same format expected by MapIoFileinput.
+    for (City* city : map->getCities())
+    {
+        cityStream << city->getName() << ' ' << city->getX() << ' ' << city->getY() << '\n';
+    }
+
+    // Save each street by storing the names of its endpoint cities.
+    for (Street* street : map->getStreets())
+    {
+        streetStream << street->getCity1()->getName() << ' ' << street->getCity2()->getName() << '\n';
+    }
+
+    cityFile.close();
+    streetFile.close();
+
+    QMessageBox::information(this, "Save", "Map successfully saved.");
+    qDebug() << "Map saved to files:" << cityFilePath << streetFilePath;
 }

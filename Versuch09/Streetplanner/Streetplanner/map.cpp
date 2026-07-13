@@ -174,3 +174,19 @@ QStringList Map::getCityNameList() const
 
     return cityNames;
 }
+
+/**
+ * @brief Returns the internal city container for read-only export operations.
+ */
+const QVector<City*>& Map::getCities() const
+{
+    return cities;
+}
+
+/**
+ * @brief Returns the internal street container for read-only export operations.
+ */
+const QVector<Street*>& Map::getStreets() const
+{
+    return streets;
+}

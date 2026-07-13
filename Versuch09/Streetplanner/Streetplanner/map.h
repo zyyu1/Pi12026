@@ -77,6 +77,18 @@ public:
      */
     void draw(QGraphicsScene& scene) const;
 
+    /**
+     * @brief Provides read-only access to all stored cities.
+     * @return Constant reference to the internal city container.
+     */
+    const QVector<City*>& getCities() const;
+
+    /**
+     * @brief Provides read-only access to all stored streets.
+     * @return Constant reference to the internal street container.
+     */
+    const QVector<Street*>& getStreets() const;
+
 private:
     ///< All cities currently stored in the map.
     QVector<City*> cities;

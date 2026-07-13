@@ -93,7 +93,7 @@ private slots:
     void on_actionOpen_triggered();
 
     /**
-     * @brief Placeholder for saving the current map.
+     * @brief Saves the current map into user-selected text files.
      */
     void on_actionSave_triggered();
 
