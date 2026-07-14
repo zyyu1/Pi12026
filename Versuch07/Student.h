@@ -5,7 +5,7 @@
 #ifndef STUDENT_H_
 #define STUDENT_H_
 
-#include <ostream>
+#include <ostream> // Versuch07: needed for ostream-based output and operator<<
 #include <string>
 
 /**
@@ -65,6 +65,10 @@ public:
      * @return Student address
      */
     std::string getAdresse() const;
+
+//////////////////////////////////////////////////////////////////////////
+// versuch07 new added
+/////////////////////////////////////////////////////////////////////////
 
     /**
      * @brief Writes all stored student data to the specified output stream.

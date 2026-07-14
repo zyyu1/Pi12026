@@ -20,6 +20,10 @@
 
 #include "Student.h"
 
+//////////////////////////////////////////////////////////////////////////
+// functions
+/////////////////////////////////////////////////////////////////////////
+
 namespace
 {
 /**
@@ -111,6 +115,8 @@ void printStudentsForward(const std::vector<Student>& studenten)
 {
     for (std::vector<Student>::const_iterator it = studenten.begin(); it != studenten.end(); ++it)
     {
+        // Versuch07 change
+        //it->ausgabe();
         std::cout << *it << std::endl;
     }
 }
@@ -127,6 +133,8 @@ void printStudentsBackward(const std::vector<Student>& studenten)
          it != studenten.rend();
          ++it)
     {
+        // Versuch07 change
+        //it->ausgabe();
         std::cout << *it << std::endl;
     }
 }
@@ -213,9 +221,17 @@ bool saveStudentsToFile(const std::string& dateiname, const std::vector<Student>
 }
 }
 
+//////////////////////////////////////////////////////////////////////////
+// Main program
+/////////////////////////////////////////////////////////////////////////
+
+/**
+ * @brief Main function that provides a menu-driven interface for managing a student database.
+ *
+ * @return Exit status of the program
+ */
 int main()
 {
-    // Versuch06: The doubly linked list is replaced by std::vector.
     std::vector<Student> studentenListe;
     char abfrage = '0';
 
@@ -232,6 +248,7 @@ int main()
                   << "(7): Datenelement vorne entfernen" << std::endl
                   << "(8): Daten aus einer Datei einlesen" << std::endl
                   << "(9): Daten in einer Datei speichern" << std::endl
+                  // Versuch07 change
                   << "(s): Studenten sortieren" << std::endl
                   << "(0): Beenden" << std::endl;
         std::cin >> abfrage;
@@ -241,20 +258,25 @@ int main()
         switch (abfrage)
         {
 
-            //1. Benutzen Sie die push und pop Funktionen der Klasse vector, um Elemente am Ende hinzuzufügen  oder zu löschen.
-
+            //在最后添加一个学生
             case '1':
                 //push_back appends a new element to the end of the vector.
-                // Reads a student and appends it to the end of the vector.
+                //read从终端读取数据并返回一个Student对象
+                //push_back把这个新建好的Student对象追加到studentenListe这个vector的末尾
                 studentenListe.push_back(readStudentFromConsole());
                 break;
 
+            //删除最后一个学生
             case '2':
                 //pop_back removes the last element.
                 if (!studentenListe.empty())
                 {
                     std::cout << "Der folgende Student ist geloescht worden:" << std::endl;
+
+                    //Versuch07 change
+                    //studentenListe.back().ausgabe();
                     std::cout << studentenListe.back() << std::endl;
+                    
                     studentenListe.pop_back();
                 }
                 else
@@ -302,15 +324,14 @@ int main()
                     break;
                 }
 
-                //std::vector<Student>::iterator it = findStudentByMatNr(studentenListe, matNr);
-                //用std::find直接在vector里查找,不再使用findStudentByMatNr函数
-                Student gesuchterStudent(matNr, "", "", "");
-                std::vector<Student>::iterator it = std::find
-                (
-                    studentenListe.begin(), 
-                    studentenListe.end(), 
-                    gesuchterStudent
-                );
+                // Versuch07 requirement: use std::find instead of the old helper search.
+                //std::vector<Student>::iterator it = findStudentByMatNr(studentenListe, matNr); use find_if
+
+                //创建一个临时student对象
+                Student tempStudent(matNr, "", "", "");
+
+                //std::find在vektor中查找这个临时student对象,因为我们在Student类中重载了==运算符,所以只要matNr相等就认为是同一个学生
+                std::vector<Student>::iterator it = std::find(studentenListe.begin(), studentenListe.end(), tempStudent); 
 
                 if (it != studentenListe.end())
                 {
@@ -318,6 +339,7 @@ int main()
                     std::cout << *it << std::endl;
                     studentenListe.erase(it);
                     
+                    // Versuch07 requirement: print the remaining students after deletion.
                     //删除后输出剩余学生
                     if (studentenListe.empty())
                     {
@@ -326,26 +348,27 @@ int main()
                     else
                     {
                         std::cout << "Verbleibende Studenten:" << std::endl;
-                        for (const Student& student : studentenListe)
+
+                        //遍历剩余学生并输出, 把studentenListe中的每个学生一次取出,放入student再输出
+                        for (std::vector<Student>::const_iterator it = studentenListe.begin(); it != studentenListe.end(); ++it)
                         {
-                            std::cout << student << std::endl;
+                            std::cout << *it << std::endl;
                         }
                     }
                 }
                 else
                 {
-                    std::cout << "Kein Student mit der Matrikelnummer " << matNr
-                              << " gefunden." << std::endl;
+                    std::cout << "Kein Student mit der Matrikelnummer " << matNr << " gefunden." << std::endl;
                 }
                 break;
             }
 
-            // Adds a new student at the beginning of the vector.
+            // insert()从vector的前面添加数据元素
             case '6':
                 studentenListe.insert(studentenListe.begin(), readStudentFromConsole());
                 break;
 
-            // Removes the first student from the vector.
+            // erase()从vector的前面删除数据元素
             case '7':
                 if (!studentenListe.empty())
                 {
@@ -359,7 +382,7 @@ int main()
                 }
                 break;
 
-            // Loads student records from a text file into the vector.
+            // 从文件中读取数据
             case '8':
             {
                 std::string dateiname;
@@ -378,7 +401,7 @@ int main()
                 break;
             }
 
-            // Saves the current vector contents back to a file.
+            // 保存到文件
             case '9':
             {
                 std::string dateiname;
@@ -396,21 +419,23 @@ int main()
                 break;
             }
 
-            // Sorts the vector of students by their matriculation numbers.
+            // Versuch07 requirement: sort the student list with std::sort
             case 's':
             {
-                if (studentenListe.empty())     //空列表判断
+                //排除零值
+                if (studentenListe.empty())     
                 {
                     std::cout << "Die Datenbank ist leer!" << std::endl;
                     break;
                 }
 
+                //用std::sort排序, 默认会使用 < 来比较元素大小,直接修改原来的 studentenListe,之后输出的顺序都是排序后的顺序
                 std::sort(studentenListe.begin(), studentenListe.end());
                 std::cout << "Die Liste wurde nach Matrikelnummern sortiert." << std::endl;
 
-                for (const Student& student : studentenListe)
+                for (std::vector<Student>::const_iterator it = studentenListe.begin(); it != studentenListe.end(); ++it)
                 {
-                    std::cout << student << std::endl;
+                    std::cout << *it << std::endl;
                 }
                 break;
             }

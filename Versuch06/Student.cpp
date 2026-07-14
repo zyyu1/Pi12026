@@ -60,7 +60,5 @@ std::string Student::getAdresse() const
  */
 void Student::ausgabe() const
 {
-    std::cout << name << ", MatNr. " << matNr << ", geb. am "
-              << geburtstag << ", wohnhaft in " << adresse
-              << std::endl;
+    std::cout << name << ", MatNr. " << matNr << ", geb. am " << geburtstag << ", wohnhaft in " << adresse << std::endl;
 }

@@ -328,7 +328,7 @@ int main()
                 }
                 break;
 
-            //find_if()根据学号删除学生
+            //()根据学号删除学生
             case '5':
             {
                 unsigned int matNr = 0;
