@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file Buch.h
@@ -12,32 +12,32 @@
 #include <string>
 
 /*!
- * @brief Klasse Buch
+ * @brief Book class
  *
- * Die Klasse Buch ist eine abgeleitete Klasse von Medium.
- * Sie speichert zusaetzlich zum Titel den Autor des Buches.
+ * The Buch class is derived from Medium.
+ * In addition to the title, it stores the author of the book.
  */
 class Buch : public Medium
 {
 public:
     /*!
-     * @brief Konstruktor der Klasse Buch
+     * @brief Constructor of the Buch class
      *
-     * \param initTitel Titel des Buches
-     * \param initAutor Autor des Buches
+     * \param initTitel Title of the book
+     * \param initAutor Author of the book
      */
     Buch(std::string initTitel, std::string initAutor);
 
     /*!
-     * @brief Virtuelle Ausgabefunktion
+     * @brief Virtual output function
      *
-     * \param out Ausgabestream
+     * \param out Output stream
      */
     void ausgabe(std::ostream& out) const override;
 
 private:
     /*!
-     * @brief Autor des Buches
+     * @brief Author of the book
      */
     std::string autor;
 };

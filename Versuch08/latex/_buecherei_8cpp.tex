@@ -1,0 +1,225 @@
+\doxysection{Buecherei.\+cpp File Reference}
+\hypertarget{_buecherei_8cpp}{}\label{_buecherei_8cpp}\index{Buecherei.cpp@{Buecherei.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Medium.\+h"{}}\newline
+{\ttfamily \#include "{}Datum.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_buecherei_8cpp_a308860efc1fb01cd92de40b298ce77b5}\label{_buecherei_8cpp_a308860efc1fb01cd92de40b298ce77b5} 
+\#define {\bfseries UNTERKLASSENVORHANDEN}~true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_buecherei_8cpp_af37aa5aa9947bb586f5111438758cb1e}{fuelle\+Datenbank}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien)
+\begin{DoxyCompactList}\small\item\em Fills the library database with predefined media. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buecherei_8cpp_a6dd1350855e9da23ad6b71e8da306caf}{medium\+Hinzufuegen}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien)
+\begin{DoxyCompactList}\small\item\em Adds a new medium to the library database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buecherei_8cpp_a3e18c8125db6ee4b2dd2b50bda67eb1c}{medium\+Entfernen}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien)
+\begin{DoxyCompactList}\small\item\em Removes a medium from the library database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buecherei_8cpp_a1934545954cce69b2b45748b6c3b532e}{medium\+Ausleihen}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien, \mbox{\hyperlink{class_datum}{Datum}} aktuelles\+Datum)
+\begin{DoxyCompactList}\small\item\em Lends a medium to a person. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buecherei_8cpp_aa31d79ad55606d9d0de0a44c2c3d5acc}{medium\+Zurueckgeben}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien)
+\begin{DoxyCompactList}\small\item\em Returns a borrowed medium to the library. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buecherei_8cpp_ae2a5c111db3eaebca41620ded295997f}{alle\+Medien\+Ausgeben}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien)
+\begin{DoxyCompactList}\small\item\em Outputs all media currently stored in the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buecherei_8cpp_a942fddbf3d9742e03427096c32d7a2b2}{ausgeliehene\+Medien\+Ausgeben}} (std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&medien)
+\begin{DoxyCompactList}\small\item\em Outputs all currently borrowed media. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_buecherei_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main program of the library application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Praktikum Informatik 1 MMXXVI 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_buecherei_8cpp_ae2a5c111db3eaebca41620ded295997f}\index{Buecherei.cpp@{Buecherei.cpp}!alleMedienAusgeben@{alleMedienAusgeben}}
+\index{alleMedienAusgeben@{alleMedienAusgeben}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{alleMedienAusgeben()}{alleMedienAusgeben()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_ae2a5c111db3eaebca41620ded295997f} 
+void alle\+Medien\+Ausgeben (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{}\end{DoxyParamCaption})}
+
+
+
+Outputs all media currently stored in the database. 
+
+Outputs all media stored in the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects\\
+\hline
+\end{DoxyParams}
+Iterates over the complete media vector and prints each medium using the overloaded stream operator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_buecherei_8cpp_a942fddbf3d9742e03427096c32d7a2b2}\index{Buecherei.cpp@{Buecherei.cpp}!ausgelieheneMedienAusgeben@{ausgelieheneMedienAusgeben}}
+\index{ausgelieheneMedienAusgeben@{ausgelieheneMedienAusgeben}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{ausgelieheneMedienAusgeben()}{ausgelieheneMedienAusgeben()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_a942fddbf3d9742e03427096c32d7a2b2} 
+void ausgeliehene\+Medien\+Ausgeben (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{}\end{DoxyParamCaption})}
+
+
+
+Outputs all currently borrowed media. 
+
+Outputs all currently borrowed media stored in the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects\\
+\hline
+\end{DoxyParams}
+Iterates over the media vector and prints only those media whose status indicates that they are currently lent out.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_buecherei_8cpp_af37aa5aa9947bb586f5111438758cb1e}\index{Buecherei.cpp@{Buecherei.cpp}!fuelleDatenbank@{fuelleDatenbank}}
+\index{fuelleDatenbank@{fuelleDatenbank}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{fuelleDatenbank()}{fuelleDatenbank()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_af37aa5aa9947bb586f5111438758cb1e} 
+void fuelle\+Datenbank (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{}\end{DoxyParamCaption})}
+
+
+
+Fills the library database with predefined media. 
+
+Fills the library database automatically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects\\
+\hline
+\end{DoxyParams}
+Depending on the compile-\/time switch, this function either inserts predefined derived media objects or prints a message that derived classes are disabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_buecherei_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{Buecherei.cpp@{Buecherei.cpp}!main@{main}}
+\index{main@{main}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main program of the library application. 
+
+Initializes the media database, shows the menu, and dispatches the selected user actions until the program is terminated.
+
+\begin{DoxyReturn}{Returns}
+Exit status of the program 
+\end{DoxyReturn}
+\Hypertarget{_buecherei_8cpp_a1934545954cce69b2b45748b6c3b532e}\index{Buecherei.cpp@{Buecherei.cpp}!mediumAusleihen@{mediumAusleihen}}
+\index{mediumAusleihen@{mediumAusleihen}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{mediumAusleihen()}{mediumAusleihen()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_a1934545954cce69b2b45748b6c3b532e} 
+void medium\+Ausleihen (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{, }\item[{\mbox{\hyperlink{class_datum}{Datum}}}]{aktuelles\+Datum}{}\end{DoxyParamCaption})}
+
+
+
+Lends a medium to a person. 
+
+Lends a medium from the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+{\em aktuelles\+Datum} & Current date used as the borrowing date\\
+\hline
+\end{DoxyParams}
+Reads the medium ID and borrower information from the user and forwards the borrowing request to the selected medium.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+{\em aktuelles\+Datum} & Current date used as the borrowing date \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_buecherei_8cpp_a3e18c8125db6ee4b2dd2b50bda67eb1c}\index{Buecherei.cpp@{Buecherei.cpp}!mediumEntfernen@{mediumEntfernen}}
+\index{mediumEntfernen@{mediumEntfernen}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{mediumEntfernen()}{mediumEntfernen()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_a3e18c8125db6ee4b2dd2b50bda67eb1c} 
+void medium\+Entfernen (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{}\end{DoxyParamCaption})}
+
+
+
+Removes a medium from the library database. 
+
+Removes a medium from the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects\\
+\hline
+\end{DoxyParams}
+Prompts the user for an ID, searches for the matching medium, and removes it from the vector if it exists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_buecherei_8cpp_a6dd1350855e9da23ad6b71e8da306caf}\index{Buecherei.cpp@{Buecherei.cpp}!mediumHinzufuegen@{mediumHinzufuegen}}
+\index{mediumHinzufuegen@{mediumHinzufuegen}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{mediumHinzufuegen()}{mediumHinzufuegen()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_a6dd1350855e9da23ad6b71e8da306caf} 
+void medium\+Hinzufuegen (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new medium to the library database. 
+
+Adds a new medium to the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects\\
+\hline
+\end{DoxyParams}
+Lets the user choose the media type and enter the corresponding data, then creates the appropriate object and appends it to the media vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_buecherei_8cpp_aa31d79ad55606d9d0de0a44c2c3d5acc}\index{Buecherei.cpp@{Buecherei.cpp}!mediumZurueckgeben@{mediumZurueckgeben}}
+\index{mediumZurueckgeben@{mediumZurueckgeben}!Buecherei.cpp@{Buecherei.cpp}}
+\doxysubsubsection{\texorpdfstring{mediumZurueckgeben()}{mediumZurueckgeben()}}
+{\footnotesize\ttfamily \label{_buecherei_8cpp_aa31d79ad55606d9d0de0a44c2c3d5acc} 
+void medium\+Zurueckgeben (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_medium}{Medium}} \texorpdfstring{$\ast$}{*} $>$ \&}]{medien}{}\end{DoxyParamCaption})}
+
+
+
+Returns a borrowed medium to the library. 
+
+Returns a borrowed medium.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects\\
+\hline
+\end{DoxyParams}
+Prompts the user for an ID and forwards the return request to the selected medium.
+
+
+\begin{DoxyParams}{Parameters}
+{\em medien} & Vector that stores pointers to all media objects \\
+\hline
+\end{DoxyParams}

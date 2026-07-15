@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file Medium.h
@@ -12,103 +12,104 @@
 
 #include <iostream>
 
-/*! \brief Basisklasse fuer saemtliche Medien
+/*!
+ * @brief Base class for all media
  *
- * Diese Klasse stellt eine Basisklasse fuer Objekte dar, die Medien beschreiben.
- * Von dieser Klasse werden alle anderen Medien, wie z.B. Buch oder DVD, abgeleitet.
+ * The Medium class is the base class for objects that represent media items.
+ * All other media types such as books, magazines, or DVDs are derived from it.
  */
 class Medium
 {
 public:
     /*!
-     * @brief Konstruktor
+     * @brief Constructor
      *
-     * \param initTitel Titel des Mediums
+     * \param initTitel Title of the medium
      */
     Medium(std::string initTitel);
 
     /*!
-     * @brief Virtueller Destruktor
+     * @brief Virtual destructor
      */
     virtual ~Medium(void);
 
     /*!
-     * @brief Virtuelle Ausgabefunktion
+     * @brief Virtual output function
      *
-     * \param out Ausgabestream
+     * \param out Output stream
      */
-    virtual void ausgabe(std::ostream& out) const = 0; //所有媒体的输出写到输出流out中
+    virtual void ausgabe(std::ostream& out) const = 0;   //pure virtual function -> medium is an abstract class
+                                                         //提供规则,不能实现,只说“每个媒体都必须能输出, 但具体怎么输出，由子类实现
+    /*!
+     * @brief Virtual lend function
+     *
+     * \param person Person who wants to borrow the medium
+     * \param ausleihdatum Date of borrowing
+     *
+     * \return true if the medium was borrowed successfully
+     * \return false if the medium is already lent out
+     */
+    virtual bool ausleihen(Person person, Datum ausleihdatum); //同样是虚函数,并保留实现,让子类可以服用或重写
 
     /*!
-     * @brief Virtuelle Ausleihen-Funktion
-     *
-     * \param person Person, die das Medium ausleihen moechte
-     * \param ausleihdatum Datum, an dem das Medium ausgeliehen wird
-     *
-     * \return true, wenn das Medium ausgeliehen werden konnte
-     * \return false, wenn das Medium bereits verliehen ist
-     */
-    virtual bool ausleihen(Person person, Datum ausleihdatum);
-
-    /*!
-     * @brief Gibt ein Medium in die Buecherei zurueck
+     * @brief Returns the medium to the library
      */
     virtual void zurueckgeben();
 
     /*!
-     * @brief Zugriff auf die ID
+     * @brief Returns the ID
      *
-     * \return Eindeutige ID des Mediums
+     * \return Unique medium ID
      */
     unsigned int getID();
 
     /*!
-     * @brief Zugriff auf den Ausleihstatus
+     * @brief Returns the lending status
      *
-     * \return true, wenn das Medium ausgeliehen ist
-     * \return false, wenn das Medium verfuegbar ist
+     * \return true if the medium is currently lent out
+     * \return false if the medium is available
      */
     bool getStatus() const;
 
 protected:
     /*!
-     * @brief Statische Variable fuer fortlaufende IDs
+     * @brief Static variable for generating consecutive IDs
      */
     static unsigned int currentID;
 
     /*!
-     * @brief Eindeutige ID des Mediums
+     * @brief Unique ID of the medium
      */
     unsigned int ID;
 
     /*!
-     * @brief Titel des Mediums
+     * @brief Title of the medium
      */
     std::string titel;
 
     /*!
-     * @brief Ausleihstatus des Mediums
+     * @brief Lending status of the medium
      */
     bool status;
 
     /*!
-     * @brief Datum der Ausleihe
+     * @brief Date when the medium was lent out
      */
     Datum datumAusgeliehen;
 
     /*!
-     * @brief Person, die das Medium ausgeliehen hat
+     * @brief Person who borrowed the medium
      */
     Person personAusgeliehen;
 };
 
 /*!
- * @brief Ausgabeoperator fuer Medien
+ * @brief Output operator for media
  *
- * \param os Ausgabestream
- * \param medium Medium, das ausgegeben werden soll
+ * \param os Output stream
+ * \param medium Medium to be written
  *
- * \return Referenz auf den beschriebenen Stream
+ * \return Reference to the output stream
  */
 std::ostream& operator<<(std::ostream& os, const Medium& medium);
 

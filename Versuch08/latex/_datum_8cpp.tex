@@ -7,9 +7,9 @@
 \begin{DoxyCompactItemize}
 \item 
 std\+::ostream \& \mbox{\hyperlink{_datum_8cpp_ac3075fae14570b9c38d7f8c1a9a5fcef}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_datum}{Datum}} \&datum)
-\begin{DoxyCompactList}\small\item\em Überladung des Ausgabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Overloaded output stream operator for \doxylink{class_datum}{Datum}. \end{DoxyCompactList}\item 
 std\+::istream \& \mbox{\hyperlink{_datum_8cpp_a5919b2bf1198fa21a564a25e481744c5}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_datum}{Datum}} \&datum)
-\begin{DoxyCompactList}\small\item\em Überladung des Eingabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overloaded input stream operator for \doxylink{class_datum}{Datum}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -24,17 +24,17 @@ std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream 
 
 
 
-Überladung des Ausgabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} 
+Overloaded output stream operator for \doxylink{class_datum}{Datum}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em std\+::ostream\&} & out\+: Argument auf der linken Seite des Operators \\
+{\em out} & Left-\/hand side output stream \\
 \hline
-{\em const} & \doxylink{class_datum}{Datum}\& d\+: Argument auf der rechten Seite des Operators\\
+{\em d} & Right-\/hand side date object\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-std\+::ostream\&\+: Rückgabe des Streams auf den das \doxylink{class_datum}{Datum} geschrieben wurde 
+Reference to the output stream 
 \end{DoxyReturn}
 \Hypertarget{_datum_8cpp_a5919b2bf1198fa21a564a25e481744c5}\index{Datum.cpp@{Datum.cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!Datum.cpp@{Datum.cpp}}
@@ -44,15 +44,15 @@ std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream 
 
 
 
-Überladung des Eingabestream-\/\+Operators für die Klasse \doxylink{class_datum}{Datum} 
+Overloaded input stream operator for \doxylink{class_datum}{Datum}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em std\+::istream\&} & out\+: Argument auf der linken Seite des Operators \\
+{\em in} & Left-\/hand side input stream \\
 \hline
-{\em const} & \doxylink{class_datum}{Datum}\& d\+: Argument auf der rechten Seite des Operators\\
+{\em d} & Right-\/hand side date object\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-std\+::istream\&\+: Rückgabe des Streams in den das \doxylink{class_datum}{Datum} geschrieben wurde 
+Reference to the input stream 
 \end{DoxyReturn}

@@ -114,10 +114,10 @@ $(function(){initNavTree('_datum_8cpp.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac3075fae14570b9c38d7f8c1a9a5fcef" id="r_ac3075fae14570b9c38d7f8c1a9a5fcef"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3075fae14570b9c38d7f8c1a9a5fcef">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="class_datum.html">Datum</a> &amp;datum)</td></tr>
-<tr class="memdesc:ac3075fae14570b9c38d7f8c1a9a5fcef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überladung des Ausgabestream-Operators für die Klasse <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>  <br /></td></tr>
+<tr class="memdesc:ac3075fae14570b9c38d7f8c1a9a5fcef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded output stream operator for <a class="el" href="class_datum.html" title="Class representing a date.">Datum</a>.  <br /></td></tr>
 <tr class="separator:ac3075fae14570b9c38d7f8c1a9a5fcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5919b2bf1198fa21a564a25e481744c5" id="r_a5919b2bf1198fa21a564a25e481744c5"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5919b2bf1198fa21a564a25e481744c5">operator&gt;&gt;</a> (std::istream &amp;in, <a class="el" href="class_datum.html">Datum</a> &amp;datum)</td></tr>
-<tr class="memdesc:a5919b2bf1198fa21a564a25e481744c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überladung des Eingabestream-Operators für die Klasse <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>  <br /></td></tr>
+<tr class="memdesc:a5919b2bf1198fa21a564a25e481744c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded input stream operator for <a class="el" href="class_datum.html" title="Class representing a date.">Datum</a>.  <br /></td></tr>
 <tr class="separator:a5919b2bf1198fa21a564a25e481744c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -142,15 +142,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Überladung des Ausgabestream-Operators für die Klasse <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a> </p>
+<p>Overloaded output stream operator for <a class="el" href="class_datum.html" title="Class representing a date.">Datum</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">std::ostream&amp;</td><td>out: Argument auf der linken Seite des Operators </td></tr>
-    <tr><td class="paramname">const</td><td><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>&amp; d: Argument auf der rechten Seite des Operators</td></tr>
+    <tr><td class="paramname">out</td><td>Left-hand side output stream </td></tr>
+    <tr><td class="paramname">d</td><td>Right-hand side date object</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::ostream&amp;: Rückgabe des Streams auf den das <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a> geschrieben wurde </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the output stream </dd></dl>
 
 </div>
 </div>
@@ -173,15 +173,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Überladung des Eingabestream-Operators für die Klasse <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a> </p>
+<p>Overloaded input stream operator for <a class="el" href="class_datum.html" title="Class representing a date.">Datum</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">std::istream&amp;</td><td>out: Argument auf der linken Seite des Operators </td></tr>
-    <tr><td class="paramname">const</td><td><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>&amp; d: Argument auf der rechten Seite des Operators</td></tr>
+    <tr><td class="paramname">in</td><td>Left-hand side input stream </td></tr>
+    <tr><td class="paramname">d</td><td>Right-hand side date object</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::istream&amp;: Rückgabe des Streams in den das <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a> geschrieben wurde </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the input stream </dd></dl>
 
 </div>
 </div>

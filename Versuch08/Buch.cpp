@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file Buch.cpp
@@ -9,21 +9,19 @@
 #include <iostream>
 
 /*!
- * @brief Konstruktor der Klasse Buch
+ * @brief Constructor of the Buch class
  *
- * \param initTitel Titel des Buches
- * \param initAutor Autor des Buches
+ * \param initTitel Title of the book
+ * \param initAutor Author of the book
  */
-Buch::Buch(std::string initTitel, std::string initAutor)
-: Medium(initTitel)
-, autor(initAutor)
+Buch::Buch(std::string initTitel, std::string initAutor): Medium(initTitel), autor(initAutor)
 {
 }
 
 /*!
- * @brief Gibt alle Informationen des Buches aus
+ * @brief Outputs all information about the book
  *
- * \param out Ausgabestream
+ * \param out Output stream
  */
 void Buch::ausgabe(std::ostream& out) const
 {

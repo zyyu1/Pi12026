@@ -2,6 +2,7 @@ var files_dup =
 [
     [ "Buch.cpp", "_buch_8cpp.html", null ],
     [ "Buch.h", "_buch_8h.html", "_buch_8h" ],
+    [ "Buecherei.cpp", "_buecherei_8cpp.html", "_buecherei_8cpp" ],
     [ "Datum.cpp", "_datum_8cpp.html", "_datum_8cpp" ],
     [ "Datum.h", "_datum_8h.html", "_datum_8h" ],
     [ "DVD.cpp", "_d_v_d_8cpp.html", null ],

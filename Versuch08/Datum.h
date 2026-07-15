@@ -1,4 +1,4 @@
-/*!
+ï»¿/*!
  * Praktikum Informatik 1 MMXXVI
  *
  * @file Datum.h
@@ -10,77 +10,72 @@
 #include <string>
 #include <iostream>
 
-
-/*! \brief Klasse für ein Datum
+/*! \brief Class representing a date
  *
- * Speichert ein Datum, bestehend aus Tag, Monat und Jahr.
- * Die Klasse Datum bietet verschiedene Funktionalitäten/Operatoren
- * die zum Ausgeben/Bearbeiten/Vergleichen von verschiedenen Daten genutzt werden können
- *
+ * Stores a date consisting of day, month, and year.
+ * The Datum class provides several functions and operators that can be used
+ * to output, modify, and compare dates.
  */
-
 class Datum
 {
 public:
     /*!
-     * @brief Standartkonstruktor
+     * @brief Default constructor
      *
-     * Initialisiert die Klasse Datum mit dem heutigen Datum
-     *
+     * Initializes the object with the current date.
      */
     Datum();
 
     /*!
-     * @brief Konstruktor für ein gegebenes Datum
+     * @brief Constructor for a specific date
      *
-     * \param int initTag:    gegebener Tag
-     * \param int initMonat:  gegebener Monat
-     * \param int initJahr:   gegebenes Jahr
-     *
+     * \param initTag Day value
+     * \param initMonat Month value
+     * \param initJahr Year value
      */
     Datum(int initTag, int initMonat, int initJahr);
 
     /*!
-     * @Brief Destruktor
+     * @brief Destructor
      */
     ~Datum(void);
 
     /*!
-     * @brief Eingabe eines Datums über einen Eingabestream
+     * @brief Reads a date from an input stream
      *
-     * \param std::istream& in: Eingabestream zum Einlesen
+     * \param in Input stream
      */
     void eingabe(std::istream& in);
 
     /*!
-     * @brief Ausgabe eines Datums über einen Ausgabestream
+     * @brief Writes the date to an output stream
      *
-     * \param std::ostream out: Ausgabestream zum Ausgeben
+     * \param out Output stream
      */
     void ausgabe(std::ostream& out) const;
 
     /*!
-     * @brief Zuweisungsoperator
+     * @brief Assignment operator
      *
-     * \param Datum& d: Argument auf der rechten Seite, welches der Ausgangspunkt für die Zuweisung ist
+     * \param d Right-hand side operand
      */
     Datum& operator=(Datum& d);
 
     /*!
-     * @brief Subtraktionsoperator
+     * @brief Subtraction operator
      *
-     * \param Datum& d: Argument auf der rechten Seite
+     * \param d Right-hand side operand
      *
-     * \return int: Gibt die Differenz der beiden Monate in Monaten zurück
+     * \return Difference between the two dates in full months
      */
     int operator-(const Datum d) const;
 
     /*!
-     * @brief Additionsoperator
+     * @brief Addition operator
      *
-     * \param const int: anzahlTag Anzahl der Tage, die auf das aktuelle Datum addiert werden sollen
+     * \param anzahlTage Number of days to add
      *
-     * \return Datum: Gibt das modifizierte Datum zurück
+     * \return Modified date
      */
     Datum operator+(const int anzahlTage) const;
 
@@ -90,28 +85,28 @@ private:
     int jahr;
 
     /*!
-     * @brief Enthält die Anzahl der Tage pro Monat
+     * @brief Number of days in each month
      */
     static const int tageMonat[12];
 };
 
 /*!
- * @brief Überladung des Ausgabestream-Operators für die Klasse Datum
+ * @brief Overloaded output stream operator for Datum
  *
- * \param std::ostream& out: Argument auf der linken Seite des Operators
- * \param const Datum& d: Argument auf der rechten Seite des Operators
+ * \param out Left-hand side output stream
+ * \param d Right-hand side date object
  *
- * \return std::ostream&: Rückgabe des Streams auf den das Datum geschrieben wurde
+ * \return Reference to the output stream
  */
 std::ostream& operator<<(std::ostream& out, const Datum& d);
 
 /*!
- * @brief Überladung des Eingabestream-Operators für die Klasse Datum
+ * @brief Overloaded input stream operator for Datum
  *
- * \param std::istream& out: Argument auf der linken Seite des Operators
- * \param const Datum& d: Argument auf der rechten Seite des Operators
+ * \param in Left-hand side input stream
+ * \param d Right-hand side date object
  *
- * \return std::istream&: Rückgabe des Streams in den das Datum geschrieben wurde
+ * \return Reference to the input stream
  */
 std::istream& operator >> (std::istream& in, Datum& d);
 

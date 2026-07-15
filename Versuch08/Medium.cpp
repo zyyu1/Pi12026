@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file Medium.cpp
@@ -12,9 +12,9 @@
 unsigned int Medium::currentID = 1;
 
 /*!
- * @brief Konstruktor der Klasse Medium
+ * @brief Constructor of the Medium class
  *
- * \param initTitel Titel des Mediums
+ * \param initTitel Title of the medium
  */
 Medium::Medium(std::string initTitel)
 : titel(initTitel)
@@ -24,18 +24,19 @@ Medium::Medium(std::string initTitel)
 }
 
 /*!
- * @brief Virtueller Destruktor der Klasse Medium
+ * @brief Virtual destructor of the Medium class
  */
 Medium::~Medium(void)
 {
 }
 
 /*!
- * @brief Gibt alle Informationen des Mediums aus
+ * @brief Outputs the general information of the medium
  *
- * \param out Ausgabestream
+ * \param out Output stream
  */
-void Medium::ausgabe(std::ostream& out) const
+//保留实现,因此子类可以复用亲类的实现,并在子类中添加额外的输出信息
+void Medium::ausgabe(std::ostream& out) const 
 {
     out << "ID: " << ID << std::endl;
     out << "Titel: " << titel << std::endl;
@@ -43,7 +44,7 @@ void Medium::ausgabe(std::ostream& out) const
     if (status)
     {
         out << "Status : Das Medium ist seit dem " << datumAusgeliehen
-                  << " an " << personAusgeliehen.getName() << " ausgeliehen." << std::endl;
+            << " an " << personAusgeliehen.getName() << " ausgeliehen." << std::endl;
     }
     else
     {
@@ -52,13 +53,13 @@ void Medium::ausgabe(std::ostream& out) const
 }
 
 /*!
- * @brief Leiht ein Medium aus, wenn es noch verfuegbar ist
+ * @brief Lends the medium if it is still available
  *
- * \param person Person, die das Medium ausleihen moechte
- * \param ausleihdatum Datum, an dem das Medium ausgeliehen wird
+ * \param person Person who wants to borrow the medium
+ * \param ausleihdatum Date of borrowing
  *
- * \return true, wenn das Medium erfolgreich ausgeliehen wurde
- * \return false, wenn das Medium bereits verliehen ist
+ * \return true if the medium was borrowed successfully
+ * \return false if the medium is already lent out
  */
 bool Medium::ausleihen(Person person, Datum ausleihdatum)
 {
@@ -76,11 +77,12 @@ bool Medium::ausleihen(Person person, Datum ausleihdatum)
 }
 
 /*!
- * @brief Gibt ein ausgeliehenes Medium zurueck
+ * @brief Returns a borrowed medium
  */
 void Medium::zurueckgeben()
 {
-    if (status)
+    //检查是否还在借出状态,如果是,则将状态改为未借出,并输出归还信息;如果不是,则输出提示信息
+    if (status == true)
     {
         status = false;
         std::cout << "Das Medium \"" << titel << "\" wurde zurueckgegeben." << std::endl;
@@ -92,9 +94,9 @@ void Medium::zurueckgeben()
 }
 
 /*!
- * @brief Liefert die eindeutige ID des Mediums
+ * @brief Returns the unique ID of the medium
  *
- * \return ID des Mediums
+ * \return ID of the medium
  */
 unsigned int Medium::getID()
 {
@@ -102,12 +104,12 @@ unsigned int Medium::getID()
 }
 
 /*!
- * @brief Ueberladener Ausgabeoperator fuer Medium
+ * @brief Overloaded output operator for Medium
  *
- * \param os Ausgabestream
- * \param medium Medium, das ausgegeben werden soll
+ * \param os Output stream
+ * \param medium Medium to be written
  *
- * \return Referenz auf den Ausgabestream
+ * \return Reference to the output stream
  */
 std::ostream& operator<<(std::ostream& os, const Medium& medium)
 {
@@ -116,10 +118,10 @@ std::ostream& operator<<(std::ostream& os, const Medium& medium)
 }
 
 /*!
- * @brief Liefert den Ausleihstatus des Mediums
+ * @brief Returns the lending status of the medium
  *
- * \return true, wenn das Medium ausgeliehen ist
- * \return false, wenn das Medium verfuegbar ist
+ * \return true if the medium is lent out
+ * \return false if the medium is available
  */
 bool Medium::getStatus() const
 {

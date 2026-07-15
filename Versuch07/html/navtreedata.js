@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
-    [ "Versuch07", "versuch07.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

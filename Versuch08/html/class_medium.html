@@ -111,7 +111,7 @@ $(function(){initNavTree('class_medium.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Basisklasse fuer saemtliche Medien.  
+<p>Base class for all media.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_medium_8h_source.html">Medium.h</a>&gt;</code></p>
@@ -121,69 +121,69 @@ Inheritance diagram for Medium:</div>
  <div class="center">
   <img src="class_medium.png" usemap="#Medium_map" alt=""/>
   <map id="Medium_map" name="Medium_map">
-<area href="class_buch.html" title="Klasse Buch." alt="Buch" shape="rect" coords="0,56,60,80"/>
-<area href="class_d_v_d.html" title="Klasse DVD." alt="DVD" shape="rect" coords="70,56,130,80"/>
-<area href="class_magazin.html" title="Klasse Magazin." alt="Magazin" shape="rect" coords="140,56,200,80"/>
+<area href="class_buch.html" title="Book class." alt="Buch" shape="rect" coords="0,56,60,80"/>
+<area href="class_d_v_d.html" title="DVD class." alt="DVD" shape="rect" coords="70,56,130,80"/>
+<area href="class_magazin.html" title="Magazine class." alt="Magazin" shape="rect" coords="140,56,200,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8bd867d2e3644022a117433e3321f18" id="r_aa8bd867d2e3644022a117433e3321f18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8bd867d2e3644022a117433e3321f18">Medium</a> (std::string initTitel)</td></tr>
-<tr class="memdesc:aa8bd867d2e3644022a117433e3321f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <br /></td></tr>
+<tr class="memdesc:aa8bd867d2e3644022a117433e3321f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:aa8bd867d2e3644022a117433e3321f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77264993251b16f49de7cfc2a079eae2" id="r_a77264993251b16f49de7cfc2a079eae2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77264993251b16f49de7cfc2a079eae2">~Medium</a> (void)</td></tr>
-<tr class="memdesc:a77264993251b16f49de7cfc2a079eae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtueller Destruktor.  <br /></td></tr>
+<tr class="memdesc:a77264993251b16f49de7cfc2a079eae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="separator:a77264993251b16f49de7cfc2a079eae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f9379ad4ef74ba58d25de30a62d21de" id="r_a3f9379ad4ef74ba58d25de30a62d21de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f9379ad4ef74ba58d25de30a62d21de">ausgabe</a> (std::ostream &amp;out) const =0</td></tr>
-<tr class="memdesc:a3f9379ad4ef74ba58d25de30a62d21de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtuelle Ausgabefunktion.  <br /></td></tr>
+<tr class="memdesc:a3f9379ad4ef74ba58d25de30a62d21de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual output function.  <br /></td></tr>
 <tr class="separator:a3f9379ad4ef74ba58d25de30a62d21de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98261c5da2a63906799f298cbbcd66b8" id="r_a98261c5da2a63906799f298cbbcd66b8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98261c5da2a63906799f298cbbcd66b8">ausleihen</a> (<a class="el" href="class_person.html">Person</a> person, <a class="el" href="class_datum.html">Datum</a> ausleihdatum)</td></tr>
-<tr class="memdesc:a98261c5da2a63906799f298cbbcd66b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtuelle Ausleihen-Funktion.  <br /></td></tr>
+<tr class="memdesc:a98261c5da2a63906799f298cbbcd66b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual lend function.  <br /></td></tr>
 <tr class="separator:a98261c5da2a63906799f298cbbcd66b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a243e7659e4c9596061a5d5805ae271c4" id="r_a243e7659e4c9596061a5d5805ae271c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a243e7659e4c9596061a5d5805ae271c4">zurueckgeben</a> ()</td></tr>
-<tr class="memdesc:a243e7659e4c9596061a5d5805ae271c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt ein <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> in die Buecherei zurueck.  <br /></td></tr>
+<tr class="memdesc:a243e7659e4c9596061a5d5805ae271c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the medium to the library.  <br /></td></tr>
 <tr class="separator:a243e7659e4c9596061a5d5805ae271c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc65e286218957af48211f6ace30789" id="r_a7bc65e286218957af48211f6ace30789"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bc65e286218957af48211f6ace30789">getID</a> ()</td></tr>
-<tr class="memdesc:a7bc65e286218957af48211f6ace30789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zugriff auf die ID.  <br /></td></tr>
+<tr class="memdesc:a7bc65e286218957af48211f6ace30789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID.  <br /></td></tr>
 <tr class="separator:a7bc65e286218957af48211f6ace30789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ebfbc460958b938a04f15b3cf68f6bc" id="r_a5ebfbc460958b938a04f15b3cf68f6bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ebfbc460958b938a04f15b3cf68f6bc">getStatus</a> () const</td></tr>
-<tr class="memdesc:a5ebfbc460958b938a04f15b3cf68f6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zugriff auf den Ausleihstatus.  <br /></td></tr>
+<tr class="memdesc:a5ebfbc460958b938a04f15b3cf68f6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the lending status.  <br /></td></tr>
 <tr class="separator:a5ebfbc460958b938a04f15b3cf68f6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a5e72a311f06810444cde614ddbc4b31f" id="r_a5e72a311f06810444cde614ddbc4b31f"><td class="memItemLeft" align="right" valign="top"><a id="a5e72a311f06810444cde614ddbc4b31f" name="a5e72a311f06810444cde614ddbc4b31f"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>ID</b></td></tr>
-<tr class="memdesc:a5e72a311f06810444cde614ddbc4b31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eindeutige ID des Mediums. <br /></td></tr>
+<tr class="memdesc:a5e72a311f06810444cde614ddbc4b31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID of the medium. <br /></td></tr>
 <tr class="separator:a5e72a311f06810444cde614ddbc4b31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab76783269f8b09141d7b2168b008429d" id="r_ab76783269f8b09141d7b2168b008429d"><td class="memItemLeft" align="right" valign="top"><a id="ab76783269f8b09141d7b2168b008429d" name="ab76783269f8b09141d7b2168b008429d"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>titel</b></td></tr>
-<tr class="memdesc:ab76783269f8b09141d7b2168b008429d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Titel des Mediums. <br /></td></tr>
+<tr class="memdesc:ab76783269f8b09141d7b2168b008429d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Title of the medium. <br /></td></tr>
 <tr class="separator:ab76783269f8b09141d7b2168b008429d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41d79c1b3b57a54c8b372a8e36f1b5c9" id="r_a41d79c1b3b57a54c8b372a8e36f1b5c9"><td class="memItemLeft" align="right" valign="top"><a id="a41d79c1b3b57a54c8b372a8e36f1b5c9" name="a41d79c1b3b57a54c8b372a8e36f1b5c9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>status</b></td></tr>
-<tr class="memdesc:a41d79c1b3b57a54c8b372a8e36f1b5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ausleihstatus des Mediums. <br /></td></tr>
+<tr class="memdesc:a41d79c1b3b57a54c8b372a8e36f1b5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lending status of the medium. <br /></td></tr>
 <tr class="separator:a41d79c1b3b57a54c8b372a8e36f1b5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7a2605566e899641b075f51893948c7" id="r_af7a2605566e899641b075f51893948c7"><td class="memItemLeft" align="right" valign="top"><a id="af7a2605566e899641b075f51893948c7" name="af7a2605566e899641b075f51893948c7"></a>
 <a class="el" href="class_datum.html">Datum</a>&#160;</td><td class="memItemRight" valign="bottom"><b>datumAusgeliehen</b></td></tr>
-<tr class="memdesc:af7a2605566e899641b075f51893948c7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a> der Ausleihe. <br /></td></tr>
+<tr class="memdesc:af7a2605566e899641b075f51893948c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date when the medium was lent out. <br /></td></tr>
 <tr class="separator:af7a2605566e899641b075f51893948c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcfa7b252fea996b5cb6551f735f252" id="r_a2dcfa7b252fea996b5cb6551f735f252"><td class="memItemLeft" align="right" valign="top"><a id="a2dcfa7b252fea996b5cb6551f735f252" name="a2dcfa7b252fea996b5cb6551f735f252"></a>
 <a class="el" href="class_person.html">Person</a>&#160;</td><td class="memItemRight" valign="bottom"><b>personAusgeliehen</b></td></tr>
-<tr class="memdesc:a2dcfa7b252fea996b5cb6551f735f252"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_person.html" title="Klasse Person.">Person</a>, die das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausgeliehen hat. <br /></td></tr>
+<tr class="memdesc:a2dcfa7b252fea996b5cb6551f735f252"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_person.html" title="Class representing a person.">Person</a> who borrowed the medium. <br /></td></tr>
 <tr class="separator:a2dcfa7b252fea996b5cb6551f735f252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:ac48d0988284d67e8bdf54b8fab9ebbe8" id="r_ac48d0988284d67e8bdf54b8fab9ebbe8"><td class="memItemLeft" align="right" valign="top"><a id="ac48d0988284d67e8bdf54b8fab9ebbe8" name="ac48d0988284d67e8bdf54b8fab9ebbe8"></a>
 static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>currentID</b> = 1</td></tr>
-<tr class="memdesc:ac48d0988284d67e8bdf54b8fab9ebbe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statische Variable fuer fortlaufende IDs. <br /></td></tr>
+<tr class="memdesc:ac48d0988284d67e8bdf54b8fab9ebbe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static variable for generating consecutive IDs. <br /></td></tr>
 <tr class="separator:ac48d0988284d67e8bdf54b8fab9ebbe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Basisklasse fuer saemtliche Medien. </p>
-<p>Diese Klasse stellt eine Basisklasse fuer Objekte dar, die Medien beschreiben. Von dieser Klasse werden alle anderen Medien, wie z.B. <a class="el" href="class_buch.html" title="Klasse Buch.">Buch</a> oder <a class="el" href="class_d_v_d.html" title="Klasse DVD.">DVD</a>, abgeleitet. </p>
+<div class="textblock"><p>Base class for all media. </p>
+<p>The <a class="el" href="class_medium.html" title="Base class for all media.">Medium</a> class is the base class for objects that represent media items. All other media types such as books, magazines, or DVDs are derived from it. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8bd867d2e3644022a117433e3321f18" name="aa8bd867d2e3644022a117433e3321f18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8bd867d2e3644022a117433e3321f18">&#9670;&#160;</a></span>Medium()</h2>
@@ -200,11 +200,11 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>curren
       </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. </p>
-<p>Konstruktor der Klasse <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a>.</p>
+<p>Constructor. </p>
+<p>Constructor of the <a class="el" href="class_medium.html" title="Base class for all media.">Medium</a> class.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initTitel</td><td>Titel des Mediums </td></tr>
+    <tr><td class="paramname">initTitel</td><td>Title of the medium </td></tr>
   </table>
   </dd>
 </dl>
@@ -234,8 +234,8 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>curren
 </table>
 </div><div class="memdoc">
 
-<p>Virtueller Destruktor. </p>
-<p>Virtueller Destruktor der Klasse <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a>. </p>
+<p>Virtual destructor. </p>
+<p>Virtual destructor of the <a class="el" href="class_medium.html" title="Base class for all media.">Medium</a> class. </p>
 
 </div>
 </div>
@@ -263,11 +263,11 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>curren
 </table>
 </div><div class="memdoc">
 
-<p>Virtuelle Ausgabefunktion. </p>
-<p>Gibt alle Informationen des Mediums aus.</p>
+<p>Virtual output function. </p>
+<p>Outputs the general information of the medium.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>Ausgabestream </td></tr>
+    <tr><td class="paramname">out</td><td>Output stream </td></tr>
   </table>
   </dd>
 </dl>
@@ -303,28 +303,18 @@ static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>curren
 </table>
 </div><div class="memdoc">
 
-<p>Virtuelle Ausleihen-Funktion. </p>
-<p>Leiht ein <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> aus, wenn es noch verfuegbar ist.</p>
+<p>Virtual lend function. </p>
+<p>Lends the medium if it is still available.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">person</td><td><a class="el" href="class_person.html" title="Klasse Person.">Person</a>, die das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausleihen moechte </td></tr>
-    <tr><td class="paramname">ausleihdatum</td><td><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>, an dem das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausgeliehen wird</td></tr>
+    <tr><td class="paramname">person</td><td><a class="el" href="class_person.html" title="Class representing a person.">Person</a> who wants to borrow the medium </td></tr>
+    <tr><td class="paramname">ausleihdatum</td><td>Date of borrowing</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausgeliehen werden konnte </dd>
+<dl class="section return"><dt>Returns</dt><dd>true if the medium was borrowed successfully </dd>
 <dd>
-false, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> bereits verliehen ist</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">person</td><td><a class="el" href="class_person.html" title="Klasse Person.">Person</a>, die das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausleihen moechte </td></tr>
-    <tr><td class="paramname">ausleihdatum</td><td><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>, an dem das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausgeliehen wird</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> erfolgreich ausgeliehen wurde </dd>
-<dd>
-false, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> bereits verliehen ist </dd></dl>
+false if the medium is already lent out </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_d_v_d.html#a70c30e0b6b96df84fdaae5a8cb069ef4">DVD</a>, and <a class="el" href="class_magazin.html#af64fe3e3431aa4493e1b5d701696a9e1">Magazin</a>.</p>
 
@@ -345,11 +335,11 @@ false, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer s
       </table>
 </div><div class="memdoc">
 
-<p>Zugriff auf die ID. </p>
-<p>Liefert die eindeutige ID des Mediums.</p>
-<dl class="section return"><dt>Returns</dt><dd>Eindeutige ID des Mediums</dd>
+<p>Returns the ID. </p>
+<p>Returns the unique ID of the medium.</p>
+<dl class="section return"><dt>Returns</dt><dd>Unique medium ID</dd>
 <dd>
-ID des Mediums </dd></dl>
+ID of the medium </dd></dl>
 
 </div>
 </div>
@@ -368,11 +358,15 @@ ID des Mediums </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Zugriff auf den Ausleihstatus. </p>
-<p>Liefert den Ausleihstatus des Mediums.</p>
-<dl class="section return"><dt>Returns</dt><dd>true, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> ausgeliehen ist </dd>
+<p>Returns the lending status. </p>
+<p>Returns the lending status of the medium.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the medium is currently lent out </dd>
 <dd>
-false, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> verfuegbar ist </dd></dl>
+false if the medium is available</dd>
+<dd>
+true if the medium is lent out </dd>
+<dd>
+false if the medium is available </dd></dl>
 
 </div>
 </div>
@@ -399,8 +393,8 @@ false, wenn das <a class="el" href="class_medium.html" title="Basisklasse fuer s
 </table>
 </div><div class="memdoc">
 
-<p>Gibt ein <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> in die Buecherei zurueck. </p>
-<p>Gibt ein ausgeliehenes <a class="el" href="class_medium.html" title="Basisklasse fuer saemtliche Medien.">Medium</a> zurueck. </p>
+<p>Returns the medium to the library. </p>
+<p>Returns a borrowed medium. </p>
 
 </div>
 </div>

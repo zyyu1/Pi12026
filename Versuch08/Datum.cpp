@@ -1,4 +1,4 @@
-/*!
+ï»¿/*!
  * Praktikum Informatik 1 MMXXVI
  *
  * @file Datum.cpp
@@ -9,28 +9,26 @@
 #include <time.h>
 #include <sstream>
 
-
-//Instanzierung des tage-Arrays
+// Initialization of the month-day array
 const int Datum::tageMonat[12] = { 31,30,31,28,31,30,31,31,30,31,30,31 };
 
-
-//Standardkonstruktor
+// Default constructor
 Datum::Datum()
 {
-    //aktuelle Zeit einlesen
-    time_t aktuelleZeit; 
+    // Read the current time
+    time_t aktuelleZeit;
     time(&aktuelleZeit);
 
-    //Zeiger auf aktuelles Array erstellen
+    // Create a pointer to the current date structure
     struct tm* aktuellesDatum = localtime(&aktuelleZeit);
 
-    // Werte zuweisen
+    // Assign the values
     tag   = aktuellesDatum->tm_mday;
     monat = aktuellesDatum->tm_mon + 1;
     jahr  = aktuellesDatum->tm_year + 1900;
 }
 
-// Konstruktor
+// Constructor
 Datum::Datum(int initTag, int initMonat, int initJahr)
 : tag(initTag)
 , monat(initMonat)
@@ -38,18 +36,17 @@ Datum::Datum(int initTag, int initMonat, int initJahr)
 {
 }
 
-// Destruktor
+// Destructor
 Datum::~Datum(void)
 {
 }
 
-
-// Ausgabe des Datums in einen Ausgabestream
+// Writes the date to an output stream
 void Datum::ausgabe(std::ostream& out) const
 {
     out << tag << ".";
 
-    // Formatierung um z.B. 01 statt 1 ausgeben
+    // Format output as 01 instead of 1
     if (monat < 10)
     {
         out << '0';
@@ -58,65 +55,65 @@ void Datum::ausgabe(std::ostream& out) const
     out << monat << "." << jahr;
 }
 
-// Funktion liest aus einem Eingabestream ein Datum ein
+// Reads a date from an input stream
 void Datum::eingabe(std::istream& in)
 {
     std::string DatumString;
 
-    while (true) // Endlosschleife
+    while (true)
     {
-        in >> DatumString; //String einlesen
+        in >> DatumString;
         try
         {
-            // Abfangen der falschen Länge der Eingabe
+            // Reject input with invalid length
             if (DatumString.length() != 10)
             {
                 throw (std::string("Falsches Format!"));
             }
 
-            // Stringstream zum Umwandeln in Integer-Zahlen
+            // Use a string stream to convert into integers
             std::istringstream stringstream;
             stringstream.str(DatumString);
 
-            // Tag einlesen
+            // Read the day
             stringstream >> tag;
 
-            // Nach dem Tag muss ein Punkt stehen
+            // A dot must follow the day
             if ((char)stringstream.get() != '.')
             {
                 throw (std::string("Falsches Format!"));
             }
 
-            // Monat einlesen
+            // Read the month
             stringstream >> monat;
 
-            // Überprüfen der Gültigkeit des Monats
+            // Validate the month
             if ((monat < 1) || (monat > 12))
             {
-                throw (std::string("Ungültiger Monat!"));
+                throw (std::string("Ungé»®tiger Monat!"));
             }
 
-            // Überprüfen, ob der eigegebene Tag zum Monat passt
+            // Validate the day within the selected month
             if ((tag > tageMonat[monat - 1]) || (tag < 1))
             {
-                throw (std::string("Ungültiger tag!"));
+                throw (std::string("Ungé»®tiger tag!"));
             }
 
-            // Nach dem Monat muss ein Punkt stehen
+            // A dot must follow the month
             if ((char)stringstream.get() != '.')
             {
                 throw (std::string("Falsches Format!"));
             }
 
-            // Einlesen des Jahrs
+            // Read the year
             stringstream >> jahr;
 
             if(jahr < 1000 || jahr > 2026 )
             {
-                throw(std::string("Ungültiges Jahr!"));
+                throw(std::string("Ungé»®tiges Jahr!"));
             }
 
-            //Datum wurde korrekt eingelesen, also Endlosschleife verlassen
+            // The date was read successfully
             return;
         }
         catch (std::string& fehler)
@@ -127,25 +124,22 @@ void Datum::eingabe(std::istream& in)
     }
 }
 
-
-// Überladener Subtraktions-Operator
+// Overloaded subtraction operator
 int Datum::operator-(const Datum datum) const
 {
     int tagDiff = tag - datum.tag;
     int monatDiff = monat - datum.monat;
     int jahrDiff = jahr - datum.jahr;
 
-    //Differenz der Monate abrunden
+    // Round down the month difference
     if (tagDiff < 0)
     {
         monatDiff--;
     }
 
-    // Berechung der Monatsdifferenz zwischen beiden Daten
+    // Calculate the difference in months
     return monatDiff + 12 * jahrDiff;
 }
-
-
 
 Datum Datum::operator+(const int anzahl_Tage) const
 {
@@ -153,14 +147,14 @@ Datum Datum::operator+(const int anzahl_Tage) const
     int monatNeu = monat;
     int jahrNeu = jahr;
 
-    //Mehrere Monate weiterspringen
+    // Move forward across multiple months if necessary
     while (tagNeu > tageMonat[monatNeu-1])
     {
-        //Monat erhöhen und die jeweiligen Tage abziehen
+        // Increase the month and subtract its day count
         tagNeu -= tageMonat[monatNeu-1];
         monatNeu++;
 
-        // Monat darf nicht größer als 12 werden
+        // The month must not become larger than 12
         if (monatNeu > 12)
         {
             monatNeu -= 12;
@@ -170,7 +164,7 @@ Datum Datum::operator+(const int anzahl_Tage) const
     return Datum(tagNeu, monatNeu, jahrNeu);
 }
 
-//Zuweisungsoperator
+// Assignment operator
 Datum& Datum::operator=(Datum& Datum)
 {
     jahr = Datum.jahr;
@@ -180,17 +174,16 @@ Datum& Datum::operator=(Datum& Datum)
     return *this;
 }
 
-//Streamoperator für ostream
+// Stream operator for ostream
 std::ostream& operator<<(std::ostream& out, const Datum& datum)
 {
     datum.ausgabe(out);
     return out;
 }
 
-//Streamoperator für istream
+// Stream operator for istream
 std::istream& operator >> (std::istream& in, Datum& datum)
 {
     datum.eingabe(in);
     return in;
 }
-

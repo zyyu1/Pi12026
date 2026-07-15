@@ -1,31 +1,30 @@
-/*!
- * Praktikum Informatik 1 
- * 
+﻿/*!
+ * Praktikum Informatik 1
  *
  * @file Person.cpp
  */
  
 #include "Person.h"
 
-// Konstruktor
+// Constructor
 Person::Person(std::string initName, Datum initGeburtsdatum)
 : name(initName)
 , geburtsdatum(initGeburtsdatum)
 {
 }
 
-// Destruktor
+// Destructor
 Person::~Person()
 {
 }
 
-// Zugriffsfunktion auf das Geburtsdatum
+// Returns the date of birth
 Datum Person::getGeburtsdatum() const
 {
     return geburtsdatum;
 }
 
-// Zugriffsfunktion auf den Namen
+// Returns the name
 std::string Person::getName() const
 {
     return name;

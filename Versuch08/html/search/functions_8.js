@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zurueckgeben_0',['zurueckgeben',['../class_medium.html#a243e7659e4c9596061a5d5805ae271c4',1,'Medium']]]
+  ['person_0',['Person',['../class_person.html#a6e74d12bd0c913a004fd427dfc15cf43',1,'Person']]]
 ];

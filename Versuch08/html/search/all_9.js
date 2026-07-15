@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['person_0',['Person',['../class_person.html',1,'Person'],['../class_person.html#a6e74d12bd0c913a004fd427dfc15cf43',1,'Person::Person()']]],
-  ['person_2ecpp_1',['Person.cpp',['../_person_8cpp.html',1,'']]],
-  ['person_2eh_2',['Person.h',['../_person_8h.html',1,'']]],
-  ['personausgeliehen_3',['personAusgeliehen',['../class_medium.html#a2dcfa7b252fea996b5cb6551f735f252',1,'Medium']]]
+  ['operator_2b_0',['operator+',['../class_datum.html#ab580376d6838d4b3176606b061d7fe74',1,'Datum']]],
+  ['operator_2d_1',['operator-',['../class_datum.html#a8e9f8000e2869bacbf1cac80ac2ff7ee',1,'Datum']]],
+  ['operator_3c_3c_2',['operator&lt;&lt;',['../_datum_8cpp.html#ac3075fae14570b9c38d7f8c1a9a5fcef',1,'operator&lt;&lt;(std::ostream &amp;out, const Datum &amp;datum):&#160;Datum.cpp'],['../_datum_8h.html#a779d3c0ba9de0cab8e7442764ceda484',1,'operator&lt;&lt;(std::ostream &amp;out, const Datum &amp;d):&#160;Datum.cpp'],['../_medium_8cpp.html#a32665c7aa128570b1c5de261107a1d8d',1,'operator&lt;&lt;(std::ostream &amp;os, const Medium &amp;medium):&#160;Medium.cpp'],['../_medium_8h.html#a32665c7aa128570b1c5de261107a1d8d',1,'operator&lt;&lt;(std::ostream &amp;os, const Medium &amp;medium):&#160;Medium.cpp']]],
+  ['operator_3d_3',['operator=',['../class_datum.html#ae083121165ba9b060bab456f156ef4df',1,'Datum']]],
+  ['operator_3e_3e_4',['operator&gt;&gt;',['../_datum_8cpp.html#a5919b2bf1198fa21a564a25e481744c5',1,'operator&gt;&gt;(std::istream &amp;in, Datum &amp;datum):&#160;Datum.cpp'],['../_datum_8h.html#a592a2f3f79a3c03fa723b5fb70bbfe33',1,'operator&gt;&gt;(std::istream &amp;in, Datum &amp;d):&#160;Datum.cpp']]]
 ];

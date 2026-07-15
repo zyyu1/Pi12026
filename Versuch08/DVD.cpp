@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file DVD.cpp
@@ -9,11 +9,11 @@
 #include <iostream>
 
 /*!
- * @brief Konstruktor der Klasse DVD
+ * @brief Constructor of the DVD class
  *
- * \param initTitel Titel der DVD
- * \param initAltersfreigabe Altersfreigabe der DVD
- * \param initGenre Genre der DVD
+ * \param initTitel Title of the DVD
+ * \param initAltersfreigabe Age rating of the DVD
+ * \param initGenre Genre of the DVD
  */
 DVD::DVD(std::string initTitel, int initAltersfreigabe, std::string initGenre)
 : Medium(initTitel)
@@ -23,9 +23,9 @@ DVD::DVD(std::string initTitel, int initAltersfreigabe, std::string initGenre)
 }
 
 /*!
- * @brief Gibt alle Informationen der DVD aus
+ * @brief Outputs all information about the DVD
  *
- * \param out Ausgabestream
+ * \param out Output stream
  */
 void DVD::ausgabe(std::ostream& out) const
 {
@@ -35,13 +35,13 @@ void DVD::ausgabe(std::ostream& out) const
 }
 
 /*!
- * @brief Leiht die DVD aus, wenn die Altersfreigabe erfuellt ist
+ * @brief Lends the DVD if the age restriction is met
  *
- * \param person Person, die die DVD ausleihen moechte
- * \param ausleihdatum Datum, an dem die DVD ausgeliehen werden soll
+ * \param person Person who wants to borrow the DVD
+ * \param ausleihdatum Date of borrowing
  *
- * \return true, wenn die DVD ausgeliehen werden konnte
- * \return false, wenn die Person nicht alt genug ist
+ * \return true if the DVD was borrowed successfully
+ * \return false if the person is not old enough
  */
 bool DVD::ausleihen(Person person, Datum ausleihdatum)
 {

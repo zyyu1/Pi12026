@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file Magazin.h
@@ -13,49 +13,49 @@
 #include <string>
 
 /*!
- * @brief Klasse Magazin
+ * @brief Magazine class
  *
- * Die Klasse Magazin ist eine abgeleitete Klasse von Medium.
- * Sie speichert zusaetzlich das Erscheinungsdatum und die Sparte.
+ * The Magazin class is derived from Medium.
+ * It stores the issue date and the category in addition to the title.
  */
 class Magazin : public Medium
 {
 public:
     /*!
-     * @brief Konstruktor der Klasse Magazin
+     * @brief Constructor of the Magazin class
      *
-     * \param initTitel Titel des Magazins
-     * \param initAusgabe Erscheinungsdatum der Ausgabe
-     * \param initSparte Sparte des Magazins
+     * \param initTitel Title of the magazine
+     * \param initAusgabe Issue date
+     * \param initSparte Category of the magazine
      */
     Magazin(std::string initTitel, Datum initAusgabe, std::string initSparte);
 
     /*!
-     * @brief Virtuelle Ausgabefunktion
+     * @brief Virtual output function
      *
-     * \param out Ausgabestream
+     * \param out Output stream
      */
     void ausgabe(std::ostream& out) const override;
 
     /*!
-     * @brief Leiht das Magazin aus, falls es nicht die neueste Ausgabe ist
+     * @brief Lends the magazine if it is not the newest issue
      *
-     * \param person Person, die das Magazin ausleihen moechte
-     * \param ausleihdatum Datum, an dem das Magazin ausgeliehen werden soll
+     * \param person Person who wants to borrow the magazine
+     * \param ausleihdatum Date of borrowing
      *
-     * \return true, wenn das Magazin ausgeliehen werden konnte
-     * \return false, wenn die aktuelle Ausgabe nicht verliehen werden darf
+     * \return true if the magazine was borrowed successfully
+     * \return false if the current issue may not be borrowed
      */
     bool ausleihen(Person person, Datum ausleihdatum) override;
 
 private:
     /*!
-     * @brief Erscheinungsdatum der Ausgabe
+     * @brief Issue date
      */
     Datum datumAusgabe;
 
     /*!
-     * @brief Sparte des Magazins
+     * @brief Category of the magazine
      */
     std::string sparte;
 };

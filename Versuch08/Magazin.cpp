@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Praktikum Informatik 1
  *
  * @file Magazin.cpp
@@ -9,11 +9,11 @@
 #include <iostream>
 
 /*!
- * @brief Konstruktor der Klasse Magazin
+ * @brief Constructor of the Magazin class
  *
- * \param initTitel Titel des Magazins
- * \param initAusgabe Erscheinungsdatum der Ausgabe
- * \param initSparte Sparte des Magazins
+ * \param initTitel Title of the magazine
+ * \param initAusgabe Issue date
+ * \param initSparte Category of the magazine
  */
 Magazin::Magazin(std::string initTitel, Datum initAusgabe, std::string initSparte)
 : Medium(initTitel)
@@ -23,9 +23,9 @@ Magazin::Magazin(std::string initTitel, Datum initAusgabe, std::string initSpart
 }
 
 /*!
- * @brief Gibt alle Informationen des Magazins aus
+ * @brief Outputs all information about the magazine
  *
- * \param out Ausgabestream
+ * \param out Output stream
  */
 void Magazin::ausgabe(std::ostream& out) const
 {
@@ -35,13 +35,13 @@ void Magazin::ausgabe(std::ostream& out) const
 }
 
 /*!
- * @brief Leiht das Magazin aus, wenn es sich nicht um die neueste Ausgabe handelt
+ * @brief Lends the magazine if it is not the latest issue
  *
- * \param person Person, die das Magazin ausleihen moechte
- * \param ausleihdatum Datum, an dem das Magazin ausgeliehen werden soll
+ * \param person Person who wants to borrow the magazine
+ * \param ausleihdatum Date of borrowing
  *
- * \return true, wenn das Magazin ausgeliehen werden konnte
- * \return false, wenn die aktuelle Ausgabe nicht verliehen werden darf
+ * \return true if the magazine was borrowed successfully
+ * \return false if the current issue may not be borrowed
  */
 bool Magazin::ausleihen(Person person, Datum ausleihdatum)
 {

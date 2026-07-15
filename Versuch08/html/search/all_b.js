@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['titel_0',['titel',['../class_medium.html#ab76783269f8b09141d7b2168b008429d',1,'Medium']]]
+  ['status_0',['status',['../class_medium.html#a41d79c1b3b57a54c8b372a8e36f1b5c9',1,'Medium']]]
 ];

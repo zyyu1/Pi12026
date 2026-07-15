@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['operator_2b_0',['operator+',['../class_datum.html#ab580376d6838d4b3176606b061d7fe74',1,'Datum']]],
-  ['operator_2d_1',['operator-',['../class_datum.html#a8e9f8000e2869bacbf1cac80ac2ff7ee',1,'Datum']]],
-  ['operator_3c_3c_2',['operator&lt;&lt;',['../_datum_8cpp.html#ac3075fae14570b9c38d7f8c1a9a5fcef',1,'operator&lt;&lt;(std::ostream &amp;out, const Datum &amp;datum):&#160;Datum.cpp'],['../_datum_8h.html#a779d3c0ba9de0cab8e7442764ceda484',1,'operator&lt;&lt;(std::ostream &amp;out, const Datum &amp;d):&#160;Datum.cpp'],['../_medium_8cpp.html#a32665c7aa128570b1c5de261107a1d8d',1,'operator&lt;&lt;(std::ostream &amp;os, const Medium &amp;medium):&#160;Medium.cpp'],['../_medium_8h.html#a32665c7aa128570b1c5de261107a1d8d',1,'operator&lt;&lt;(std::ostream &amp;os, const Medium &amp;medium):&#160;Medium.cpp']]],
-  ['operator_3d_3',['operator=',['../class_datum.html#ae083121165ba9b060bab456f156ef4df',1,'Datum']]],
-  ['operator_3e_3e_4',['operator&gt;&gt;',['../_datum_8cpp.html#a5919b2bf1198fa21a564a25e481744c5',1,'operator&gt;&gt;(std::istream &amp;in, Datum &amp;datum):&#160;Datum.cpp'],['../_datum_8h.html#a592a2f3f79a3c03fa723b5fb70bbfe33',1,'operator&gt;&gt;(std::istream &amp;in, Datum &amp;d):&#160;Datum.cpp']]]
+  ['magazin_0',['Magazin',['../class_magazin.html#a6bffe363cf7bc99e5692da280db7c3db',1,'Magazin']]],
+  ['main_1',['main',['../_buecherei_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Buecherei.cpp']]],
+  ['medium_2',['Medium',['../class_medium.html#aa8bd867d2e3644022a117433e3321f18',1,'Medium']]],
+  ['mediumausleihen_3',['mediumAusleihen',['../_buecherei_8cpp.html#a1934545954cce69b2b45748b6c3b532e',1,'Buecherei.cpp']]],
+  ['mediumentfernen_4',['mediumEntfernen',['../_buecherei_8cpp.html#a3e18c8125db6ee4b2dd2b50bda67eb1c',1,'Buecherei.cpp']]],
+  ['mediumhinzufuegen_5',['mediumHinzufuegen',['../_buecherei_8cpp.html#a6dd1350855e9da23ad6b71e8da306caf',1,'Buecherei.cpp']]],
+  ['mediumzurueckgeben_6',['mediumZurueckgeben',['../_buecherei_8cpp.html#aa31d79ad55606d9d0de0a44c2c3d5acc',1,'Buecherei.cpp']]]
 ];

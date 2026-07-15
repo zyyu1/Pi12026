@@ -2,7 +2,7 @@
 \hypertarget{class_person}{}\label{class_person}\index{Person@{Person}}
 
 
-Klasse \doxylink{class_person}{Person}.  
+Class representing a person.  
 
 
 
@@ -13,23 +13,23 @@ Klasse \doxylink{class_person}{Person}.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_person_a6e74d12bd0c913a004fd427dfc15cf43}{Person}} (std\+::string init\+Name="{}"{}, \mbox{\hyperlink{class_datum}{Datum}} init\+Geburtsdatum=\mbox{\hyperlink{class_datum}{Datum}}())
-\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \Hypertarget{class_person_a700ffd693321c5fe6880262acf43d4da}\label{class_person_a700ffd693321c5fe6880262acf43d4da} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Person} ()
-\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_person_ab20f096fdfd5201818c45754af4c3e3b}{get\+Name}} () const
-\begin{DoxyCompactList}\small\item\em Zugriffsfunktion auf den Namen der \doxylink{class_person}{Person}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the person\textquotesingle{}s name. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_datum}{Datum}} \mbox{\hyperlink{class_person_af3ba3a3eb3aa8d22921d99a680dcb963}{get\+Geburtsdatum}} () const
-\begin{DoxyCompactList}\small\item\em Zugriffsfunktion auf das Geburtsdatum der \doxylink{class_person}{Person}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the person\textquotesingle{}s date of birth. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Klasse \doxylink{class_person}{Person}. 
+Class representing a person. 
 
-Die Klasse \doxylink{class_person}{Person} speichert alle relevanten Informationenen einer \doxylink{class_person}{Person} ab, die für die Bücherei relevant sind, dies beinhaltet\+:
+The \doxylink{class_person}{Person} class stores the information about a person that is relevant for the library system\+:
 \begin{DoxyItemize}
-\item Name
-\item Geburtsdatum 
+\item name
+\item date of birth 
 \end{DoxyItemize}
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -41,15 +41,13 @@ Person\+::\+Person (\begin{DoxyParamCaption}\item[{std\+::string}]{init\+Name}{ 
 
 
 
-Konstruktor. 
-
-Konstruktor der Klasse \doxylink{class_person}{Person}
+Constructor. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em std\+::string} & name\+: Name der \doxylink{class_person}{Person}, Default-\/\+Value ist ein leerer String \\
+{\em init\+Name} & Name of the person, defaults to an empty string \\
 \hline
-{\em \doxylink{class_datum}{Datum}} & init\+Geburtsdatum\+: Geburtsdatum der \doxylink{class_person}{Person}, Default-\/\+Value ist das aktuelle \doxylink{class_datum}{Datum} \\
+{\em init\+Geburtsdatum} & Date of birth, defaults to the current date \\
 \hline
 \end{DoxyParams}
 
@@ -63,10 +61,10 @@ Konstruktor der Klasse \doxylink{class_person}{Person}
 
 
 
-Zugriffsfunktion auf das Geburtsdatum der \doxylink{class_person}{Person}. 
+Returns the person\textquotesingle{}s date of birth. 
 
 \begin{DoxyReturn}{Returns}
-\doxylink{class_datum}{Datum}\+: gibt das Geburtsdautm der \doxylink{class_person}{Person} zurück 
+Date of birth 
 \end{DoxyReturn}
 \Hypertarget{class_person_ab20f096fdfd5201818c45754af4c3e3b}\index{Person@{Person}!getName@{getName}}
 \index{getName@{getName}!Person@{Person}}
@@ -76,10 +74,10 @@ std\+::string Person\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCap
 
 
 
-Zugriffsfunktion auf den Namen der \doxylink{class_person}{Person}. 
+Returns the person\textquotesingle{}s name. 
 
 \begin{DoxyReturn}{Returns}
-std\+::string\+: gibt den Namen der \doxylink{class_person}{Person} zurück 
+Name of the person 
 \end{DoxyReturn}
 
 

@@ -109,7 +109,7 @@ $(function(){initNavTree('class_person.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p>Klasse <a class="el" href="class_person.html" title="Klasse Person.">Person</a>.  
+<p>Class representing a person.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_person_8h_source.html">Person.h</a>&gt;</code></p>
@@ -117,24 +117,24 @@ $(function(){initNavTree('class_person.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e74d12bd0c913a004fd427dfc15cf43" id="r_a6e74d12bd0c913a004fd427dfc15cf43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e74d12bd0c913a004fd427dfc15cf43">Person</a> (std::string initName=&quot;&quot;, <a class="el" href="class_datum.html">Datum</a> initGeburtsdatum=<a class="el" href="class_datum.html">Datum</a>())</td></tr>
-<tr class="memdesc:a6e74d12bd0c913a004fd427dfc15cf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor.  <br /></td></tr>
+<tr class="memdesc:a6e74d12bd0c913a004fd427dfc15cf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:a6e74d12bd0c913a004fd427dfc15cf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700ffd693321c5fe6880262acf43d4da" id="r_a700ffd693321c5fe6880262acf43d4da"><td class="memItemLeft" align="right" valign="top"><a id="a700ffd693321c5fe6880262acf43d4da" name="a700ffd693321c5fe6880262acf43d4da"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Person</b> ()</td></tr>
-<tr class="memdesc:a700ffd693321c5fe6880262acf43d4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor. <br /></td></tr>
+<tr class="memdesc:a700ffd693321c5fe6880262acf43d4da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:a700ffd693321c5fe6880262acf43d4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab20f096fdfd5201818c45754af4c3e3b" id="r_ab20f096fdfd5201818c45754af4c3e3b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20f096fdfd5201818c45754af4c3e3b">getName</a> () const</td></tr>
-<tr class="memdesc:ab20f096fdfd5201818c45754af4c3e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zugriffsfunktion auf den Namen der <a class="el" href="class_person.html" title="Klasse Person.">Person</a>.  <br /></td></tr>
+<tr class="memdesc:ab20f096fdfd5201818c45754af4c3e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the person's name.  <br /></td></tr>
 <tr class="separator:ab20f096fdfd5201818c45754af4c3e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3ba3a3eb3aa8d22921d99a680dcb963" id="r_af3ba3a3eb3aa8d22921d99a680dcb963"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_datum.html">Datum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3ba3a3eb3aa8d22921d99a680dcb963">getGeburtsdatum</a> () const</td></tr>
-<tr class="memdesc:af3ba3a3eb3aa8d22921d99a680dcb963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zugriffsfunktion auf das Geburtsdatum der <a class="el" href="class_person.html" title="Klasse Person.">Person</a>.  <br /></td></tr>
+<tr class="memdesc:af3ba3a3eb3aa8d22921d99a680dcb963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the person's date of birth.  <br /></td></tr>
 <tr class="separator:af3ba3a3eb3aa8d22921d99a680dcb963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Klasse <a class="el" href="class_person.html" title="Klasse Person.">Person</a>. </p>
-<p>Die Klasse <a class="el" href="class_person.html" title="Klasse Person.">Person</a> speichert alle relevanten Informationenen einer <a class="el" href="class_person.html" title="Klasse Person.">Person</a> ab, die für die Bücherei relevant sind, dies beinhaltet:</p><ul>
-<li>Name</li>
-<li>Geburtsdatum </li>
+<div class="textblock"><p>Class representing a person. </p>
+<p>The <a class="el" href="class_person.html" title="Class representing a person.">Person</a> class stores the information about a person that is relevant for the library system:</p><ul>
+<li>name</li>
+<li>date of birth </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6e74d12bd0c913a004fd427dfc15cf43" name="a6e74d12bd0c913a004fd427dfc15cf43"></a>
@@ -156,12 +156,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Konstruktor. </p>
-<p>Konstruktor der Klasse <a class="el" href="class_person.html" title="Klasse Person.">Person</a></p>
+<p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">std::string</td><td>name: Name der <a class="el" href="class_person.html" title="Klasse Person.">Person</a>, Default-Value ist ein leerer String </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a></td><td>initGeburtsdatum: Geburtsdatum der <a class="el" href="class_person.html" title="Klasse Person.">Person</a>, Default-Value ist das aktuelle <a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a> </td></tr>
+    <tr><td class="paramname">initName</td><td>Name of the person, defaults to an empty string </td></tr>
+    <tr><td class="paramname">initGeburtsdatum</td><td>Date of birth, defaults to the current date </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,8 +183,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Zugriffsfunktion auf das Geburtsdatum der <a class="el" href="class_person.html" title="Klasse Person.">Person</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_datum.html" title="Klasse für ein Datum.">Datum</a>: gibt das Geburtsdautm der <a class="el" href="class_person.html" title="Klasse Person.">Person</a> zurück </dd></dl>
+<p>Returns the person's date of birth. </p>
+<dl class="section return"><dt>Returns</dt><dd>Date of birth </dd></dl>
 
 </div>
 </div>
@@ -204,8 +203,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Zugriffsfunktion auf den Namen der <a class="el" href="class_person.html" title="Klasse Person.">Person</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string: gibt den Namen der <a class="el" href="class_person.html" title="Klasse Person.">Person</a> zurück </dd></dl>
+<p>Returns the person's name. </p>
+<dl class="section return"><dt>Returns</dt><dd>Name of the person </dd></dl>
 
 </div>
 </div>

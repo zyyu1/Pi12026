@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['magazin_0',['Magazin',['../class_magazin.html#a6bffe363cf7bc99e5692da280db7c3db',1,'Magazin']]],
-  ['medium_1',['Medium',['../class_medium.html#aa8bd867d2e3644022a117433e3321f18',1,'Medium']]]
+  ['getgeburtsdatum_0',['getGeburtsdatum',['../class_person.html#af3ba3a3eb3aa8d22921d99a680dcb963',1,'Person']]],
+  ['getid_1',['getID',['../class_medium.html#a7bc65e286218957af48211f6ace30789',1,'Medium']]],
+  ['getname_2',['getName',['../class_person.html#ab20f096fdfd5201818c45754af4c3e3b',1,'Person']]],
+  ['getstatus_3',['getStatus',['../class_medium.html#a5ebfbc460958b938a04f15b3cf68f6bc',1,'Medium']]]
 ];

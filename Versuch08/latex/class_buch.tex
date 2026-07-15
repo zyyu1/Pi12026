@@ -2,7 +2,7 @@
 \hypertarget{class_buch}{}\label{class_buch}\index{Buch@{Buch}}
 
 
-Klasse \doxylink{class_buch}{Buch}.  
+Book class.  
 
 
 
@@ -19,49 +19,49 @@ Inheritance diagram for Buch\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_buch_aabc82930f1e38ca1bf4be15cb5681d81}{Buch}} (std\+::string init\+Titel, std\+::string init\+Autor)
-\begin{DoxyCompactList}\small\item\em Konstruktor der Klasse \doxylink{class_buch}{Buch}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor of the \doxylink{class_buch}{Buch} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_buch_ae4599c9144eff315a326309542ede55e}{ausgabe}} (std\+::ostream \&out) const override
-\begin{DoxyCompactList}\small\item\em Virtuelle Ausgabefunktion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Virtual output function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_medium}{Medium}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_medium_aa8bd867d2e3644022a117433e3321f18}{Medium}} (std\+::string init\+Titel)
-\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_medium_a77264993251b16f49de7cfc2a079eae2}{\texorpdfstring{$\sim$}{\string~}\+Medium}} (void)
-\begin{DoxyCompactList}\small\item\em Virtueller Destruktor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_medium_a98261c5da2a63906799f298cbbcd66b8}{ausleihen}} (\mbox{\hyperlink{class_person}{Person}} person, \mbox{\hyperlink{class_datum}{Datum}} ausleihdatum)
-\begin{DoxyCompactList}\small\item\em Virtuelle Ausleihen-\/\+Funktion. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual lend function. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_medium_a243e7659e4c9596061a5d5805ae271c4}{zurueckgeben}} ()
-\begin{DoxyCompactList}\small\item\em Gibt ein \doxylink{class_medium}{Medium} in die Buecherei zurueck. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the medium to the library. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{class_medium_a7bc65e286218957af48211f6ace30789}{get\+ID}} ()
-\begin{DoxyCompactList}\small\item\em Zugriff auf die ID. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the ID. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_medium_a5ebfbc460958b938a04f15b3cf68f6bc}{get\+Status}} () const
-\begin{DoxyCompactList}\small\item\em Zugriff auf den Ausleihstatus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the lending status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_medium}{Medium}}}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int {\bfseries ID}
-\begin{DoxyCompactList}\small\item\em Eindeutige ID des Mediums. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Unique ID of the medium. \end{DoxyCompactList}\item 
 std\+::string {\bfseries titel}
-\begin{DoxyCompactList}\small\item\em Titel des Mediums. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Title of the medium. \end{DoxyCompactList}\item 
 bool {\bfseries status}
-\begin{DoxyCompactList}\small\item\em Ausleihstatus des Mediums. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Lending status of the medium. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_datum}{Datum}} {\bfseries datum\+Ausgeliehen}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_datum}{Datum} der Ausleihe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Date when the medium was lent out. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_person}{Person}} {\bfseries person\+Ausgeliehen}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_person}{Person}, die das \doxylink{class_medium}{Medium} ausgeliehen hat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_person}{Person} who borrowed the medium. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_medium}{Medium}}}
 \begin{DoxyCompactItemize}
 \item 
 static unsigned int {\bfseries current\+ID} = 1
-\begin{DoxyCompactList}\small\item\em Statische Variable fuer fortlaufende IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static variable for generating consecutive IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Klasse \doxylink{class_buch}{Buch}. 
+Book class. 
 
-Die Klasse \doxylink{class_buch}{Buch} ist eine abgeleitete Klasse von \doxylink{class_medium}{Medium}. Sie speichert zusaetzlich zum Titel den Autor des Buches. 
+The \doxylink{class_buch}{Buch} class is derived from \doxylink{class_medium}{Medium}. In addition to the title, it stores the author of the book. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_buch_aabc82930f1e38ca1bf4be15cb5681d81}\index{Buch@{Buch}!Buch@{Buch}}
@@ -72,13 +72,13 @@ Buch\+::\+Buch (\begin{DoxyParamCaption}\item[{std\+::string}]{init\+Titel}{, }\
 
 
 
-Konstruktor der Klasse \doxylink{class_buch}{Buch}. 
+Constructor of the \doxylink{class_buch}{Buch} class. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em init\+Titel} & Titel des Buches \\
+{\em init\+Titel} & Title of the book \\
 \hline
-{\em init\+Autor} & Autor des Buches \\
+{\em init\+Autor} & Author of the book \\
 \hline
 \end{DoxyParams}
 
@@ -92,13 +92,13 @@ void Buch\+::ausgabe (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\
 
 
 
-Virtuelle Ausgabefunktion. 
+Virtual output function. 
 
-Gibt alle Informationen des Buches aus.
+Outputs all information about the book.
 
 
 \begin{DoxyParams}{Parameters}
-{\em out} & Ausgabestream \\
+{\em out} & Output stream \\
 \hline
 \end{DoxyParams}
 

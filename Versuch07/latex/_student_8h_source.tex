@@ -7,7 +7,7 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ STUDENT\_H\_}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ STUDENT\_H\_}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ostream>}\ \textcolor{comment}{//\ Versuch07:\ needed\ for\ ostream-\/based\ output\ and\ operator<<}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00015\ }
@@ -26,26 +26,28 @@
 \DoxyCodeLine{00061\ }
 \DoxyCodeLine{00067\ \ \ \ \ std::string\ \mbox{\hyperlink{class_student_aec9e550c530f685630942bf4140bfb73}{getAdresse}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00068\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a0ca4751d3971d290ed7ea54927211ebf}{ausgabe}}(std::ostream\&\ out)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a44b0dc0efbc95f687706f28363e897db}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a8ed21df54035f4067179661924875aac}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a8f7c31ed0e331481ac58f12b2e822047}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ matNr;}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ versuch07\ new\ added}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a0ca4751d3971d290ed7ea54927211ebf}{ausgabe}}(std::ostream\&\ out)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a44b0dc0efbc95f687706f28363e897db}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a8ed21df54035f4067179661924875aac}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a8f7c31ed0e331481ac58f12b2e822047}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00105\ \ \ \ \ std::string\ name;}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00108\ \ \ \ \ std::string\ geburtstag;}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00111\ \ \ \ \ std::string\ adresse;}
-\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ matNr;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::string\ geburtstag;}
 \DoxyCodeLine{00113\ }
-\DoxyCodeLine{00124\ std::ostream\&\ \mbox{\hyperlink{_student_8h_aadd1864a776093e95f449dc91906f9eb}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\&\ student);}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ \ \ \ \ std::string\ adresse;}
+\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00128\ std::ostream\&\ \mbox{\hyperlink{_student_8h_aadd1864a776093e95f449dc91906f9eb}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_student}{Student}}\&\ student);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

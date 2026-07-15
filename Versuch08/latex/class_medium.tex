@@ -2,7 +2,7 @@
 \hypertarget{class_medium}{}\label{class_medium}\index{Medium@{Medium}}
 
 
-Basisklasse fuer saemtliche Medien.  
+Base class for all media.  
 
 
 
@@ -19,49 +19,49 @@ Inheritance diagram for Medium\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_medium_aa8bd867d2e3644022a117433e3321f18}{Medium}} (std\+::string init\+Titel)
-\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_medium_a77264993251b16f49de7cfc2a079eae2}{\texorpdfstring{$\sim$}{\string~}\+Medium}} (void)
-\begin{DoxyCompactList}\small\item\em Virtueller Destruktor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_medium_a3f9379ad4ef74ba58d25de30a62d21de}{ausgabe}} (std\+::ostream \&out) const =0
-\begin{DoxyCompactList}\small\item\em Virtuelle Ausgabefunktion. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual output function. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_medium_a98261c5da2a63906799f298cbbcd66b8}{ausleihen}} (\mbox{\hyperlink{class_person}{Person}} person, \mbox{\hyperlink{class_datum}{Datum}} ausleihdatum)
-\begin{DoxyCompactList}\small\item\em Virtuelle Ausleihen-\/\+Funktion. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual lend function. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_medium_a243e7659e4c9596061a5d5805ae271c4}{zurueckgeben}} ()
-\begin{DoxyCompactList}\small\item\em Gibt ein \doxylink{class_medium}{Medium} in die Buecherei zurueck. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the medium to the library. \end{DoxyCompactList}\item 
 unsigned int \mbox{\hyperlink{class_medium_a7bc65e286218957af48211f6ace30789}{get\+ID}} ()
-\begin{DoxyCompactList}\small\item\em Zugriff auf die ID. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the ID. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_medium_a5ebfbc460958b938a04f15b3cf68f6bc}{get\+Status}} () const
-\begin{DoxyCompactList}\small\item\em Zugriff auf den Ausleihstatus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the lending status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_medium_a5e72a311f06810444cde614ddbc4b31f}\label{class_medium_a5e72a311f06810444cde614ddbc4b31f} 
 unsigned int {\bfseries ID}
-\begin{DoxyCompactList}\small\item\em Eindeutige ID des Mediums. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Unique ID of the medium. \end{DoxyCompactList}\item 
 \Hypertarget{class_medium_ab76783269f8b09141d7b2168b008429d}\label{class_medium_ab76783269f8b09141d7b2168b008429d} 
 std\+::string {\bfseries titel}
-\begin{DoxyCompactList}\small\item\em Titel des Mediums. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Title of the medium. \end{DoxyCompactList}\item 
 \Hypertarget{class_medium_a41d79c1b3b57a54c8b372a8e36f1b5c9}\label{class_medium_a41d79c1b3b57a54c8b372a8e36f1b5c9} 
 bool {\bfseries status}
-\begin{DoxyCompactList}\small\item\em Ausleihstatus des Mediums. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Lending status of the medium. \end{DoxyCompactList}\item 
 \Hypertarget{class_medium_af7a2605566e899641b075f51893948c7}\label{class_medium_af7a2605566e899641b075f51893948c7} 
 \mbox{\hyperlink{class_datum}{Datum}} {\bfseries datum\+Ausgeliehen}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_datum}{Datum} der Ausleihe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Date when the medium was lent out. \end{DoxyCompactList}\item 
 \Hypertarget{class_medium_a2dcfa7b252fea996b5cb6551f735f252}\label{class_medium_a2dcfa7b252fea996b5cb6551f735f252} 
 \mbox{\hyperlink{class_person}{Person}} {\bfseries person\+Ausgeliehen}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_person}{Person}, die das \doxylink{class_medium}{Medium} ausgeliehen hat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_person}{Person} who borrowed the medium. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_medium_ac48d0988284d67e8bdf54b8fab9ebbe8}\label{class_medium_ac48d0988284d67e8bdf54b8fab9ebbe8} 
 static unsigned int {\bfseries current\+ID} = 1
-\begin{DoxyCompactList}\small\item\em Statische Variable fuer fortlaufende IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static variable for generating consecutive IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Basisklasse fuer saemtliche Medien. 
+Base class for all media. 
 
-Diese Klasse stellt eine Basisklasse fuer Objekte dar, die Medien beschreiben. Von dieser Klasse werden alle anderen Medien, wie z.\+B. \doxylink{class_buch}{Buch} oder \doxylink{class_d_v_d}{DVD}, abgeleitet. 
+The \doxylink{class_medium}{Medium} class is the base class for objects that represent media items. All other media types such as books, magazines, or DVDs are derived from it. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_medium_aa8bd867d2e3644022a117433e3321f18}\index{Medium@{Medium}!Medium@{Medium}}
@@ -72,13 +72,13 @@ Medium\+::\+Medium (\begin{DoxyParamCaption}\item[{std\+::string}]{init\+Titel}{
 
 
 
-Konstruktor. 
+Constructor. 
 
-Konstruktor der Klasse \doxylink{class_medium}{Medium}.
+Constructor of the \doxylink{class_medium}{Medium} class.
 
 
 \begin{DoxyParams}{Parameters}
-{\em init\+Titel} & Titel des Mediums \\
+{\em init\+Titel} & Title of the medium \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_medium_a77264993251b16f49de7cfc2a079eae2}\index{Medium@{Medium}!````~Medium@{\texorpdfstring{$\sim$}{\string~}Medium}}
@@ -89,9 +89,9 @@ Medium\+::\texorpdfstring{$\sim$}{\string~}\+Medium (\begin{DoxyParamCaption}\it
 
 
 
-Virtueller Destruktor. 
+Virtual destructor. 
 
-Virtueller Destruktor der Klasse \doxylink{class_medium}{Medium}. 
+Virtual destructor of the \doxylink{class_medium}{Medium} class. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_medium_a3f9379ad4ef74ba58d25de30a62d21de}\index{Medium@{Medium}!ausgabe@{ausgabe}}
@@ -102,13 +102,13 @@ void Medium\+::ausgabe (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{
 
 
 
-Virtuelle Ausgabefunktion. 
+Virtual output function. 
 
-Gibt alle Informationen des Mediums aus.
+Outputs the general information of the medium.
 
 
 \begin{DoxyParams}{Parameters}
-{\em out} & Ausgabestream \\
+{\em out} & Output stream \\
 \hline
 \end{DoxyParams}
 
@@ -123,33 +123,21 @@ bool Medium\+::ausleihen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_
 
 
 
-Virtuelle Ausleihen-\/\+Funktion. 
+Virtual lend function. 
 
-Leiht ein \doxylink{class_medium}{Medium} aus, wenn es noch verfuegbar ist.
+Lends the medium if it is still available.
 
 
 \begin{DoxyParams}{Parameters}
-{\em person} & \doxylink{class_person}{Person}, die das \doxylink{class_medium}{Medium} ausleihen moechte \\
+{\em person} & \doxylink{class_person}{Person} who wants to borrow the medium \\
 \hline
-{\em ausleihdatum} & \doxylink{class_datum}{Datum}, an dem das \doxylink{class_medium}{Medium} ausgeliehen wird\\
+{\em ausleihdatum} & Date of borrowing\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true, wenn das \doxylink{class_medium}{Medium} ausgeliehen werden konnte 
+true if the medium was borrowed successfully 
 
-false, wenn das \doxylink{class_medium}{Medium} bereits verliehen ist
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em person} & \doxylink{class_person}{Person}, die das \doxylink{class_medium}{Medium} ausleihen moechte \\
-\hline
-{\em ausleihdatum} & \doxylink{class_datum}{Datum}, an dem das \doxylink{class_medium}{Medium} ausgeliehen wird\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true, wenn das \doxylink{class_medium}{Medium} erfolgreich ausgeliehen wurde 
-
-false, wenn das \doxylink{class_medium}{Medium} bereits verliehen ist 
+false if the medium is already lent out 
 \end{DoxyReturn}
 
 
@@ -163,14 +151,14 @@ unsigned int Medium\+::get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaptio
 
 
 
-Zugriff auf die ID. 
+Returns the ID. 
 
-Liefert die eindeutige ID des Mediums.
+Returns the unique ID of the medium.
 
 \begin{DoxyReturn}{Returns}
-Eindeutige ID des Mediums
+Unique medium ID
 
-ID des Mediums 
+ID of the medium 
 \end{DoxyReturn}
 \Hypertarget{class_medium_a5ebfbc460958b938a04f15b3cf68f6bc}\index{Medium@{Medium}!getStatus@{getStatus}}
 \index{getStatus@{getStatus}!Medium@{Medium}}
@@ -180,14 +168,18 @@ bool Medium\+::get\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) 
 
 
 
-Zugriff auf den Ausleihstatus. 
+Returns the lending status. 
 
-Liefert den Ausleihstatus des Mediums.
+Returns the lending status of the medium.
 
 \begin{DoxyReturn}{Returns}
-true, wenn das \doxylink{class_medium}{Medium} ausgeliehen ist 
+true if the medium is currently lent out 
 
-false, wenn das \doxylink{class_medium}{Medium} verfuegbar ist 
+false if the medium is available
+
+true if the medium is lent out 
+
+false if the medium is available 
 \end{DoxyReturn}
 \Hypertarget{class_medium_a243e7659e4c9596061a5d5805ae271c4}\index{Medium@{Medium}!zurueckgeben@{zurueckgeben}}
 \index{zurueckgeben@{zurueckgeben}!Medium@{Medium}}
@@ -197,9 +189,9 @@ void Medium\+::zurueckgeben (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 
 
-Gibt ein \doxylink{class_medium}{Medium} in die Buecherei zurueck. 
+Returns the medium to the library. 
 
-Gibt ein ausgeliehenes \doxylink{class_medium}{Medium} zurueck. 
+Returns a borrowed medium. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
