@@ -2,6 +2,11 @@
 \hypertarget{class_abstract_map}{}\label{class_abstract_map}\index{AbstractMap@{AbstractMap}}
 
 
+Abstract interface for a map of cities and streets.  
+
+
+
+
 {\ttfamily \#include $<$abstractmap.\+h$>$}
 
 Inheritance diagram for Abstract\+Map\+:\begin{figure}[H]
@@ -28,6 +33,11 @@ virtual \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} \mbox{\hy
 virtual double \mbox{\hyperlink{class_abstract_map_a4457b31b90038c291b84675941400238}{get\+Length}} (const \mbox{\hyperlink{class_street}{Street}} \texorpdfstring{$\ast$}{*}street) const =0
 \begin{DoxyCompactList}\small\item\em Calculate the street length. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Abstract interface for a map of cities and streets. 
+
+This interface defines the required functions for a map implementation. The concrete \doxylink{class_map}{Map} class must implement all pure virtual functions. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_abstract_map_ab2fbb46108e2905fb1193a67510d41f0}\index{AbstractMap@{AbstractMap}!````~AbstractMap@{\texorpdfstring{$\sim$}{\string~}AbstractMap}}

@@ -35,7 +35,11 @@ double \mbox{\hyperlink{class_map_a70ad7dd376aa71119c8dc05eed75fd05}{get\+Length
 QString\+List \mbox{\hyperlink{class_map_a269f182e34033dabb2d271f4530228ea}{get\+City\+Name\+List}} () const
 \begin{DoxyCompactList}\small\item\em Returns the names of all cities stored in the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_map_a22f2205bdc629f5934f244ef16cce029}{draw}} (QGraphics\+Scene \&scene) const
-\begin{DoxyCompactList}\small\item\em Draws all streets and cities into the given scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draws all streets and cities into the given scene. \end{DoxyCompactList}\item 
+const QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_map_af9212a4b6c7db067bd24bc0054791faa}{get\+Cities}} () const
+\begin{DoxyCompactList}\small\item\em Provides read-\/only access to all stored cities. \end{DoxyCompactList}\item 
+const QVector$<$ \mbox{\hyperlink{class_street}{Street}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_map_a7be645f24f24ac611a54de699f62607c}{get\+Streets}} () const
+\begin{DoxyCompactList}\small\item\em Provides read-\/only access to all stored streets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_abstract_map}{Abstract\+Map}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -148,6 +152,21 @@ Matching city pointer or nullptr if not found.
 
 Implements \mbox{\hyperlink{class_abstract_map_a09ddd4db3021602aa2c0ca343a8dd3a2}{Abstract\+Map}}.
 
+\Hypertarget{class_map_af9212a4b6c7db067bd24bc0054791faa}\index{Map@{Map}!getCities@{getCities}}
+\index{getCities@{getCities}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getCities()}{getCities()}}
+{\footnotesize\ttfamily \label{class_map_af9212a4b6c7db067bd24bc0054791faa} 
+const QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ \& Map\+::get\+Cities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Provides read-\/only access to all stored cities. 
+
+Returns the internal city container for read-\/only export operations.
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the internal city container. 
+\end{DoxyReturn}
 \Hypertarget{class_map_a269f182e34033dabb2d271f4530228ea}\index{Map@{Map}!getCityNameList@{getCityNameList}}
 \index{getCityNameList@{getCityNameList}!Map@{Map}}
 \doxysubsubsection{\texorpdfstring{getCityNameList()}{getCityNameList()}}
@@ -235,6 +254,21 @@ Vector of connected streets.
 
 Implements \mbox{\hyperlink{class_abstract_map_add9d35daea37d6e08391be612e7038e3}{Abstract\+Map}}.
 
+\Hypertarget{class_map_a7be645f24f24ac611a54de699f62607c}\index{Map@{Map}!getStreets@{getStreets}}
+\index{getStreets@{getStreets}!Map@{Map}}
+\doxysubsubsection{\texorpdfstring{getStreets()}{getStreets()}}
+{\footnotesize\ttfamily \label{class_map_a7be645f24f24ac611a54de699f62607c} 
+const QVector$<$ \mbox{\hyperlink{class_street}{Street}} \texorpdfstring{$\ast$}{*} $>$ \& Map\+::get\+Streets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Provides read-\/only access to all stored streets. 
+
+Returns the internal street container for read-\/only export operations.
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the internal street container. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -13,7 +13,7 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QStringList>}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QVector>}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_map_a0f5ad0fd4563497b4214038cbca8b582}{Map}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_map}{AbstractMap}}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_map_a0f5ad0fd4563497b4214038cbca8b582}{Map}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_abstract_map}{AbstractMap}}\ \ \textcolor{comment}{//map\ inherits\ from\ Abstracrmap}}
 \DoxyCodeLine{00019\ \{}
 \DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_map_a0f5ad0fd4563497b4214038cbca8b582}{Map}}();}
@@ -34,11 +34,15 @@
 \DoxyCodeLine{00073\ }
 \DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_a22f2205bdc629f5934f244ef16cce029}{draw}}(QGraphicsScene\&\ scene)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00082\ \ \ \ \ QVector<City*>\ cities;}
-\DoxyCodeLine{00084\ \ \ \ \ QVector<Street*>\ streets;}
-\DoxyCodeLine{00085\ \};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAP\_H}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ QVector<City*>\&\ \mbox{\hyperlink{class_map_af9212a4b6c7db067bd24bc0054791faa}{getCities}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ QVector<Street*>\&\ \mbox{\hyperlink{class_map_a7be645f24f24ac611a54de699f62607c}{getStreets}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \ \ QVector<City*>\ cities;}
+\DoxyCodeLine{00096\ \ \ \ \ QVector<Street*>\ streets;}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAP\_H}}
 
 \end{DoxyCode}
