@@ -36,6 +36,7 @@ void MainWindow::testInput()
     // If conversion succeeds, treat the input as a number.
     if (trans)
     {
+        //弹窗显示
         QMessageBox::information(
             this,
             "Input test",
@@ -96,6 +97,119 @@ void MainWindow::testMap()
     map->draw(*scene);
 
     qDebug() << "Map drawn";
+}
+
+/**
+ * @brief Runs the standard AbstractMap conformance test from the exercise template.
+ */
+//包含findCity, getStreetList, getOppositeCity, getLength
+void MainWindow::testAbstractMap()
+{
+    // This test follows the structure provided in TestFunktionen.txt.
+    Map testMap;
+    City *a = new City("a", 0, 0);
+    City *b = new City("b", 0, 100);
+    City *c = new City("c", 100, 300);
+    Street *s = new Street(a, b);
+    Street *s2 = new Street(b, c);
+
+    qDebug() << "MapTest: Start Test of the Map";
+    {
+        // A street must not be added before both endpoint cities exist in the map.
+        qDebug() << "MapTest: adding wrong street";
+        bool t1 = testMap.addStreet(s);
+        if (t1)
+        {
+            qDebug() << "-Error: Street should not be added if cities have not been added.";
+        }
+    }
+
+    {
+        // After adding the cities, the same street should be accepted.
+        qDebug() << "MapTest: adding correct street";
+        testMap.addCity(a);
+        testMap.addCity(b);
+        bool t1 = testMap.addStreet(s);
+        if (!t1)
+        {
+            qDebug() << "-Error: It should be possible to add this street.";
+        }
+    }
+
+    {
+        // Existing cities must be found, missing cities must return nullptr.
+        qDebug() << "MapTest: findCity";
+        City* city = testMap.findCity("a");
+        if (city != a)
+        {
+            qDebug() << "-Error: City a could not be found.";
+        }
+
+        city = testMap.findCity("b");
+        if (city != b)
+        {
+            qDebug() << "-Error: City b could not be found.";
+        }
+
+        city = testMap.findCity("c");
+        if (city != nullptr)
+        {
+            qDebug() << "-Error: If city could not be found nullptr should be returned.";
+        }
+    }
+
+    // Extend the test graph for the remaining checks.
+    testMap.addCity(c);
+    testMap.addStreet(s2);
+
+    {
+        // The map must return the opposite endpoint of a valid street.
+        qDebug() << "MapTest: getOppositeCity";
+        const City *city = testMap.getOppositeCity(s, a);
+        if (city != b)
+        {
+            qDebug() << "-Error: Opposite city should be b.";
+        }
+
+        city = testMap.getOppositeCity(s, c);
+        if (city != nullptr)
+        {
+            qDebug() << "-Error: Opposite city for a city not linked by the street should be nullptr.";
+        }
+    }
+
+    {
+        // The street length should match the expected geometry.
+        qDebug() << "MapTest: streetLength";
+        double l = testMap.getLength(s2);
+        double expectedLength = 223.6;
+        if (l < expectedLength * 0.95 || l > expectedLength * 1.05)
+        {
+            qDebug() << "-Error: Street length is not equal to the expected value.";
+        }
+    }
+
+    {
+        // Street lists should contain the expected number of connected streets.
+        qDebug() << "MapTest: getStreetList";
+        QVector<Street*> streetList1 = testMap.getStreetList(a);
+        QVector<Street*> streetList2 = testMap.getStreetList(b);
+        if (streetList1.size() != 1)
+        {
+            qDebug() << "-Error: One street should be found for city a.";
+        }
+        else if (*streetList1.begin() != s)
+        {
+            qDebug() << "-Error: The wrong street has been found for city a.";
+        }
+
+        if (streetList2.size() != 2)
+        {
+            qDebug() << "-Error: Two streets should be found for city b.";
+        }
+    }
+
+    qDebug() << "MapTest: End Test of the Map.";
 }
 
 /**
@@ -223,117 +337,6 @@ void MainWindow::testLength()
     }
 }
 
-/**
- * @brief Runs the standard AbstractMap conformance test from the exercise template.
- */
-void MainWindow::testAbstractMap()
-{
-    // This test follows the structure provided in TestFunktionen.txt.
-    Map testMap;
-    City *a = new City("a", 0, 0);
-    City *b = new City("b", 0, 100);
-    City *c = new City("c", 100, 300);
-    Street *s = new Street(a, b);
-    Street *s2 = new Street(b, c);
-
-    qDebug() << "MapTest: Start Test of the Map";
-    {
-        // A street must not be added before both endpoint cities exist in the map.
-        qDebug() << "MapTest: adding wrong street";
-        bool t1 = testMap.addStreet(s);
-        if (t1)
-        {
-            qDebug() << "-Error: Street should not be added if cities have not been added.";
-        }
-    }
-
-    {
-        // After adding the cities, the same street should be accepted.
-        qDebug() << "MapTest: adding correct street";
-        testMap.addCity(a);
-        testMap.addCity(b);
-        bool t1 = testMap.addStreet(s);
-        if (!t1)
-        {
-            qDebug() << "-Error: It should be possible to add this street.";
-        }
-    }
-
-    {
-        // Existing cities must be found, missing cities must return nullptr.
-        qDebug() << "MapTest: findCity";
-        City* city = testMap.findCity("a");
-        if (city != a)
-        {
-            qDebug() << "-Error: City a could not be found.";
-        }
-
-        city = testMap.findCity("b");
-        if (city != b)
-        {
-            qDebug() << "-Error: City b could not be found.";
-        }
-
-        city = testMap.findCity("c");
-        if (city != nullptr)
-        {
-            qDebug() << "-Error: If city could not be found nullptr should be returned.";
-        }
-    }
-
-    // Extend the test graph for the remaining checks.
-    testMap.addCity(c);
-    testMap.addStreet(s2);
-
-    {
-        // The map must return the opposite endpoint of a valid street.
-        qDebug() << "MapTest: getOppositeCity";
-        const City *city = testMap.getOppositeCity(s, a);
-        if (city != b)
-        {
-            qDebug() << "-Error: Opposite city should be b.";
-        }
-
-        city = testMap.getOppositeCity(s, c);
-        if (city != nullptr)
-        {
-            qDebug() << "-Error: Opposite city for a city not linked by the street should be nullptr.";
-        }
-    }
-
-    {
-        // The street length should match the expected geometry.
-        qDebug() << "MapTest: streetLength";
-        double l = testMap.getLength(s2);
-        double expectedLength = 223.6;
-        if (l < expectedLength * 0.95 || l > expectedLength * 1.05)
-        {
-            qDebug() << "-Error: Street length is not equal to the expected value.";
-        }
-    }
-
-    {
-        // Street lists should contain the expected number of connected streets.
-        qDebug() << "MapTest: getStreetList";
-        QVector<Street*> streetList1 = testMap.getStreetList(a);
-        QVector<Street*> streetList2 = testMap.getStreetList(b);
-        if (streetList1.size() != 1)
-        {
-            qDebug() << "-Error: One street should be found for city a.";
-        }
-        else if (*streetList1.begin() != s)
-        {
-            qDebug() << "-Error: The wrong street has been found for city a.";
-        }
-
-        if (streetList2.size() != 2)
-        {
-            qDebug() << "-Error: Two streets should be found for city b.";
-        }
-    }
-
-    qDebug() << "MapTest: End Test of the Map.";
-}
 
 /**
  * @brief Fills and draws the predefined NRW map.
@@ -404,7 +407,7 @@ void MainWindow::testRandomRect()
 void MainWindow::on_pushButton_clicked()
 {
     qDebug() << "=== Test ===";
-    testInput();
+    testInput();   //可以更改其他需要的test
     qDebug() << "=== End of Test ===";
 }
 
@@ -502,13 +505,16 @@ void MainWindow::updateCityComboBoxes()
  */
 void MainWindow::on_pushButton_fillMap_clicked()
 {
+    //清空画面
     scene->clear();
 
     // Rebuild the map to avoid mixing old and new content.
     delete map;
     map = new Map();
 
+    //用mapIo->fillMap(*map) 填充示例数据
     mapIo->fillMap(*map);
+    //画出来
     map->draw(*scene);
 
     updateCityComboBoxes();
@@ -525,6 +531,7 @@ void MainWindow::on_pushButton_searchPath_clicked()
     scene->clear();
     map->draw(*scene);
 
+    //读取起点和终点城市名称
     QString startCity;
     QString targetCity;
 
@@ -533,7 +540,7 @@ void MainWindow::on_pushButton_searchPath_clicked()
     {
         startCity = ui->lineEdit_startCity->text();
     }
-    else
+    else //读取combobox
     {
         startCity = ui->comboBox_startCity->currentText();
     }
@@ -546,6 +553,7 @@ void MainWindow::on_pushButton_searchPath_clicked()
     {
         targetCity = ui->comboBox_targetCity->currentText();
     }
+
 
     // Run the shortest-path search on the current map.
     QVector<Street*> path = Dijkstra::search(*map, startCity, targetCity);
@@ -580,8 +588,9 @@ void MainWindow::on_pushButton_clearScene_clicked()
 void MainWindow::on_pushButton_addCity_clicked()
 {
     // Open the dialog and wait for the user to accept or cancel it.
-    AddCityDialog dialog(this);
-    int result = dialog.exec();
+    AddCityDialog dialog(this);         
+    int result = dialog.exec();     //exe()把dialog 作为moral对话框打开,用户需先关闭窗口才能进行下一步操作
+                                    //show()程序正常运行
 
     if (result == QDialog::Accepted)
     {

@@ -16,6 +16,21 @@ Map::Map()
  */
 void Map::addCity(City* city)
 {
+    // Reject invalid input early.
+    if (city == nullptr)
+    {
+        qDebug() << "City is null";
+        return;
+    }
+
+    // 防止同一城市重复添加
+    if (findCity(city->getName()) != nullptr)
+    {
+        qDebug() << "City already exists:" << city->getName();
+        delete city;
+        return;
+    }
+
     // Store the city pointer so it becomes part of the graph structure.
     cities.push_back(city);
 
@@ -34,14 +49,34 @@ bool Map::addStreet(Street* street)
         return false;
     }
 
+    // Read the two endpoint cities of the street.
     City* city1 = street->getCity1();
     City* city2 = street->getCity2();
 
-    // A street is only valid if both endpoint cities are already known by the map.
+    //检查两个城市都在地图上
     if (!cities.contains(city1) || !cities.contains(city2))
     {
         qDebug() << "Street cannot be added because at least one city is not in the map";
         return false;
+    }
+
+    //如果已经存在同一对城市之间的街道，就拒绝重复添加
+    for (Street* existingStreet : streets)
+    {
+        bool sameDirection =
+            existingStreet->getCity1() == city1 && existingStreet->getCity2() == city2;
+        bool oppositeDirection =
+            existingStreet->getCity1() == city2 && existingStreet->getCity2() == city1;
+
+        if (sameDirection || oppositeDirection)
+        {
+            qDebug() << "Street already exists between"
+                     << city1->getName()
+                     << "and"
+                     << city2->getName();
+            delete street;
+            return false;
+        }
     }
 
     streets.push_back(street);

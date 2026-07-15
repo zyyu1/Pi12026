@@ -15,7 +15,7 @@
  * The map stores cities and streets, offers graph-related lookup functions,
  * and can draw its current contents.
  */
-class Map : public AbstractMap
+class Map : public AbstractMap  //map inherits from Abstracrmap
 {
 public:
     /**

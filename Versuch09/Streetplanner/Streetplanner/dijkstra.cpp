@@ -27,11 +27,13 @@ public:
 /**
  * @brief Searches the shortest path between two cities using Dijkstra's algorithm.
  */
+//能够正确调用就行
 QVector<Street*> Dijkstra::search(const AbstractMap &map, QString start, QString target)
 {
     // Resolve the start and target names to actual city objects.
     City* startPointer = map.findCity(start);
     City* targetPointer = map.findCity(target);
+
     if (startPointer == nullptr || targetPointer == nullptr)
     {
         qDebug() << "Dijkstra: Cities not found";
@@ -39,6 +41,8 @@ QVector<Street*> Dijkstra::search(const AbstractMap &map, QString start, QString
         return l;
     }
 
+    //yellow：已经发现，但还没最终处理完的城市
+    //green：已经处理完成的城市
     QVector<Tuppel> green;
     QVector<Tuppel> yellow;
 
@@ -51,6 +55,7 @@ QVector<Street*> Dijkstra::search(const AbstractMap &map, QString start, QString
         // Select the yellow entry with the currently smallest distance.
         Tuppel edgeToProcessData;
         QVector<Tuppel>::iterator edgeToProcess = yellow.begin();
+
         for (QVector<Tuppel>::iterator it = yellow.begin(); it != yellow.end(); it++)
         {
             if ((*it).distance < (*edgeToProcess).distance)
@@ -63,8 +68,10 @@ QVector<Street*> Dijkstra::search(const AbstractMap &map, QString start, QString
         yellow.erase(edgeToProcess);
 
         // Build a list of direct successors reachable from the current city.
+        //找出所有相邻街道
         QVector<Street*> streets = map.getStreetList(edgeToProcessData.city);
         QVector<Tuppel> successorList;
+
         for (QVector<Street*>::const_iterator it = streets.begin(); it != streets.end(); it++)
         {
             temp.city = map.getOppositeCity(*it, edgeToProcessData.city);

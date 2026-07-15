@@ -15,6 +15,12 @@
 #include "city.h"
 #include "street.h"
 
+/**
+ * @brief Abstract interface for a map of cities and streets.
+ *
+ * This interface defines the required functions for a map implementation.
+ * The concrete Map class must implement all pure virtual functions.
+ */
 class AbstractMap
 {
 public:

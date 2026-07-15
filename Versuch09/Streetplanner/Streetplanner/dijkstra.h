@@ -21,6 +21,7 @@ public:
      * @param target Name of the target city.
      * @return List of streets forming the shortest path. Empty if no connection was found.
      */
+    //static变量给不需要特定对象
     static QVector<Street*> search(const AbstractMap &map, QString start, QString target);
 
 private:
